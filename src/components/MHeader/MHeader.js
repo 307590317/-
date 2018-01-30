@@ -6,11 +6,9 @@ export default class MHeader extends React.Component {
     return (
         <div className='header'>
           {this.props.children}
-            <Link to={{pathname:'/detail/1'}}
-              className="iconfont icon-paihangbang1"
-                     tag='span'
-            >
-            </Link>
+              <Link to={{pathname:'/detail/1'}}>
+                <i className="iconfont icon-paihangbang1"></i>
+              </Link>
         </div>
     )
   }
