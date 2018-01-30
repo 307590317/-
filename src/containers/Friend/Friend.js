@@ -8,7 +8,9 @@ export default class Friend extends React.Component {
           <MHeader>
             <i className="iconfont icon-tianjiahaoyou"></i>
             <div className='friendCenter'>
-              朋友
+              <div>
+
+              </div>
             </div>
           </MHeader>
         </div>
