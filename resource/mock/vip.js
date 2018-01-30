@@ -1,0 +1,17 @@
+module.exports=[
+  {
+    id:1,
+    poster:'http://p1.music.126.net/AZEa0RlZxNkxWAi0wpDI4w==/109951163097632993.webp?imageView&thumbnail=247x0&quality=75&tostatic=0&type=webp',
+    title:'那么多城市谢谢你来我身边'
+  },
+  {
+    id:2,
+    poster:'http://p1.music.126.net/AZEa0RlZxNkxWAi0wpDI4w==/109951163097632993.webp?imageView&thumbnail=247x0&quality=75&tostatic=0&type=webp',
+    title:'那么多城市谢谢你来我身边'
+  },
+  {
+    id:3,
+    poster:'http://p1.music.126.net/AZEa0RlZxNkxWAi0wpDI4w==/109951163097632993.webp?imageView&thumbnail=247x0&quality=75&tostatic=0&type=webp',
+    title:'那么多城市谢谢你来我身边'
+  }
+];

@@ -1,0 +1,29 @@
+.nav{
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 50px;
+  background: rgba(0,0,0,.7);
+  display: flex;
+  border-radius: 5px;
+  a{
+    -webkit-tap-highlight-color: transparent;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    color: #ababab;
+    &.active{
+      color: #fff;
+    }
+    i{
+      font-size: 20px;
+      font-weight: 500;
+    }
+    span{
+      font-size: 11px;
+    }
+  }
+}

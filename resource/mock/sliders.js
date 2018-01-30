@@ -1,0 +1,10 @@
+module.exports=[
+  'http://p1.music.126.net/Axx9y9226XVpxtwLnYbQXA==/109951163122788131.jpg',
+  'http://p1.music.126.net/78klyfpq-ehARBXZyoK-Dg==/109951163122788649.jpg',
+  'http://p1.music.126.net/Pinl84ivVpeWKUIX_tLcCA==/109951163122815644.jpg',
+  'http://p1.music.126.net/Ngy0oOlUm6vuBbBU6QW8OQ==/109951163119858289.jpg',
+  'http://p1.music.126.net/mE6VnkQYh83g_v0UE6i9cA==/109951163121301913.jpg',
+  'http://p1.music.126.net/dGnOGmv_FAZHeHrgeCeeDw==/109951163119939072.jpg',
+  'http://p1.music.126.net/O25xihln15GDxyO2jBiV7g==/109951163122807865.jpg',
+  'http://p1.music.126.net/ZfwaNLPQc8kyc790iQAHYA==/109951163122788565.jpg'
+];
