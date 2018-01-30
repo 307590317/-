@@ -1,9 +1,16 @@
 import React from 'react';
+import './index.less';
+import MHeader from "../../components/MHeader/MHeader";
 export default class Friend extends React.Component {
   render(){
     return (
-        <div>
-          Friend
+        <div className='friend'>
+          <MHeader>
+            <i className="iconfont icon-tianjiahaoyou"></i>
+            <div className='friendCenter'>
+              朋友
+            </div>
+          </MHeader>
         </div>
     )
   }

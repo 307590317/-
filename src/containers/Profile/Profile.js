@@ -1,17 +1,54 @@
 import React from 'react';
+import MHeader from "../../components/MHeader/MHeader";
 import "./index.less";
 export default class Profile extends React.Component {
-  render(){
+  render() {
     return (
         <div className="profile">
-          <container>
+          <MHeader>
+            <i className='empty'></i>
+            <div className='ProfileCenter'>
+              账号
+            </div>
+          </MHeader>
+          <div className="content">
             <div className="profile-header">
-              <div className="unlogin">
+              {/*登录前的头部*/}
+              <div className="unlogin" style={{display:"none"}}>
                 <p>登录网易云音乐</p>
                 <p>320k高音质无线下载，手机电脑多端同步</p>
                 <button>立即登录</button>
               </div>
-              <div className="logined"></div>
+              {/*登录后的头部*/}
+              <div className="logined">
+                <div className="Basic-info">
+                  <img src=""/>
+                  <div className="info-text">
+                    <p className="name">机智的半夏</p>
+                    <span className="grade">Lv.7</span>
+                  </div>
+                  <span className="sign"><i className="iconfont icon-jinbi"></i>签到</span>
+
+                </div>
+                <ul>
+                  <li>
+                    <p>动态</p>
+                    <p className="num">1</p>
+                  </li>
+                  <li>
+                    <p>关注</p>
+                    <p className="num">1</p>
+                  </li>
+                  <li>
+                    <p>粉丝</p>
+                    <p className="num">1</p>
+                  </li>
+                  <li>
+                    <i className="iconfont icon-qiandao"></i>
+                    <p>我的资料</p>
+                  </li>
+                </ul>
+              </div>
             </div>
             <div className="profile-main">
 
@@ -56,12 +93,14 @@ export default class Profile extends React.Component {
                   </li>
                   <li>
                     <i className="iconfont icon-yifuhuanfu icon-left"></i>
+                    <span className="color-name">官方红</span>
                     <h5>个性换肤</h5>
                     <i className="iconfont icon-youjiantou icon-right"></i>
                   </li>
                   <li>
                     <i className="iconfont icon-yejianmoshi icon-left"></i>
                     <h5>夜间模式</h5>
+                    <input type="checkbox" className="switch"/>
                     <i className="iconfont icon-youjiantou icon-right"></i>
                   </li>
                   <li>
@@ -78,6 +117,7 @@ export default class Profile extends React.Component {
                     <i className="iconfont icon-cheliang icon-left"></i>
                     <h5>驾驶模式</h5>
                     <i className="iconfont icon-youjiantou icon-right"></i>
+
                   </li>
                 </ul>
               </div>
@@ -99,7 +139,7 @@ export default class Profile extends React.Component {
             <div className="exit">
               退出登录
             </div>
-          </container>
+          </div>
         </div>
     )
   }
