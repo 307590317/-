@@ -33,10 +33,10 @@ let write=(filename,data,cb)=>{
 };
 //允许跨域
 app.use((req,res,next)=>{
-  /*res.setHeader("Access-Control-Allow-Origin", "http://localhost:8080");
+  res.setHeader("Access-Control-Allow-Origin", "http://localhost:8080");
   //允许跨域并携带cookies
-  res.setHeader("Access-Control-Allow-Credentials",true);*/
-  res.setHeader("Access-Control-Allow-Origin","*");
+  res.setHeader("Access-Control-Allow-Credentials",true);
+  // res.setHeader("Access-Control-Allow-Origin","*");
   res.setHeader("Access-Control-Allow-Headers", "Content-Type,Content-Length, Authorization, Accept,X-Requested-With");
   res.setHeader("Access-Control-Allow-Methods","PUT,POST,GET,DELETE,OPTIONS");
   res.setHeader("X-Powered-By",' 3.2.1');
@@ -46,7 +46,7 @@ app.use((req,res,next)=>{
 //静态资源请求
 app.use(express.static('./'));
 //获取问号传参后面的参数:获取后放到req的自定义属性id上以后可以直接用
-app.use((req,res)=>{
+app.use((req,res,next)=>{
   req.id=parseInt(req.query.id);
   next();
 });

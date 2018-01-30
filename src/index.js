@@ -7,6 +7,8 @@ import Home from "./containers/Home/Home";
 import MyMusic from "./containers/MyMusic/MyMusic";
 import Friend from "./containers/Friend/Friend";
 import Profile from "./containers/Profile/Profile";
+
+
 render(<Provider>
   <Router>
     <App>
