@@ -12,5 +12,6 @@ iconfont.icon-zuojiantou :左箭头
 iconfont.icon-yunzhanghu :云账户
 iconfont.icon-yinle101 : 歌单
 iconfont.icon-xiazai :个人中心
+iconfont.icon-tianjiahaoyou :添加好友
 
 
