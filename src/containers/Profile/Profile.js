@@ -1,7 +1,13 @@
 import React from 'react';
 import MHeader from "../../components/MHeader/MHeader";
 import "./index.less";
+import {NavLink} from 'react-router-dom';
+import Login from "../Login/Login";
+
 export default class Profile extends React.Component {
+  toLogin=()=>{
+    this.props.history.push('/login')
+  };
   render() {
     return (
         <div className="profile">
@@ -14,13 +20,13 @@ export default class Profile extends React.Component {
           <div className="content">
             <div className="profile-header">
               {/*登录前的头部*/}
-              <div className="unlogin" style={{display:"none"}}>
+              <div className="unlogin" style={{display:"block"}}>
                 <p>登录网易云音乐</p>
                 <p>320k高音质无线下载，手机电脑多端同步</p>
-                <button>立即登录</button>
+                <button onClick={this.toLogin}>立即登录</button>
               </div>
               {/*登录后的头部*/}
-              <div className="logined">
+              <div className="logined" style={{display:'none'}}>
                 <div className="Basic-info">
                   <img src=""/>
                   <div className="info-text">
