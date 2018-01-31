@@ -33,25 +33,25 @@ export default class Profile extends React.Component {
                     <p className="name">机智的半夏</p>
                     <span className="grade">Lv.7</span>
                   </div>
-                  <span className="sign"><i className="iconfont">&#xe6c8;</i>签到</span>
+                  <span className="sign"><i className="iconfont icon-jinbi"></i>签到</span>
 
                 </div>
                 <ul>
                   <li>
-                    <p>动态</p>
+                    <p><NavLink to={""}>动态</NavLink></p>
                     <p className="num">1</p>
                   </li>
                   <li>
-                    <p>关注</p>
+                    <p><NavLink to={""}>关注</NavLink></p>
                     <p className="num">1</p>
                   </li>
                   <li>
-                    <p>粉丝</p>
+                    <p><NavLink to={""}>粉丝</NavLink></p>
                     <p className="num">1</p>
                   </li>
                   <li>
                     <i className="iconfont">&#xe61c;</i>
-                    <p>我的资料</p>
+                    <p><NavLink to={""}>我的资料</NavLink></p>
                   </li>
                 </ul>
               </div>
@@ -62,67 +62,67 @@ export default class Profile extends React.Component {
               <div className="util">
                 <li>
                   <i className="iconfont icon-xiaoxi icon-left"></i>
-                  <h5>我的消息</h5>
-                  <i className="iconfont icon-right">&#xe658;</i>
+                  <h5><NavLink to={""}>我的消息</NavLink></h5>
+                  <i className="iconfont icon-right icon-youjiantou"></i>
                 </li>
               </div>
               <div className="util">
                 <ul>
                   <li>
-                    <i className="iconfont icon-left">&#xe64c;</i>
-                    <h5>vip会员</h5>
-                    <i className="iconfont icon-right">&#xe658;</i>
+                    <i className="iconfont icon-left icon-vip"></i>
+                    <h5><NavLink to={""}>vip会员</NavLink></h5>
+                    <i className="iconfont icon-right icon-youjiantou"></i>
                   </li>
                   <li>
-                    <i className="iconfont icon-left">&#xe625;</i>
-                    <h5>商城</h5>
-                    <i className="iconfont icon-right">&#xe658;</i>
+                    <i className="iconfont icon-left icon-gouwuche"></i>
+                    <h5><NavLink to={""}>商城</NavLink></h5>
+                    <i className="iconfont icon-right icon-youjiantou"></i>
                   </li>
                   <li>
-                    <i className="iconfont icon-left">&#xe864;</i>
-                    <h5>在线听歌免流量</h5>
-                    <i className="iconfont icon-right">&#xe658;</i>
+                    <i className="iconfont icon-left icon-liuliang"></i>
+                    <h5><NavLink to={""}>在线听歌免流量</NavLink></h5>
+                    <i className="iconfont icon-right icon-youjiantou"></i>
                   </li>
                 </ul>
               </div>
               <div className="util">
                 <ul>
                   <li>
-                    <i className="iconfont icon-left">&#xe606;</i>
-                    <h5>设置</h5>
-                    <i className="iconfont icon-right">&#xe658;</i>
+                    <i className="iconfont icon-left icon-shezhi"></i>
+                    <h5><NavLink to={""}>设置</NavLink></h5>
+                    <i className="iconfont icon-right icon-youjiantou"></i>
                   </li>
                   <li>
-                    <i className="iconfont icon-left">&#xe7bb;</i>
-                    <h5>扫一扫</h5>
-                    <i className="iconfont icon-right">&#xe658;</i>
+                    <i className="iconfont icon-left icon-saoyisao"></i>
+                    <h5><NavLink to={""}>扫一扫</NavLink></h5>
+                    <i className="iconfont icon-right icon-youjiantou"></i>
                   </li>
                   <li>
-                    <i className="iconfont icon-left">&#xe6e0;</i>
+                    <i className="iconfont icon-left icon-yifuhuanfu"></i>
                     <span className="color-name">官方红</span>
-                    <h5>个性换肤</h5>
-                    <i className="iconfont icon-right">&#xe658;</i>
+                    <h5><NavLink to={""}>个性换肤</NavLink></h5>
+                    <i className="iconfont icon-right icon-youjiantou"></i>
                   </li>
                   <li>
-                    <i className="iconfont icon-left">&#xe6c1;</i>
+                    <i className="iconfont icon-left icon-yejianmoshi"></i>
                     <h5>夜间模式</h5>
                     <input type="checkbox" className="switch"/>
-                    <i className="iconfont icon-right">&#xe658;</i>
+                    <i className="iconfont icon-right icon-youjiantou"></i>
                   </li>
                   <li>
-                    <i className="iconfont icon-left">&#xe607;</i>
+                    <i className="iconfont icon-left icon-dingshiguanbi"></i>
                     <h5>定时关闭</h5>
-                    <i className="iconfont icon-right">&#xe658;</i>
+                    <i className="iconfont icon-right icon-youjiantou"></i>
                   </li>
                   <li>
-                    <i className="iconfont icon-left">&#xe614;</i>
-                    <h5>音乐闹钟</h5>
-                    <i className="iconfont icon-right">&#xe658;</i>
+                    <i className="iconfont icon-left icon-icon-test"></i>
+                    <h5><NavLink to={""}>音乐闹钟</NavLink></h5>
+                    <i className="iconfont icon-right icon-youjiantou"></i>
                   </li>
                   <li>
-                    <i className="iconfont icon-left">&#xe62b;</i>
-                    <h5>驾驶模式</h5>
-                    <i className="iconfont icon-right">&#xe658;</i>
+                    <i className="iconfont icon-left icon-cheliang"></i>
+                    <h5><NavLink to={""}>驾驶模式</NavLink></h5>
+                    <i className="iconfont icon-right icon-youjiantou"></i>
 
                   </li>
                 </ul>
@@ -130,20 +130,20 @@ export default class Profile extends React.Component {
               <div className="util">
                 <ul>
                   <li>
-                    <i className="iconfont icon-left">&#xe616;</i>
-                    <h5>分享网易云音乐</h5>
-                    <i className="iconfont icon-right">&#xe658;</i>
+                    <i className="iconfont icon-left icon-fenxiang"></i>
+                    <h5><NavLink to={""}>分享网易云音乐</NavLink></h5>
+                    <i className="iconfont icon-right icon-youjiantou"></i>
                   </li>
                   <li>
-                    <i className="iconfont icon-left">&#xe629;</i>
-                    <h5>关于</h5>
-                    <i className="iconfont icon-right">&#xe658;</i>
+                    <i className="iconfont icon-left icon-iconset0142"></i>
+                    <h5><NavLink to={""}>关于</NavLink></h5>
+                    <i className="iconfont icon-right icon-youjiantou"></i>
                   </li>
                 </ul>
               </div>
             </div>
             <div className="exit">
-              退出登录
+              <NavLink to={""}>退出登录</NavLink>
             </div>
           </div>
         </div>

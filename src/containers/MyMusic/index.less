@@ -28,14 +28,15 @@
         }
 
         i.front {
-          background: pink; //测试
           display: inline-block;
           width: 30px;
           height: 30px;
           position: absolute;
-          left: -30px;
-          top: 50%;
-          transform: translateY(-50%);
+          left: -28px;
+          top: 2px;
+          font-size: 20px;
+          color: #ff0100;
+          //transform: translateY(-50%);
         }
 
         p {
@@ -46,22 +47,22 @@
 
         span {
           display: inline-block;
-          width: 15px;
+          width: 20px;
           position: absolute;
-          right: 20px;
+          right: 22px;
           font-size: 12px;
-          color: #000;
+          color: #999999;
+          text-align: right;
         }
 
         i.back {
-          background: pink; //测试
           display: inline-block;
           width: 20px;
           height: 20px;
           position: absolute;
           right: 0;
-          top: 50%;
-          transform: translateY(-50%);
+          top: 1px;
+          color: #cccccc;
 
         }
 
@@ -79,43 +80,37 @@
         font-size: 12px;
         color: rgba(0, 0, 0, .6);
         position: relative;
-
-        i {
-          background: pink; //测试
-          width: 20px;
-          height: 20px;
+        i{
           position: absolute;
-          top: 50%;
-          transform: translateY(-50%);
-
-          &.forwards {
-            left: -30px;
-          }
-          &.backwards {
-            right: 5px;
-          }
+          top: 5px;
+          width: 15px;
+          height: 15px;
+          line-height: 15px;
+        }
+        i.forwards {
+          left: -27px;
         }
 
-        span {
-
+        i.backwards {
+          font-size: 20px;
+          right: 13px;
         }
-        //空
-
       }
 
       .layer-left {
 
         li {
           position: relative;
-          margin: 6px 0 0 60px;
+         left: 20px;
+          top: 10px;
           border-bottom: 1px solid #ccc;
 
           img {
             background: lightblue; //测试
-            width: 50px;
-            height: 50px;
+            width: 40px;
+            height: 40px;
             position: absolute;
-            left: -58px;
+            left: -46px;
             top: 50%;
             transform: translateY(-50%);
           }
@@ -128,14 +123,15 @@
             }
 
             i.little {
-              display: inline-block;
+              //display: inline-block;
               background: pink; //测试
-              width: 10px;
-              height: 10px;
+              width: 12px;
+              height: 12px;
+              top: 28px;
             }
 
             span {
-              margin-left: 5px;
+              margin-left: 15px;
               color: #ababab;
               font-size: 12px;
             }

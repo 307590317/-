@@ -10,6 +10,7 @@ import Profile from "./containers/Profile/Profile";
 import Detail from "./containers/Detail/Detail";
 import Login from "./containers/Login/Login";
 import NumLogin from "./containers/Login/NumLogin";
+import Reg from "./containers/Reg/Reg";
 import store from './store';
 import './common/index.less';
 import FriendDynamicDetail from './containers/FriendDynamicDetail/FirendDynamicDetail'
@@ -26,6 +27,7 @@ render(<Provider store={store}>
                 <Route path={'/detail/:id'} component={Detail}/>
                 <Route path={'/login'} component={Login}/>
                 <Route path={'/numlogin'} component={NumLogin}/>
+                <Route path={'/reg'} component={Reg}/>
                 <Route path={'/detail/:id'} component={Detail}/>
                 <Route path={'/frienddynamicdetail'} component={FriendDynamicDetail}/>
                <Route path={'/playfrienddynamiccontent'} component={PlayDynamicContent}/>
