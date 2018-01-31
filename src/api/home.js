@@ -10,9 +10,6 @@ export let getNewSong=()=>axios.get(`/personalized/newsong`);
 //推荐mv
 export let getMV=()=>axios.get(`/personalized/mv`);
 //歌单
-export let getMusicList=()=>axios.get(``);
-
-
 
 
 

@@ -9,5 +9,35 @@
     color: #fff;
     text-align: center;
     flex-direction: column;
+    background: red;
+    .change{
+      position: relative;
+      width: 116px;
+      margin: 0 auto;
+      height:26px;
+      border: 1px solid #fff;
+      border-radius: 15px;
+      a{
+        position: absolute;
+        -webkit-tap-highlight-color: transparent;
+        top: -1px;
+        display: inline-block;
+        width: 60px;
+        height: 28px;
+        line-height: 28px;
+        color: #ffffff;
+        font-size: 14px;
+        font-weight: bold;
+        font-family: "微软雅黑";
+        border-radius: 15px;
+        &.select{
+          background: #fff;
+          color: red;
+        }
+        &:nth-of-type(1){
+          left: -1px;
+        }
+      }
+    }
   }
 }

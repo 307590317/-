@@ -1,8 +1,7 @@
 import React from 'react';
 import MHeader from "../../components/MHeader/MHeader";
 import './index.less';
-import {getBanner} from "../../api/home";
-import {HashRouter as Router, Route, Switch, NavLink} from 'react-router-dom';
+import { Route, Switch, NavLink} from 'react-router-dom';
 import HomeMusic from "./HomeMusic";
 import HomeVideo from "./HomeVideo";
 import HomeRadio from "./HomeRadio";
@@ -11,17 +10,16 @@ import actions from '../../store/actions/home';
 import HomeTop from "./HomeTop";
 import './index.less';
 
-@connect(state => ({...state.homeReducer}), actions)
+@connect(state => ({...state}), actions)
 export default class Home extends React.Component {
 
-
-    componentWillMount() {
-        this.props.getBannerAPI();
-        this.props.getTuiJiansAPI();
-    }
+    // componentDidMount() {
+    //     this.props.getBannerAPI();
+    //     this.props.getTuiJiansAPI();
+    // }
 
     render() {
-        console.log(this.props);
+
         return (
             <div className='home'>
                 <MHeader>
@@ -31,11 +29,28 @@ export default class Home extends React.Component {
                         <input type="text" placeholder="推荐好歌"/>
                     </div>
                 </MHeader>
+
                 <div className='content'>
-                    <HomeTop/>
+
+                    {/*HomeTop*/}
+                    <div className='home-top'>
+                        <NavLink to={'/home/music'} className={this.props.location.pathname === '/'?'active':''}>
+                            <span>音乐</span>
+                        </NavLink>
+                        <NavLink to={'/home/video'}>
+                            <span>视频</span>
+                        </NavLink>
+                        <NavLink to={'/home/radio'}>
+                            <span>电台</span>
+                        </NavLink>
+                    </div>
+
+
+                    {/*<HomeTop/>*/}
+
                     <div className="router">
                         <Switch>
-                            <Route path={'/'}  exact={true}  component={HomeMusic}/>
+                            <Route path={'/'} exact={true} component={HomeMusic}/>
                             <Route path={'/home/music'} component={HomeMusic}/>
                             <Route path={'/home/video'} component={HomeVideo}/>
                             <Route path={'/home/radio'} component={HomeRadio}/>

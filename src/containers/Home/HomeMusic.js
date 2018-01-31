@@ -2,9 +2,19 @@ import React from 'react';
 import HomeSwiper from './HomeSwiper';
 import {connect} from 'react-redux';
 import actions from '../../store/actions/home';
+import { Route, Switch, NavLink} from 'react-router-dom';
+import  SongList from './HomeDetail/SongList';
 
 @connect(state => ({...state.homeReducer}), actions)
 export default class HomeMusic extends React.Component {
+
+    componentDidMount() {
+        this.props.getBannerAPI();
+        this.props.getTuiJiansAPI();
+        this.props.getDuJiasAPI();
+       this.props. getNewSongAPI();
+    }
+
 
 
     render() {
@@ -14,17 +24,19 @@ export default class HomeMusic extends React.Component {
             {/*slider*/}
             <HomeSwiper lists={this.props.banners}/>
 
+
+            {/*每日排行*/}
             <div className="home-list">
                 <ul>
                     <li>
                         <a href="#">
-                            <i className="iconfont icon-music"></i>
+                            <i className="iconfont icon-radio"></i>
                         </a>
                         <span>私人FM</span>
                     </li>
                     <li>
                         <a href="#">
-                            <i className="iconfont icon-yaoqinghaoyou"></i>
+                            <i className="iconfont icon-rili"></i>
                         </a>
                         <span>
                         每日推荐
@@ -33,7 +45,7 @@ export default class HomeMusic extends React.Component {
                     </li>
                     <li>
                         <a href="#">
-                            <i className="iconfont icon-yinyue"></i>
+                            <i className="iconfont icon-swticonyinle2"></i>
                         </a>
 
                         <span>
@@ -42,7 +54,7 @@ export default class HomeMusic extends React.Component {
                     </li>
                     <li>
                         <a href="#">
-                            <i className="iconfont icon-xiazai"></i>
+                            <i className="iconfont icon-PCbofangye_paihangbang"></i>
                         </a>
 
                         <span>
@@ -53,132 +65,77 @@ export default class HomeMusic extends React.Component {
 
             </div>
 
-            <div className="home-recommend">
-                <div className="list">
+
+            {/*推荐歌单*/}
+            <div className="music home-recommend">
+                <div className="music-title">
                     <i className="iconfont icon-music"></i>
-                    <h4>推荐歌单></h4>
+                    <h4>推荐歌单 <i className='iconfont icon-fanhui2'></i></h4>
                 </div>
                 <ul>
-                    <li>
-                        <a>
-                            <img src="http://p1.music.126.net/bCGtIIW-f0Ofr_ABRGRLiw==/109951163118947933.jpg?param=140y140" alt=""/>
+                    {this.props.recommend.result.slice(0,6).map((item,index)=>(
+                    <li key={index}>
+                        <NavLink to='/songList' >
+                            <img src={item.picUrl} alt=""/>
                             <span>
-                                  <i></i>
-                             conmment
+                                  <i className="iconfont icon-headseterji"></i>
+                                  <b>{Math.round(item.playCount/10000).toFixed(1)}万</b>
                             </span>
-                        </a>
+                        </NavLink>
                         <p className="title">
-                            华语新歌
+                            {item.name}
                         </p>
                     </li>
-                    <li>
-                        <a>
-                            <img src="http://p1.music.126.net/bCGtIIW-f0Ofr_ABRGRLiw==/109951163118947933.jpg?param=140y140" alt=""/>
-                            <span>
-                                  <i></i>
-                             conmment
-                            </span>
-                        </a>
-                        <p className="title">
-                            华语新歌
-                        </p>
-                    </li>
-                    <li>
-                        <a>
-                            <img src="http://p1.music.126.net/bCGtIIW-f0Ofr_ABRGRLiw==/109951163118947933.jpg?param=140y140" alt=""/>
-                            <span>
-                                  <i></i>
-                             conmment
-                            </span>
-                        </a>
-                        <p className="title">
-                            华语新歌
-                        </p>
-                    </li>
-                    <li>
-                        <a>
-                            <img src="http://p1.music.126.net/bCGtIIW-f0Ofr_ABRGRLiw==/109951163118947933.jpg?param=140y140" alt=""/>
-                            <span>
-                                  <i></i>
-                             conmment
-                            </span>
-                        </a>
-                        <p className="title">
-                            华语新歌
-                        </p>
-                    </li>
-                    <li>
-                        <a>
-                            <img src="http://p1.music.126.net/bCGtIIW-f0Ofr_ABRGRLiw==/109951163118947933.jpg?param=140y140" alt=""/>
-                            <span>
-                                  <i></i>
-                             conmment
-                            </span>
-                        </a>
-                        <p className="title">
-                            华语新歌华语新歌华语新歌华语新歌
-                        </p>
-                    </li>
+                    ))}
                 </ul>
             </div>
 
-            <div className="home-unique">
-                <div className="list">
+
+            {/*独家放送*/}
+            <div className="music home-unique">
+                <div className="music-title">
                     <i className="iconfont icon-music"></i>
-                    <h4>独家放送></h4>
+                    <h4>独家放送  <i className='iconfont icon-fanhui2'></i>   </h4>
                 </div>
                 <ul>
-                    <li>
-                    <a href="">
-                        <i className="iconfont icon-music"></i>
-                        <img src="http://p4.music.126.net/DjKpNXFBukZBYIfJJ9KGMQ==/18753270325541976.jpg?param=200y200" alt=""/>
-                    </a>
-                        <p>在无聊的有氧运动中寻找你的节奏</p>
-                </li>
-                    <li>
+                    {this.props.unique.result.map((item,index)=>(
+                    <li key={index}>
                         <a href="">
-                            <i className="iconfont icon-music"></i>
-                            <img src="http://p4.music.126.net/DjKpNXFBukZBYIfJJ9KGMQ==/18753270325541976.jpg?param=200y200" alt=""/>
+                            <span>
+                                 <i className="iconfont icon-shipinbofangyingpian"></i>
+                            </span>
+                            <img src={item.picUrl}/>
                         </a>
-                        <p>在无聊的有氧运动中寻找你的节奏</p>
+                        <p>{item.name}</p>
                     </li>
-                    <li>
-                        <a href="">
-                            <i className="iconfont icon-music"></i>
-                            <img src="http://p4.music.126.net/DjKpNXFBukZBYIfJJ9KGMQ==/18753270325541976.jpg?param=200y200" alt=""/>
-                        </a>
-                        <p>在无聊的有氧运动中寻找你的节奏</p>
-                    </li>
+                    ))}
                 </ul>
             </div>
 
-            <div className="home-new">
-                <div className="list">
+
+            {/*最新音乐*/}
+            <div className="music home-new">
+                <div className="music-title">
                     <i className="iconfont icon-music"></i>
-                    <h4>独家放送></h4>
+                    <h4>最新音乐 <i className='iconfont icon-fanhui2'></i></h4>
                 </div>
                 <ul>
-                    <li>
-                        <a href="">
-                            <img src="http://p4.music.126.net/DjKpNXFBukZBYIfJJ9KGMQ==/18753270325541976.jpg?param=200y200" alt=""/>
-                        </a>
-                        <p>在无聊的有氧运动中寻找你的节奏</p>
-                    </li>
-                    <li>
-                        <a href="">
-                            <img src="http://p4.music.126.net/DjKpNXFBukZBYIfJJ9KGMQ==/18753270325541976.jpg?param=200y200" alt=""/>
-                        </a>
-                        <p>在无聊的有氧运动中寻找你的节奏</p>
-                    </li>
-                    <li>
-                        <a href="">
-                            <img src="http://p4.music.126.net/DjKpNXFBukZBYIfJJ9KGMQ==/18753270325541976.jpg?param=200y200" alt=""/>
-                        </a>
-                        <p>在无聊的有氧运动中寻找你的节奏</p>
-                    </li>
+                    {this.props.new.result.slice(0,6).map((item,index)=>(
+                        <li key={index}>
+                            <a href="">
+                                <img src={item.song.album.picUrl} alt=""/>
+                            </a>
+                            <p>{item.name}</p>
+                            <p>{item.song.artists[0].name}</p>
+                        </li>
+                    ))};
+
+
                 </ul>
             </div>
 
         </div>
     }
 }
+
+

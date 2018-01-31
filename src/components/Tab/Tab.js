@@ -1,11 +1,17 @@
 import React from 'react';
 import {NavLink} from 'react-router-dom';
 import './index.less';
+import {withRouter} from 'react-router-dom';
+@withRouter
 export default class Tab extends React.Component {
   render(){
-    return (
+      return (
+
         <nav className='nav'>
-          <NavLink to={'/'}>
+          <NavLink to={'/'} exact={true} className={
+              /\/home/.test(this.props.location.pathname)||
+              this.props.location.pathname==='/songList'
+                  ?'active':''}>
             <i className="iconfont icon-music"></i>
             <span>发现音乐</span>
           </NavLink>
