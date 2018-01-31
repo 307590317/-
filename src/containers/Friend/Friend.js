@@ -1,9 +1,10 @@
+
 import React from 'react';
 import './index.less';
 import {Route,NavLink} from 'react-router-dom';
 import MHeader from "../../components/MHeader/MHeader";
-import Dynamic from "./Dynamic";
-import Nearby from "./Nearby";
+import Dynamic from "./Dynamic/Dynamic";
+import Nearby from "./Nearby/Nearby";
 export default class Friend extends React.Component {
   render(){
     return (
@@ -25,6 +26,6 @@ export default class Friend extends React.Component {
             </div>
           </div>
         </div>
-    )
-  }
+      );
+    }
 }
