@@ -9,6 +9,7 @@ import Friend from "./containers/Friend/Friend";
 import Profile from "./containers/Profile/Profile";
 import Detail from "./containers/Detail/Detail";
 
+
 import store from './store'
 
 render(<Provider store={store}>
@@ -25,5 +26,27 @@ render(<Provider store={store}>
         </App>
     </Router>
 
+</Provider>, window.root);
+
+import Login from "./containers/Login/Login";
+import NumLogin from "./containers/Login/NumLogin";
+import store from './store';
+import './common/index.less';
+render(<Provider store={store}>
+  <Router>
+    <App>
+      <Switch>
+        <Route path={'/'} exact={true} component={Home}/>
+        <Route path={'/home'} component={Home}/>
+        <Route path={'/mymusic'} component={MyMusic}/>
+        <Route path={'/friend'} component={Friend}/>
+        <Route path={'/profile'} component={Profile}/>
+        <Route path={'/detail/:id'} component={Detail}/>
+<Route path={'/login'} component={Login}/>
+<Route path={'/numlogin'} component={NumLogin}/>
+<Route path={'/detail/:id'} component={Detail}/>
+      </Switch>
+    </App>
+  </Router>
 </Provider>, window.root);
 

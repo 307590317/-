@@ -1,8 +1,7 @@
 import React from 'react';
 import MHeader from "../../components/MHeader/MHeader";
 import './index.less';
-import {getBanner} from "../../api/home";
-import {HashRouter as Router, Route, Switch, NavLink} from 'react-router-dom';
+import { Route, Switch, NavLink} from 'react-router-dom';
 import HomeMusic from "./HomeMusic";
 import HomeVideo from "./HomeVideo";
 import HomeRadio from "./HomeRadio";
@@ -14,19 +13,10 @@ import HomeSwiper from "./HomeSwiper";
 
 @connect(state => ({...state}), actions)
 export default class Home extends React.Component {
-  // constructor() {
-  //   super();
-  //   this.state = {banner: []};
-  // }
-  //
-  // async componentDidMount() {
-  //   let banner = await getBanner();
-  //   console.log(banner);
-  //   this.setState({banner});
-  // }
-
+  componentDidMount() {
+      this.props.getBannerAPI()
+    }
   render() {
-    console.log(this.props);
     return (
       <div className='home'>
         <MHeader>
@@ -38,7 +28,7 @@ export default class Home extends React.Component {
         </MHeader>
         <div className='content'>
           <div className="home-top">
-            <NavLink to={'/home/music'}>
+            <NavLink to={'/home/music'} className={this.props.location.pathname === '/'?'active':''}>
               <span>音乐</span>
             </NavLink>
             <NavLink to={'/home/video'}>
@@ -50,7 +40,7 @@ export default class Home extends React.Component {
           </div>
 
           <div className="router">
-            <Route path={'/'} ex component={HomeMusic}/>
+            <Route path={'/'} exact={true} component={HomeMusic}/>
             <Route path={'/home/music'} component={HomeMusic}/>
             <Route path={'/home/video'} component={HomeVideo}/>
             <Route path={'/home/radio'} component={HomeRadio}/>
