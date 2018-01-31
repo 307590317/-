@@ -7,7 +7,7 @@ export default class Detail extends React.Component {
         this.state = {flag: false, flag1: false, flag2: 1}
     }
 
-    /*点击切换类名*/
+    /*点击切换类名  //点击切换字体图标*/
     changeClass = () => {
         this.setState({flag: !this.state.flag});
     };
@@ -26,22 +26,23 @@ export default class Detail extends React.Component {
     render() {
         return (
             <div className="detail">
-                <div className="header">
-                    <i className="back iconfont icon-fanhui"></i>
+                <div className="detailHeader">
+                    {/*<i className="back iconfont icon-fanhui"></i>*/}
+                    <i className="back iconfont">&#xe6b7;</i>
                     <div className="musicName">
                         <span className="name">无问西东</span>
                         <span className="singer">王菲<i className="arrows iconfont icon-fanhui2"></i></span>
                     </div>
-                    <i className="share iconfont icon-fenxiang"></i>
+                    <i className="share iconfont">&#xe7c5;</i>
                 </div>
-                <div className="body">
+                <div className="detailBody">
                     <div className="btn">
                         {/*点击之前className：icon-aixin   点击之后：icon-xin*/}
                         <i className={this.state.flag ? "like iconfont icon-aixin" : "like iconfont icon-xin"}
                            onClick={this.changeClass}></i>
-                        <i className="download iconfont icon-download"></i>
-                        <i className="comment iconfont icon-pinglun"></i>
-                        <i className="details iconfont icon-101"></i>
+                        <i className="download iconfont">&#xe64c;</i>
+                        <i className="comment iconfont">&#xe601;</i>
+                        <i className="details iconfont">&#xe60b;</i>
                     </div>
                     <div className="progress">
                         <span className="already">00:00</span>
@@ -55,13 +56,14 @@ export default class Detail extends React.Component {
                         <span className="total">03:15</span>
                     </div>
                 </div>
-                <div className="footer">
-                    <i className={this.state.flag2==1?"goBack iconfont icon-fanhui1":(this.state.flag2==2?"goBack iconfont icon-suijibofang":"goBack iconfont icon-danquxunhuan")} onClick={this.changeClassName}></i>
-                    <i className="playLeft iconfont icon-zuobofang"></i>
-                    <i className={this.state.flag1 ? "play iconfont icon-bofang" : "play iconfont icon-bofang1"}
+                <div className="detailFooter">
+                    <i className={this.state.flag2 == 1 ? "goBack iconfont icon-fanhui1" : (this.state.flag2 == 2 ? "goBack iconfont icon-suijibofang" : "goBack iconfont icon-danquxunhuan")}
+                       onClick={this.changeClassName}></i>
+                    <i className="playLeft iconfont">&#xe62f;</i>
+                    <i className={this.state.flag1 ? "play iconfont icon-bofang" : "play iconfont icon-stop"}
                        onClick={this.changeName}></i>
-                    <i className="playRight iconfont icon-youbofang"></i>
-                    <i className="list iconfont icon-liebiao2"></i>
+                    <i className="playRight iconfont">&#xe62e;</i>
+                    <i className="list iconfont">&#xe600;</i>
                 </div>
             </div>
         )

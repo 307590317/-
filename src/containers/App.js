@@ -4,9 +4,11 @@ import '../common/index.less';
 import 'babel-polyfill';
 export default class App extends React.Component {
   render(){
-    return (
+      return (
+
         <div>
           {this.props.children}
+
           <Tab/>
         </div>
     )

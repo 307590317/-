@@ -5,7 +5,7 @@ export default class Tab extends React.Component {
   render(){
     return (
         <nav className='nav'>
-          <NavLink to={'/'} exact={true}>
+          <NavLink to={'/'}>
             <i className="iconfont icon-music"></i>
             <span>发现音乐</span>
           </NavLink>
