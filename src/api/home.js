@@ -1,6 +1,6 @@
 import axios from './index';
 //获取轮播图
-export let getBanner=()=>axios.get(`/sliders`);
+export let getBanner=()=>axios.get(`/banner`);
 //获取推荐歌单
 export let getTuiJians=()=>axios.get(`/personalized`);
 //获取独家放送

@@ -10,21 +10,15 @@ import {connect} from 'react-redux';
 import actions from '../../store/actions/home';
 import HomeTop from "./HomeTop";
 import './index.less';
-import HomeSwiper from "./HomeSwiper";
 
 @connect(state => ({...state.homeReducer}), actions)
 export default class Home extends React.Component {
-    constructor() {
-        super();
-        this.state = {banner: []};
+
+
+    componentWillMount() {
+        this.props.getBannerAPI();
+        this.props.getTuiJiansAPI();
     }
-
-    async componentDidMount() {
-        let banner = await getBanner();
-        this.setState({banner});
-    }
-
-
 
     render() {
         console.log(this.props);
@@ -38,28 +32,17 @@ export default class Home extends React.Component {
                     </div>
                 </MHeader>
                 <div className='content'>
-                    <div className="home-top">
-                        <NavLink to={'/home/music'}>
-                            <span>音乐</span>
-                        </NavLink>
-                        <NavLink to={'/home/video'}>
-                            <span>视频</span>
-                        </NavLink>
-                        <NavLink to={'/home/radio'}>
-                            <span>电台</span>
-                        </NavLink>
-                    </div>
-
+                    <HomeTop/>
                     <div className="router">
-                        <Route path={'/'} component={HomeMusic}/>
-                        <Route path={'/home/music'} component={HomeMusic}/>
-                        <Route path={'/home/video'} component={HomeVideo}/>
-                        <Route path={'/home/radio'} component={HomeRadio}/>
+                        <Switch>
+                            <Route path={'/'}  exact={true}  component={HomeMusic}/>
+                            <Route path={'/home/music'} component={HomeMusic}/>
+                            <Route path={'/home/video'} component={HomeVideo}/>
+                            <Route path={'/home/radio'} component={HomeRadio}/>
+                        </Switch>
                     </div>
                 </div>
 
-                {/*slider*/}
-                <HomeSwiper/>
             </div>
         )
     }
