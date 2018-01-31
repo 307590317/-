@@ -19,7 +19,9 @@ export default class Tab extends React.Component {
             <i className="iconfont icon-yaoqinghaoyou"></i>
             <span>朋友</span>
           </NavLink>
-          <NavLink to={'/profile'}>
+          <NavLink to={'/profile'} className={
+            /\/profileDetail/.test(this.props.location.pathname)?'active':''
+          }>
             <i className="iconfont icon-xiazai"></i>
             <span>个人中心</span>
           </NavLink>

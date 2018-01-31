@@ -9,7 +9,7 @@ export default class Reg extends React.Component {
     return (
         <div className="reg">
           <MHeader>
-            <i className='iconfont icon-fanhui'></i>
+            <i className='iconfont icon-fanhui' onClick={()=>{this.props.history.goBack()}}></i>
             <div className='RegCenter'>
               手机号注册
             </div>

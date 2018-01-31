@@ -7,7 +7,7 @@ export default class NumLogin extends React.Component {
     return (
         <div className="number-login">
           <MHeader>
-            <i className='iconfont icon-fanhui'></i>
+            <i className='iconfont icon-fanhui' onClick={()=>{this.props.history.goBack()}}></i>
             <div className='numberLoginCenter'>
               手机号登录
             </div>

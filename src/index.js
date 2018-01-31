@@ -13,6 +13,7 @@ import NumLogin from "./containers/Login/NumLogin";
 import store from './store';
 import './common/index.less';
 import Reg from "./containers/Reg/Reg";
+import ProfileDetail from "./containers/ProfileDetail/ProfileDetail";
 render(<Provider store={store}>
   <Router>
     <App>
@@ -27,6 +28,7 @@ render(<Provider store={store}>
         <Route path={'/reg'} component={Reg}/>
         <Route path={'/numlogin'} component={NumLogin}/>
         <Route path={'/detail/:id'} component={Detail}/>
+        <Route path={'/profileDetail'} component={ProfileDetail}/>
       </Switch>
     </App>
   </Router>
