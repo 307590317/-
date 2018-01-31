@@ -10,6 +10,7 @@ import Profile from "./containers/Profile/Profile";
 import Detail from "./containers/Detail/Detail";
 import Login from "./containers/Login/Login";
 import NumLogin from "./containers/Login/NumLogin";
+import Reg from "./containers/Reg/Reg";
 import store from './store';
 import './common/index.less';
 render(<Provider store={store}>
@@ -22,9 +23,10 @@ render(<Provider store={store}>
         <Route path={'/friend'} component={Friend}/>
         <Route path={'/profile'} component={Profile}/>
         <Route path={'/detail/:id'} component={Detail}/>
-<Route path={'/login'} component={Login}/>
-<Route path={'/numlogin'} component={NumLogin}/>
-<Route path={'/detail/:id'} component={Detail}/>
+        <Route path={'/login'} component={Login}/>
+        <Route path={'/reg'} component={Reg}/>
+        <Route path={'/numlogin'} component={NumLogin}/>
+        <Route path={'/detail/:id'} component={Detail}/>
       </Switch>
     </App>
   </Router>
