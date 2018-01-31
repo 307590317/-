@@ -26,7 +26,7 @@ export default class Reg extends React.Component {
               <input type="text" id="password" placeholder="设置登录密码，不少于6位" />
             </div>
             <div className="util next-btn">
-              <button>下一步</button>
+              <button>注册</button>
             </div>
           </div>
           <div className="reg-footer" >
