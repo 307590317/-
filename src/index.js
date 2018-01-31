@@ -12,6 +12,8 @@ import Login from "./containers/Login/Login";
 import NumLogin from "./containers/Login/NumLogin";
 import store from './store';
 import './common/index.less';
+import FriendDynamicDetail from "./containers/FriendDynamicDetail/FirendDynamicDetail";
+import PlayDynamicContent from "./containers/PlayFriendDynamicContent/PlayFriendDynamicContent";
 import Reg from "./containers/Reg/Reg";
 import ProfileDetail from "./containers/ProfileDetail/ProfileDetail";
 render(<Provider store={store}>
@@ -29,6 +31,8 @@ render(<Provider store={store}>
         <Route path={'/numlogin'} component={NumLogin}/>
         <Route path={'/detail/:id'} component={Detail}/>
         <Route path={'/profileDetail'} component={ProfileDetail}/>
+        <Route path={'/frienddynamicdetail'} component={FriendDynamicDetail}/>
+        <Route path={'/playfrienddynamiccontent'} component={PlayDynamicContent}/>
       </Switch>
     </App>
   </Router>
