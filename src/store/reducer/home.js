@@ -1,6 +1,6 @@
 import * as Types from '../action-Types';
 
-let initState={};
+let initState={name:1};
 
 function homeReducer(state=initState,action){
 switch (action.type){
