@@ -1,0 +1,199 @@
+.content {
+  width: 100%;
+  height: 100%;
+
+  .select-list {
+
+    li {
+      width: 89%;
+      height: 50px;
+      line-height: 50px;
+      border-bottom: 1px solid #ababab;
+      position: relative;
+      margin: 0 0 0 35px;
+
+      &.last {
+        border: none;
+      }
+
+      i.front {
+        background: pink; //测试
+        display: inline-block;
+        width: 30px;
+        height: 30px;
+        position: absolute;
+        left: -30px;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+
+      p {
+        display: inline-block;
+        font-size: 14px;
+        color: #000;
+      }
+
+      span {
+        display: inline-block;
+        width: 15px;
+        position: absolute;
+        right: 20px;
+        font-size: 12px;
+        color: #000;
+      }
+
+      i.back {
+        background: pink; //测试
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+        position: absolute;
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
+
+      }
+
+    }
+  }
+
+  .song-list {
+    width: 100%;
+    background: #eee;
+    height: 23px;
+    line-height: 23px;
+
+    .song-text {
+      margin-left: 30px;
+      font-size: 12px;
+      color: rgba(0, 0, 0, .6);
+      position: relative;
+
+      i {
+        background: pink; //测试
+        width: 20px;
+        height: 20px;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+
+        &.forwards {
+          left: -30px;
+        }
+        &.backwards {
+          right: 5px;
+        }
+      }
+
+      span {
+
+      }
+      //空
+
+    }
+
+    .layer-left {
+
+      li {
+        position: relative;
+        margin: 6px 0 0 60px;
+        border-bottom: 1px solid #ccc;
+
+        img {
+          background: lightblue; //测试
+          width: 50px;
+          height: 50px;
+          position: absolute;
+          left: -58px;
+          top: 50%;
+          transform: translateY(-50%);
+        }
+
+        .describe {
+
+          P {
+            font-size: 14px;
+            color: #000;
+          }
+
+          i.little {
+            display: inline-block;
+            background: pink; //测试
+            width: 10px;
+            height: 10px;
+          }
+
+          span {
+            margin-left: 5px;
+            color: #ababab;
+            font-size: 12px;
+          }
+        }
+
+        i.trumpet {
+          background: pink; //测试
+          width: 20px;
+          height: 20px;
+          position: absolute;
+          top: 50%;
+          transform: translateY(-50%);
+          right: 0;
+        }
+      }
+    }
+
+  }
+
+  .layer-right {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,.2);
+    z-index: 10;
+
+    .popup{
+      width: 100%;
+      height: 125px;
+      background: #fff;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+
+      li{
+        width: 100%;
+        border-bottom:1px solid #ababab;
+        font-size: 14px;
+        height: 35px;
+        line-height: 35px;
+        position: relative;
+        margin:5px 0 5px 50px;
+
+        &.special{
+          margin-left: 0;
+          padding-left: 10px;
+          font-size: 12px;
+          color: rgba(0, 0, 0, .6);
+        }
+
+        &:nth-last-of-type(1){
+          border-bottom: none;
+        }
+
+        i{
+          background: pink; //测试
+          width: 35px;
+          height: 35px;
+          position: absolute;
+          top: 50%;
+          transform: translateY(-50%);
+          left: -42px;
+        }
+
+      }
+    }
+  }
+
+
+}
