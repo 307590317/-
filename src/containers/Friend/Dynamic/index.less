@@ -1,133 +1,109 @@
-*{
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  -webkit-user-select: none;
-  -webkit-appearance: none;
-  overflow: hidden;
-
-}
-.friend{
-  .friendCenter{
-    position: relative;
-    display: flex;
-    width: 230px;
-    height: 28px;
-    margin:6px 0;
-    line-height: 28px;
-    color: #fff;
-    text-align: center;
-    flex-direction: column;
-  }
-}
-.content{
-  .each-content{
+.each-content{
+  position: relative;
+  top:65px;
+  left: 0;
+  width: 100%;
+  background: lightcyan;
+  clear: both;
+  .header{
     position: relative;
     top:0;
-    left: 0;
-    width: 100%;
-    background: lightcyan;
-    clear: both;
-    .header{
-      position: relative;
+    left:0;
+    background: aliceblue;
+    height: 50px;
+
+    img{
+      position: absolute;
       top:0;
       left:0;
-      background: aliceblue;
-      height: 50px;
-
-      img{
-        position: absolute;
-        top:0;
-        left:0;
-        height:50px;
-        width: 50px;
-        margin-left: 3px;
-        border-radius: 20%;
-      }
-
-      .next-to-img{
-        position: absolute;
-        top:0;
-        left:58px;
-        height:50px;
-        .my-name{
-          font-size: 16px;
-          max-width: 100px;
-          min-width: 1px;
-          width: 100%;
-          font-family: "Microsoft JhengHei";
-          font-weight: bold;
-        }
-        .dispatch-audio{
-          width: 100%;
-          font-family: "Agency FB";
-          font-size: 16px;
-          color: gray;
-          margin-left: 6px;
-
-        }
-
-      }
-
-      .lately{
-        position: absolute;
-        bottom: 0;
-        left:58px;
-        color: gainsboro;
-        font-size: 13px;
-        font-family: "Microsoft JhengHei";
-      }
-
-      .notice-me{
-        position: absolute;
-        top:50%;
-        right: 0;
-        transform: translateY(-50%);
-        margin-right: 8px;
-        strong{
-          color: #ff0100;
-        }
-
-      }
-
-
+      height:50px;
+      width: 50px;
+      margin-left: 3px;
+      border-radius: 20%;
     }
 
-    .body{
-      position: relative;
-      height: 400px;
-      strong{
-        display: inline-block;
-        width:350px;
-        margin-left:58px;
-        word-wrap: break-word;
-      }
-      /*图片的右边的距离是不固定的，它具体的宽度是根据标题的宽度来确定的*/
-      img{
-        margin-left: 58px;
-        text-align: center;
-        height:300px;
-        width:350px;
-        margin-right: 10px;
-      }
-    }
-
-    .footer{
-      position: relative;
+    .next-to-img{
+      position: absolute;
+      top:0;
       left:58px;
-      bottom: 0;
-      span{
-        display: inline-block;
-        margin-right: 50px;
+      height:50px;
+      .my-name{
+        font-size: 16px;
+        max-width: 100px;
+        min-width: 1px;
+        width: 100%;
+        font-family: "Microsoft JhengHei";
+        font-weight: bold;
+      }
+      .dispatch-audio{
+        width: 100%;
+        font-family: "Agency FB";
         font-size: 16px;
         color: gray;
+        margin-left: 6px;
+
       }
-      .more-thing{
-        position: absolute;
-        right:18px;
-        top:50%;
-        transform: translateY(-50%);
+
+    }
+
+    .lately{
+      position: absolute;
+      bottom: 0;
+      left:58px;
+      color: gainsboro;
+      font-size: 13px;
+      font-family: "Microsoft JhengHei";
+    }
+
+    .notice-me{
+      position: absolute;
+      top:50%;
+      right: 0;
+      transform: translateY(-50%);
+      margin-right: 8px;
+      strong{
+        color: #ff0100;
       }
+
+    }
+
+
+  }
+
+  .body{
+    position: relative;
+    height: 400px;
+    strong{
+      display: inline-block;
+      width:350px;
+      margin-left:58px;
+      word-wrap: break-word;
+    }
+    /*图片的右边的距离是不固定的，它具体的宽度是根据标题的宽度来确定的*/
+    img{
+      margin-left: 58px;
+      text-align: center;
+      height:300px;
+      width:350px;
+      margin-right: 10px;
+    }
+  }
+
+  .footer{
+    position: relative;
+    left:58px;
+    bottom: 0;
+    span{
+      display: inline-block;
+      margin-right: 50px;
+      font-size: 16px;
+      color: gray;
+    }
+    .more-thing{
+      position: absolute;
+      right:18px;
+      top:50%;
+      transform: translateY(-50%);
     }
   }
 }
