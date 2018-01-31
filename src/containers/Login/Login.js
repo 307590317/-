@@ -7,6 +7,9 @@ export default class Login extends React.Component {
           <NavLink to={'/numlogin'}>
             点击进入手机号登录
           </NavLink>
+          <NavLink to={'/reg'}>
+            注册
+          </NavLink>
         </div>
     )
   }
