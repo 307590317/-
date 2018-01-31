@@ -1,10 +1,10 @@
 import React from 'react';
 import './index.less'
-export default class Dynamic extends React.Component {
+export default class Nearby extends React.Component {
   render(){
     return (
         <div>
-          Dynamic
+          Nearby
         </div>
     )
   }
