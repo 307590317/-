@@ -1,5 +1,5 @@
 import * as Types from '../action-Types';
-import {getBanner} from '../../api/home';
+import {getBanner} from "../../api/zsh";
 
 let actions={
   getBannerAPI(){

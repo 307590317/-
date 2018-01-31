@@ -8,7 +8,7 @@ export default class Reg extends React.Component {
   render(){
     return (
         <div className="reg">
-          <MHeader>
+          <MHeader show={false}>
             <i className='iconfont icon-fanhui'></i>
             <div className='RegCenter'>
               手机号注册
