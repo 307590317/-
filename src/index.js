@@ -7,7 +7,9 @@ import Home from "./containers/Home/Home";
 import MyMusic from "./containers/MyMusic/MyMusic";
 import Friend from "./containers/Friend/Friend";
 import Profile from "./containers/Profile/Profile";
-render(<Provider>
+import Detail from "./containers/Detail/Detail";
+import store from './store'
+render(<Provider store={store}>
   <Router>
     <App>
       <Switch>
@@ -15,6 +17,7 @@ render(<Provider>
         <Route path={'/mymusic'} component={MyMusic}/>
         <Route path={'/friend'} component={Friend}/>
         <Route path={'/profile'} component={Profile}/>
+        <Route path={'/detail/:id'} component={Detail}/>
       </Switch>
     </App>
   </Router>

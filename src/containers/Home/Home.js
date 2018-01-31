@@ -1,7 +1,7 @@
 import React from 'react';
 import MHeader from "../../components/MHeader/MHeader";
+import './index.less';
 import {getBanner} from "../../api/home";
-
 export default class Home extends React.Component {
   constructor(){
     super();
@@ -14,12 +14,22 @@ export default class Home extends React.Component {
   }
   render(){
     return (
-        <div>
+        <div className='home'>
           <MHeader>
             <i className="iconfont icon-shiwu-maikefeng"></i>
-            <i className="iconfont icon-sousuo sousuo"></i>
-            <input type="text" placeholder="推荐好歌"/>
+            <div className='headerCenter'>
+              <i className="iconfont icon-sousuo"></i>
+              <input type="text" placeholder="推荐好歌"/>
+            </div>
           </MHeader>
+          {/*<ScrollableTabView renderTabBar={() => <DefaultTabBar/>}>*/}
+            {/*<Text tabLabel='Tab1'/>*/}
+            {/*<Text tabLabel='Tab2'/>*/}
+            {/*<Text tabLabel='Tab3'/>*/}
+            {/*<Text tabLabel='Tab4'/>*/}
+            {/*<Text tabLabel='Tab5'/>*/}
+            {/*<Text tabLabel='Tab6'/>*/}
+          {/*</ScrollableTabView>*/}
         </div>
     )
   }
