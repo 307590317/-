@@ -1,5 +1,7 @@
 import * as Types from '../action-Types';
-import {getBanner,getTuiJians,getDuJias,getNewSong} from '../../api/home';
+
+import {getBanner,getTuiJians,getDuJias,getNewSong} from "../../api/zsh";
+
 
 let actions={
   getBannerAPI(){
