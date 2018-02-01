@@ -51,7 +51,7 @@ export default class HomeMusic extends React.Component {
             {/*推荐歌单*/}
             <div className="musicList home-recommend">
                 <div className="music-title">
-                    <i className="iconfont icon-jian"></i>
+                    <i className="iconfont icon-zhixian"></i>
                     <h5>推荐歌单 <i className='iconfont icon-fanhui2'></i></h5>
                 </div>
                 <ul>
@@ -76,7 +76,7 @@ export default class HomeMusic extends React.Component {
             {/*独家放送*/}
             <div className="musicList home-unique">
                 <div className="music-title">
-                    <i className="iconfont icon-jian"></i>
+                    <i className="iconfont icon-zhixian"></i>
                     <h5>独家放送  <i className='iconfont icon-fanhui2'></i>   </h5>
                 </div>
                 <ul>
@@ -98,7 +98,7 @@ export default class HomeMusic extends React.Component {
             {/*最新音乐*/}
             <div className="musicList home-new">
                 <div className="music-title">
-                    <i className="iconfont icon-jian"></i>
+                    <i className="iconfont icon-zhixian"></i>
                     <h5>最新音乐 <i className='iconfont icon-fanhui2'></i></h5>
                 </div>
                 <ul>
@@ -116,12 +116,14 @@ export default class HomeMusic extends React.Component {
                 </ul>
             </div>
 
-            {/*<div className='home-bottom'>*/}
+            <div className='home-bottom'>
 
-                    {/*<span>调整栏目顺序</span>*/}
+                    <span>调整栏目顺序</span>
 
-                {/*<p>看视频，发现更多有趣内容></p>*/}
-            {/*</div>*/}
+                <NavLink to='/home/video'>
+                    <p>看视频，发现更多有趣内容></p>
+                </NavLink>
+            </div>
 
         </div>
     }

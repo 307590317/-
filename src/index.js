@@ -18,6 +18,9 @@ import ProfileDetail from "./containers/ProfileDetail/ProfileDetail";
 import SongList from "./containers/Home/HomeDetail/SongList";
 import store from './store';
 import './common/index.less';
+import Ho from './containers/Home/1';
+
+
 render(<Provider store={store}>
     <Router>
         <App>
