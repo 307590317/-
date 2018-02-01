@@ -1,6 +1,11 @@
 import React from 'react';
 import './index.less';
 import {NavLink} from 'react-router-dom';
+import a from './img/placeholder_disk_210.png';
+import b from './img/placeholder_disk_play_program.png';
+import c from './img/placeholder_disk_play_song.png';
+import d from './img/play_needle.png';
+import e from './img/play_disc.png';
 
 export default class Detail extends React.Component {
     constructor() {
@@ -67,6 +72,13 @@ export default class Detail extends React.Component {
                     <i className="share iconfont icon-fenxiang"></i>
                 </div>
                 <div className="detailBody">
+                    <div className="imgDetailBox">
+                        {/*<img src={a}/>
+                        <img src={b}/>
+                        <img src={c}/>*/}
+                        <img src={d} className="img-d"/>
+                        <img src={e} className="img-e"/>
+                    </div>
                     <div className="btn">
                         {/*点击之前className：icon-aixin   点击之后：icon-xin*/}
                         <i className={this.state.flag ? "like iconfont icon-aixin" : "like iconfont icon-xin"}
