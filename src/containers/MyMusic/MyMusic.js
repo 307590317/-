@@ -31,14 +31,15 @@ export default class MyMusic extends React.Component {
   /*async componentDidMount(){
     console.log(await getRecord(''));
   }*/
-  componentWillMount(){
+  componentDidMount(){
     this.props.getRecordAPI('248846943');
   }
   render() {
-    let data=this.props.record||{},
-      weekData=data.weekData||[],
-      length=weekData.length;
-    console.log(length);
+    console.log(this.props.record.weekData.length);
+    // let data=this.props.record,
+    //   weekData=data.weekData||[],
+    //   length=weekData.length;
+    // console.log(length);
     return (
       <div className='mymusic'>
         <MHeader>
@@ -61,7 +62,7 @@ export default class MyMusic extends React.Component {
               <Link to='/latestplay'>
                 <i className='iconfont icon-bofang2 front '></i>
                 <p>最近播放</p>
-                <span>{length}</span>
+                <span>{this.props.record.weekData.length}</span>
                 <i className='back iconfont icon-fanhui2'></i>
               </Link>
             </li>
