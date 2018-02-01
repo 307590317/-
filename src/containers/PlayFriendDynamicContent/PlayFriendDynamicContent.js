@@ -8,11 +8,15 @@ export default class PlayFriendDynamicContent extends Component {
         return (
             <div>
                 <div className="play-content-and-loadmore-source">
-                    <div className="play-firend-dynamic-contentt">
+
+                    {/*播放的内容*/}
+                    <div className="play-firend-dynamic-content">
                         <img src={a} alt=""/>
                     </div>
 
+                    {/*小编一级播放内容的来源，事事件，播放次数*/}
                     <div className="friend-profile-and-comment-and-more">
+
                         <header className="header">
                             <Link to={'/notice'}>
                                 <img src={a} alt=""/>
@@ -30,33 +34,47 @@ export default class PlayFriendDynamicContent extends Component {
                                 <strong>＋</strong>
                                 <strong>关注</strong>
                             </Link>
+
                         </header>
 
-                        <Link to={'/dynamicdetail'}>
-                     <span className="body">
-                    <strong>《电视剧恋爱先生》：我的是乐坛歌王</strong>
-                </span>
-                        </Link>
+                         <span className="move-or-other-thing">
+                             <NavLink to={"/xxxxx"}>  《电视剧恋爱先生》：我的是乐坛歌王</NavLink>
+                         </span>
 
-                        <div className="praise-container">
-                    <span className="who-is-praise">
-                        <a className="praise" href="javascript:;">赞:</a>
-                        <Link to={"/profile"}><img src={a} alt=""/></Link>
-                        <Link to={"/profile"}><img src={a} alt=""/></Link>
-                        <Link to={"/profile"}><img src={a} alt=""/></Link>
+
+                        <div className="news-source">
+                    <span className="news-time">
+                        <span>发布:2018-01-31</span>
+                        <span>播放:2018-01-31</span>
                     </span>
+                        </div>
+
+                        <div className="news-type-container">
+
+                            <span>影视</span>
+                            <span>电视剧</span>
+
+                        </div>
+
+                        <div className="about-news-footer">
+                            <i className="iconfont icon-tianjiahaoyou"></i>
+                            <i className="iconfont icon-tianjiahaoyou"></i>
+                            <i className="iconfont icon-tianjiahaoyou"></i>
+                            <i className="iconfont icon-tianjiahaoyou"></i>
                         </div>
 
                     </div>
 
-
-                    <div className="comment">
+                    {/*更多推荐*/}
+                    <div className="relative-guesste">
                     <span>
                         精彩评论
                     </span>
 
                     </div>
 
+
+                    {/*相似的资源*/}
                     <div className="each-nearby-user">
 
                         <div className="nearby-user-profile">
@@ -81,8 +99,13 @@ export default class PlayFriendDynamicContent extends Component {
                         </div>
                     </div>
 
+                    {/*发表评论区*/}
                     <div className="input-comment">
-                        <input type="text"/>
+                        <div className="input-content">
+                            <input className="write-comment" type="text"/>
+                            <Link to={"/comment"} className="iconfont">评论</Link>
+                        </div>
+
                     </div>
                 </div>
 

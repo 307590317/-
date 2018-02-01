@@ -1,212 +1,291 @@
-.play-firend-dynamic-contentt {
-  display: block;
-  width: 100%;
-  height: 200px;
-}
 
-.friend-profile-and-comment-and-more {
-  position: relative;
-  top: 0;
-  left: 0;
-  clear: both;
-  background: white;
-  overflow-x: hidden;
-  padding-top: 10px;
-  .header {
-    position: relative;
-    left: 0;
-    height: 55px;
-    background: white;
-    width: 98%;
-    margin-right: 2%;
-    margin-left: 2%;
+.play-content-and-loadmore-source {
+
+  .play-firend-dynamic-content {
     img {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      left: 0;
-      height: 35px;
-      width: 35px;
-      border-radius: 50%;
-    }
-    span {
+
       display: block;
-      line-height: 35px;
-      font-size: 16px;
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      left: 40px;
-      color: black;
-      font-family: Arial;
-      font-weight: 300;
-    }
-
-    .notice-me {
-      position: absolute;
-      top: 50%;
-      right: 15px;
-      transform: translateY(-50%);
-      background: transparent;
-      border: 1px solid lightgrey;
-      height: 25px;
-      width: 67px;
-      border-radius: 25px;
-      text-align: center;
-      strong {
-        font-weight: 400;
-        font-size: 13px;
-        font-family: Arial;
-        position: absolute;
-        top: -8px;
-        left: 25px;
-        letter-spacing: 3px;
-        color: #ff0100;
-        &:nth-child(1) {
-          left: 9px;
-        }
-      }
-
-    }
-
-  }
-
-  .body {
-    position: relative;
-    strong {
-      display: inline-block;
-      width: 98%;
-      font-weight: 300;
-      font-family: Arial;
-      font-size: 20px;
-      word-wrap: break-word;
-      color: black;
-      margin-right: 2%;
-      margin-left: 2%;
-    }
-    /*图片的右边的距离是不固定的，它具体的宽度是根据标题的宽度来确定的*/
-    img {
-      display: block;
+      width: 100%;
       height: 200px;
+    }
+
+  }
+
+  .friend-profile-and-comment-and-more {
+    position: relative;
+    top: 0;
+    left: 0;
+    clear: both;
+    background: white;
+    overflow-x: hidden;
+    padding-top: 10px;
+    .header {
+      position: relative;
+      left: 0;
+      height: 55px;
+      background: white;
       width: 98%;
       margin-right: 2%;
       margin-left: 2%;
-    }
-  }
-
-}
-
-.comment {
-  height: 30px;
-  width: 100%;
-  background: rgba(47, 213, 194, 0.05);
-  color: #8d8d8e;
-  font-size: 13px;
-  line-height: 13px;
-  font-family: Arial;
-  span {
-    position: relative;
-    display: inline-block;
-    top: 9px;
-    left: 10px;
-  }
-  margin-right: 20px;
-
-}
-
-.praise-container {
-  height: 55px;
-  padding-top: 10px;
-  .who-is-praise {
-    height: 55px;
-    .praise {
-      margin-left: 10px;
-      margin-right: 10px;
-      padding-top: 10px;
-      color: grey;
-      font-family: Arial;
-      font-size: 12px;
-    }
-    a {
-      float: left;
       img {
-        height: 35px;
-        width: 35px;
-        border-radius: 50%;
-        margin-right: 10px;
-      }
-    }
-  }
-}
-
-.each-nearby-user {
-  margin-left: 10px;
-  border-bottom: 1px solid #F4F4F4;
-  .nearby-user-profile {
-    border-top: 10px solid white;
-    position: relative;
-    img {
-      height: 50px;
-      width: 50px;
-      border-radius: 50%;
-    }
-    .user-name {
-      position: absolute;
-      top: 15%;
-      left: 58px;
-      color: black;
-      font-size: 14px;
-    }
-    .distance {
-      position: absolute;
-      top: 15%;
-      right: 0;
-      color: #c0c1c1;
-      font-size: 12px;
-      clear: both;
-      margin-right: 10px;
-      font-family: Arial;
-      span {
-        float: left;
-        &:last-of-type {
-          position: relative;
-          top: -3px;
-          margin-left: 3px;
-        }
-      }
-    }
-    .sex-and-news-from {
-      position: relative;
-      display: inline-block;
-      height: 20px;
-      width: 100px;
-      span {
-        position: absolute;
-        left: 8px;
-        bottom: 20%;
-        font-size: 12px;
-        color: #adb296;
-      }
-    }
-  }
-  .nearby-user-lately-listen-song {
-    position: relative;
-    display: inline-block;
-    height: 30px;
-    max-width: 300px;
-    width: 200px;
-    a {
-      .love-song {
         position: absolute;
         top: 50%;
         transform: translateY(-50%);
         left: 0;
-        color: gray;
-        font-size: 12px;
+        height: 35px;
+        width: 35px;
+        border-radius: 50%;
+      }
+      span {
+        display: block;
+        line-height: 35px;
+        font-size: 16px;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        left: 40px;
+        color: black;
         font-family: Arial;
         font-weight: 300;
       }
+
+        .move-or-other-thing {
+          a{ -webkit-user-select: none;
+            font-family: Arial;
+            font-size: 20px;
+            font-weight: 300;
+            color: black;
+
+
+          }
+
+
+      }
+
+      .notice-me {
+        position: absolute;
+        top: 50%;
+        right: 15px;
+        transform: translateY(-50%);
+        background: transparent;
+        border: 1px solid lightgrey;
+        height: 25px;
+        width: 67px;
+        border-radius: 25px;
+        text-align: center;
+        strong {
+          font-weight: 400;
+          font-size: 13px;
+          font-family: Arial;
+          position: absolute;
+          top: -8px;
+          left: 25px;
+          letter-spacing: 3px;
+          color: #ff0100;
+          &:nth-child(1) {
+            left: 9px;
+          }
+        }
+
+      }
+
+    }
+
+  }
+
+  .news-source {
+    height: 55px;
+    .news-time {
+      width: 64%;
+      height: 35px;
+      padding-top: 10px;
+      padding-bottom: 10px;
+      display: flex;
+      margin-left: 10px;
+      span {
+        display: flex;
+        flex: 1;
+        flex-direction: row;
+        align-content: center;
+        font-size: 16px;
+        color: grey;
+        font-family: Arial;
+
+      }
+
     }
   }
 
+  .news-type-container {
+    width: 100%;
+    clear: both;
+    span {
+      float: left;
+      font-size: 13px;
+      color: grey;
+      height: 25px;
+      font-family: Arial;
+      border: 1px solid gainsboro;
+      background: transparent;
+      border-radius: 15px;
+      text-align: center;
+      line-height: 25px;
+      padding-left: 10px;
+      padding-right: 10px;
+      padding-top: 5px;
+      padding-bottom: 5px;
+      &:nth-child(1) {
+        margin-left: 10px;
+        margin-right: 10px;
+      }
+
+    }
+  }
+
+  .about-news-footer {
+    display: flex;
+    height: 55px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    width: 100%;
+    i {
+      display: flex;
+      flex: 1;
+      flex-direction: row;
+      align-content: center;
+      justify-content: center;
+      font-size: 16px;
+      color: grey;
+      font-family: Arial;
+    }
+  }
+
+  .relative-guesste {
+    height: 30px;
+    width: 100%;
+    background: rgba(47, 213, 194, 0.05);
+    color: #8d8d8e;
+    font-size: 13px;
+    line-height: 13px;
+    font-family: Arial;
+    span {
+      position: relative;
+      display: inline-block;
+      top: 9px;
+      left: 10px;
+    }
+    margin-right: 20px;
+
+  }
+
+  .each-nearby-user {
+    margin-left: 10px;
+    border-bottom: 1px solid #F4F4F4;
+    .nearby-user-profile {
+      border-top: 10px solid white;
+      position: relative;
+      img {
+        height: 50px;
+        width: 50px;
+        border-radius: 50%;
+      }
+      .user-name {
+        position: absolute;
+        top: 15%;
+        left: 58px;
+        color: black;
+        font-size: 14px;
+      }
+      .distance {
+        position: absolute;
+        top: 15%;
+        right: 0;
+        color: #c0c1c1;
+        font-size: 12px;
+        clear: both;
+        margin-right: 10px;
+        font-family: Arial;
+        span {
+          float: left;
+          &:last-of-type {
+            position: relative;
+            top: -3px;
+            margin-left: 3px;
+          }
+        }
+      }
+      .sex-and-news-from {
+        position: relative;
+        display: inline-block;
+        height: 20px;
+        width: 100px;
+        span {
+          position: absolute;
+          left: 8px;
+          bottom: 20%;
+          font-size: 12px;
+          color: #adb296;
+        }
+      }
+    }
+    .nearby-user-lately-listen-song {
+      position: relative;
+      display: inline-block;
+      height: 30px;
+      max-width: 300px;
+      width: 200px;
+      a {
+        .love-song {
+          position: absolute;
+          top: 50%;
+          transform: translateY(-50%);
+          left: 0;
+          color: gray;
+          font-size: 12px;
+          font-family: Arial;
+          font-weight: 300;
+        }
+      }
+    }
+
+  }
+
+  .input-comment {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 75px;
+    width: 100%;
+    z-index: 999;
+    background: whitesmoke;
+    border-top: 1px solid #cccccc;
+    .input-content {
+      position: relative;
+      width: 90%;
+      margin: 4% auto;
+      height: 50%;
+      .write-comment {
+        position: absolute;
+        top: 50%;
+        height: 100%;
+        transform: translateY(-50%);
+        width: 70%;
+        border-radius: 20px;
+        left: 0;
+        -webkit-user-select: none;
+        -webkit-appearance: none;
+        border: 1px solid gainsboro;
+
+      }
+      .iconfont {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        height: 100%;
+        right: 0;
+        color: #cccccc;
+        font-size: 25px;
+      }
+    }
+  }
 }
