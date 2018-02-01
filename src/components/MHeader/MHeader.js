@@ -6,7 +6,6 @@ export default class MHeader extends React.Component {
     show:true
   };
   render(){
-    console.log(this.props);
     return (
         <div className='header'>
           {this.props.children}

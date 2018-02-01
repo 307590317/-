@@ -15,10 +15,9 @@ import Reg from "./containers/Reg/Reg";
 import FriendDynamicDetail from "./containers/FriendDynamicDetail/FirendDynamicDetail";
 import PlayDynamicContent from "./containers/PlayFriendDynamicContent/PlayFriendDynamicContent";
 import ProfileDetail from "./containers/ProfileDetail/ProfileDetail";
+import SongList from "./containers/Home/HomeDetail/SongList";
 import store from './store';
 import './common/index.less';
-
-
 render(<Provider store={store}>
     <Router>
         <App>
@@ -28,6 +27,7 @@ render(<Provider store={store}>
                 <Route path={'/mymusic'} component={MyMusic}/>
                 <Route path={'/friend'} component={Friend}/>
                 <Route path={'/profile'} component={Profile}/>
+                <Route path={'/songList'} component={SongList}/>
                 <Route path={'/detail/:id'} component={Detail}/>
                 <Route path={'/login'} component={Login}/>
                 <Route path={'/numlogin'} component={NumLogin}/>
@@ -36,7 +36,6 @@ render(<Provider store={store}>
                 <Route path={'/frienddynamicdetail'} component={FriendDynamicDetail}/>
                 <Route path={'/playfrienddynamiccontent'} component={PlayDynamicContent}/>
                 <Route path={'/comment'} component={Comment}/>
-
             </Switch>
         </App>
     </Router>
