@@ -28,7 +28,7 @@ export default class MyMusic extends React.Component {
   /*async componentDidMount(){
     console.log(await getRecord(''));
   }*/
-  componentDidMount(){
+  componentWillMount(){
     this.props.getRecordAPI('248846943');
   }
   render() {

@@ -22,19 +22,21 @@ export default class FriendDynamicDetail extends React.Component {
             <div className="content">
 
                 <div className="dynamic-detail-each-content">
-                    <header className="header">
-                        <Link to={'/notice'}>
+                    <header className="friend-dynamic-detail-header">
+                        <Link  className="photo-container-in-friend-dynamic" to={'/notice'}>
                             <img src={a} alt=""/>
                         </Link>
-                        <div className="next-to-img">
-                                  <span className="my-name">
+
+                        <div className="username-in-friend-dynamic">
+                                  <Link to={"/sssss"} >
                             小可爱baby
-                                </span>
-                            <Link to={'/notice'} className="dispatch-audio">
+                                </Link>
+                            <Link to={'/notice'}>
                                 发布视频
                             </Link>
                         </div>
-                        <p className="lately">昨天：21:09</p>
+
+                        <p className="watchtime-in-friend-dynamic">昨天：21:09</p>
 
                         <Link to={'/notice'} className="notice-me">
                             <strong>＋</strong>
@@ -42,7 +44,7 @@ export default class FriendDynamicDetail extends React.Component {
                         </Link>
                     </header>
                     <Link to={'/dynamicdetail'}>
-                     <span className="body">
+                     <span className="friend-dynamic-detail-conment">
                     <strong>我的是乐坛歌王，来挑战我吧我的是乐坛歌王，来挑战我吧我的是乐坛歌王，来挑战我吧我的是乐坛歌王，来挑战我吧</strong>
                     <img src={a} alt=""/>
                 </span>
