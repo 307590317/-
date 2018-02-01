@@ -31,33 +31,41 @@
         }
       }
     }
-
-    .song-search{
-      position: absolute;
-      width: 100%;
-      top: 50px;
-      left: 0;
-      height: 35px;
-      .search-text{
-        outline: none;
-        -webkit-appearance: none;
-        width: 90%;
-        margin-left: 5%;
-        border-radius: 35px;
-        bottom: 0;
-        background:rgba(222 ,222, 222, 0.3);
-        text-align: center;
-        line-height: 35px;
-        color: white;
-      }
-      i{
+    .headerCenter {
+      position: relative;
+      display: flex;
+      width: 90%;
+      height: 28px;
+      margin:0 auto;
+      line-height: 28px;
+      border-radius: 15px;
+      flex-direction: column;
+      justify-content: center;
+      i {
         position: absolute;
+        left: 20%;
         top: 0;
-        left: 30%;
-        font-size: 30px;
-        margin-right: 5px;
-        color: white;
+        font-size: 25px;
+        color: #c9c9c9;
       }
+      input {
+        position: absolute;
+        left: 30px;
+        top: 2px;
+        outline: none;
+        border: none;
+        height: 26px;
+        line-height: 28px;
+        width: 185px;
+        font-size: 14px;
+        text-align: center;
+      }
+      input::-webkit-input-placeholder {
+        color: #c9c9c9;
+      }
+    }
+    .song-search{
+      background: rgba(255,255,255,0.6);
     }
 
     .song-detail{

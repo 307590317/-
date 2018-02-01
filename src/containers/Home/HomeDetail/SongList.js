@@ -1,12 +1,15 @@
 import React from 'react';
 import './song.less';
+import {NavLink} from 'react-router-dom';
 
 export default class SongList extends React.Component {
     render() {
         return <div className='songlist'>
             <div className="top">
                 <div className="song-title">
-                    <i className='iconfont icon-zuojiantou'></i>
+                    <NavLink to='/home/music'>
+                        <i className='iconfont icon-zuojiantou' ></i>
+                    </NavLink>
                     歌单
                     <span>
                   <i className='iconfont icon-101'></i>
@@ -16,7 +19,7 @@ export default class SongList extends React.Component {
                 </div>
 
 
-                <div className="song-search">
+                <div className="song-search headerCenter">
                     <input className="search-text" placeholder="搜索歌单歌曲">
                     </input>
                     <i className='iconfont icon-sousuo'></i>
