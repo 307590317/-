@@ -1,3 +1,6 @@
+/*获取登录后的用户id*/
+export const GET_USERID='GET_USERID';
+/*获取用户歌单*/
 /*获取轮播图*/
 export const GET_BANNER='GET_BANNER';
 /*获取最近播放的数据*/
@@ -8,8 +11,7 @@ export const  GET_RECOMMEND='GET_RECOMMEND';
 export const  GET_UNIQUE='GET_UNIQUE';
 /*获取新歌单*/
 export const  GET_NEW='GET_NEW';
-/*注册*/
-export const TO_REG="TO_REG";
+
 
 
 

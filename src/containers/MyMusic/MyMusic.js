@@ -32,6 +32,7 @@ export default class MyMusic extends React.Component {
     this.props.getRecordAPI('248846943');
   }
   render() {
+    console.log(this.props.record.weekData.length);
     // let data=this.props.record,
     //   weekData=data.weekData||[],
     //   length=weekData.length;
