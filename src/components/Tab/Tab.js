@@ -5,13 +5,17 @@ import {withRouter} from 'react-router-dom';
 @withRouter
 export default class Tab extends React.Component {
   render(){
-    return (
+      return (
+
         <nav className='nav'>
-          <NavLink to={'/'} exact={true} className={/\/home/.test(this.props.location.pathname)?'active':''}>
-            <i className="iconfont icon-music"></i>
+          <NavLink to={'/'} exact={true} className={
+              /\/home/.test(this.props.location.pathname)||
+              this.props.location.pathname==='/songList'
+                  ?'active':''}>
+            <i className="iconfont icon-wangyiyunyinyuemusic1193417easyiconnet"></i>
             <span>发现音乐</span>
           </NavLink>
-          <NavLink to={'/mymusic'}>
+          <NavLink to={'/mymusic'} className={this.props.location.pathname==='/latestplay'?'active':''}>
             <i className="iconfont icon-yinyue"></i>
             <span>我的音乐</span>
           </NavLink>

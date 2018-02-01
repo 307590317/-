@@ -41,34 +41,34 @@ export default class Profile extends React.Component {
               <div className="profile-header">
                 {this.props.userId?(
                     /*登录后的头部*/
-                    <div className="logined">
+                  <div className="logined">
                     <div className="Basic-info" onClick={(e)=>{this.toProfileDetail(e)}}>
-                  <img src={avatarUrl} />
-                  <div className="info-text">
-                  <p className="name">{nickname}</p>
-                  <span className="grade">Lv.{data.level}</span>
-                  </div>
-                  <span className="sign" onClick={(e)=>{this.sign(e)}}><i className="iconfont icon-jinbi"></i>{this.state.flag?"已签到":"签到"}</span>
+                      <img src={avatarUrl} />
+                      <div className="info-text">
+                        <p className="name">{nickname}</p>
+                        <span className="grade">Lv.{data.level}</span>
+                      </div>
+                      <span className="sign" onClick={(e)=>{this.sign(e)}}><i className="iconfont icon-jinbi"></i>{this.state.flag?"已签到":"签到"}</span>
 
-                  </div>
-                  <ul>
-                  <li>
-                  <p><NavLink to={""}>动态</NavLink></p>
-                  <p className="num">{eventCount}</p>
-                  </li>
-                  <li>
-                  <p><NavLink to={""}>关注</NavLink></p>
-                  <p className="num">{follows}</p>
-                  </li>
-                  <li>
-                  <p><NavLink to={""}>粉丝</NavLink></p>
-                  <p className="num">{followeds}</p>
-                  </li>
-                  <li>
-                  <i className="iconfont">&#xe61c;</i>
-                  <p><NavLink to={""}>我的资料</NavLink></p>
-                  </li>
-                  </ul>
+                    </div>
+                    <ul>
+                      <li>
+                        <p><NavLink to={""}>动态</NavLink></p>
+                        <p className="num">{eventCount}</p>
+                      </li>
+                      <li>
+                        <p><NavLink to={""}>关注</NavLink></p>
+                        <p className="num">{follows}</p>
+                      </li>
+                      <li>
+                        <p><NavLink to={""}>粉丝</NavLink></p>
+                        <p className="num">{followeds}</p>
+                      </li>
+                      <li>
+                      <i className="iconfont icon-qiandao"></i>
+                        <p><NavLink to={""}>我的资料</NavLink></p>
+                      </li>
+                    </ul>
                   </div>
                 ):(
                     /*登录前的头部*/

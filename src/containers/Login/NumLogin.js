@@ -22,13 +22,13 @@ export default class NumLogin extends React.Component {
               手机号登录
             </div>
           </MHeader>
+
           <div className="number-login">
-
-
             <div className="number-login-main">
               <div className="util">
                 <i className="iconfont icon-msnui-tel"></i>
                 <label htmlFor="phone-number"></label>
+
                 <input type="text" id="phone-number" maxLength="11" placeholder="手机号" ref={(x)=>{this.phoneNumber=x}} />
               </div>
 
