@@ -45,9 +45,9 @@ export default class HomeRadio extends React.Component {
 
                     <div className="vip-right">
                         <h4>音乐时间</h4>
-                        <p vip-info>safddddddddddsaad</p>
-                        <p vip-name>safddddddddddsaad</p>
-                        <p vip-price>safddddddddddsaad</p>
+                        <p className='vip-info' >safddddddddddsaad</p>
+                        <p className='vip-name'>safddddddddddsaad</p>
+                        <p className='vip-price' >safddddddddddsaad</p>
                     </div>
                 </li>
             </ul>

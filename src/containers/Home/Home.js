@@ -13,10 +13,6 @@ import './index.less';
 @connect(state => ({...state}), actions)
 export default class Home extends React.Component {
 
-    // componentDidMount() {
-    //     this.props.getBannerAPI();
-    //     this.props.getTuiJiansAPI();
-    // }
 
     render() {
 
