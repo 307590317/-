@@ -11,52 +11,65 @@
   }
   .Essential{
     width:100%;
-    height:260px;
-    padding-top:10px;
-   .Basics-info{
-     width:200px;
-     margin:0 auto;
-     img{
-       display: block;
-       width:82px;
-       height:82px;
-       border-radius: 50%;
+    height:245px;
+    padding-top:25px;
+     .Basics-info{
+       width:200px;
        margin:0 auto;
+       img{
+         display: block;
+         width:82px;
+         height:82px;
+         border-radius: 50%;
+         margin:0 auto;
 
-     }
-     .text-info{
-       text-align: center;
-       color:#fff;
-       margin-top:10px;
-       line-height: 24px;
-       h5{
-         font-size:16px;
        }
-       p{
-         font-size:12px;
-         span{
-           &:nth-child(1){
-               margin-right:5px;
+       .text-info{
+         text-align: center;
+         color:#fff;
+         margin-top:10px;
+         line-height: 24px;
+         h5{
+           font-size:16px;
+           i{
+             color:#51a7eb;
            }
-           &:nth-child(2){
-             margin-left:5px;
+           .pink{
+             color:#c7254e;
            }
          }
-       }
-       button{
-         display: block;
-         width:85px;
-         height:30px;
-         line-height: 30px;
-         border:1px solid #fff;
-         background: transparent;
-         color:#fff;
-         border-radius: 30px;
-         margin:15px  auto 0;
-         padding-left:15px;
-       }
-    }
-   }
+         p{
+           font-size:12px;
+           span{
+             &:nth-child(1){
+                 margin-right:5px;
+             }
+             &:nth-child(2){
+               margin-left:5px;
+             }
+           }
+         }
+         button{
+           position:relative;
+           display: block;
+           width:85px;
+           height:30px;
+           line-height: 30px;
+           border:1px solid #fff;
+           background: transparent;
+           color:#fff;
+           border-radius: 30px;
+           margin:15px  auto 0;
+           padding-left:15px;
+           outline: none;
+           i{
+             position:absolute;
+             top:0;
+             left:15px;
+           }
+         }
+      }
+     }
     .detail-info{
       width:100%;
     }

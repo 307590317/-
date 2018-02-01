@@ -34,3 +34,5 @@ export let getVip=()=>axios.get(`/vip`);
 export let getLogin=(phone,password)=>axios.get(`/login/cellphone?phone=${phone}&password=${password}`);
 //获取用户详情信息
 export let getProfileDetail=(id)=>axios.get(`/user/playlist?uid=${id}`);
+
+
