@@ -1,8 +1,11 @@
 import {combineReducers} from 'redux';
 import homeReducer from './home';
 import regReducer from "./reg";
-
+import loginReducer from "./login";
+import profileReducer from "./profile";
 export default combineReducers({
   homeReducer,
-  regReducer
+  regReducer,
+  loginReducer,
+  profileReducer
 })
