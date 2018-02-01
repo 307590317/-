@@ -1,11 +1,11 @@
 import * as Types from '../action-Types';
 
-let initState = {};
+let initState = {record:{weekData:[]}};
 
 let mymusicReducer = function (state = initState, action) {
   switch (action.type) {
     case Types.GET_RECORD:
-      return {...state, record: action.payload};
+      return {...state,record: action.payload};
   }
   return state;
 };
