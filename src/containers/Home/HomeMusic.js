@@ -27,55 +27,37 @@ export default class HomeMusic extends React.Component {
 
             {/*每日排行*/}
             <div className="home-list">
-                <ul>
-                    <li>
-                        <a href="#">
-                            <i className="iconfont icon-radio"></i>
-                        </a>
-                        <span>私人FM</span>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <i className="iconfont icon-rili"></i>
-                        </a>
-                        <span>
-                        每日推荐
-                    </span>
 
-                    </li>
-                    <li>
-                        <a href="#">
-                            <i className="iconfont icon-swticonyinle2"></i>
-                        </a>
-
-                        <span>
-                       歌单
-                    </span>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <i className="iconfont icon-PCbofangye_paihangbang"></i>
-                        </a>
-
-                        <span>
-                        排行榜
-                    </span>
-                    </li>
-                </ul>
+                <NavLink to={'/detail/1'} >
+                    <i className="iconfont icon-radio"></i>
+                    <span>私人FM</span>
+                </NavLink>
+                <NavLink to={'/mymusic'}>
+                    <i className="iconfont icon-rili"></i>
+                    <span>每日推荐</span>
+                </NavLink>
+                <NavLink to={'/friend'}>
+                    <i className="iconfont icon-swticonyinle2"></i>
+                    <span>歌单</span>
+                </NavLink>
+                <NavLink to={'/profile'}>
+                    <i className="iconfont icon-PCbofangye_paihangbang"></i>
+                    <span>排行榜</span>
+                </NavLink>
 
             </div>
 
 
             {/*推荐歌单*/}
-            <div className="music home-recommend">
+            <div className="musicList home-recommend">
                 <div className="music-title">
                     <i className="iconfont icon-music"></i>
-                    <h4>推荐歌单 <i className='iconfont icon-fanhui2'></i></h4>
+                    <h5>推荐歌单 <i className='iconfont icon-fanhui2'></i></h5>
                 </div>
                 <ul>
                     {this.props.recommend.result.slice(0,6).map((item,index)=>(
                     <li key={index}>
-                        <NavLink to='/songList' >
+                        <NavLink to='/songList'>
                             <img src={item.picUrl} alt=""/>
                             <span>
                                   <i className="iconfont icon-headseterji"></i>
@@ -92,10 +74,10 @@ export default class HomeMusic extends React.Component {
 
 
             {/*独家放送*/}
-            <div className="music home-unique">
+            <div className="musicList home-unique">
                 <div className="music-title">
                     <i className="iconfont icon-music"></i>
-                    <h4>独家放送  <i className='iconfont icon-fanhui2'></i>   </h4>
+                    <h5>独家放送  <i className='iconfont icon-fanhui2'></i>   </h5>
                 </div>
                 <ul>
                     {this.props.unique.result.map((item,index)=>(
@@ -114,10 +96,10 @@ export default class HomeMusic extends React.Component {
 
 
             {/*最新音乐*/}
-            <div className="music home-new">
+            <div className="musicList home-new">
                 <div className="music-title">
                     <i className="iconfont icon-music"></i>
-                    <h4>最新音乐 <i className='iconfont icon-fanhui2'></i></h4>
+                    <h5>最新音乐 <i className='iconfont icon-fanhui2'></i></h5>
                 </div>
                 <ul>
                     {this.props.new.result.slice(0,6).map((item,index)=>(

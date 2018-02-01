@@ -42,12 +42,12 @@
     z-index: 20;
     font-size: 18px;
     display: flex;
+    justify-content: space-around;
     a {
       -webkit-tap-highlight-color: transparent;
       display: flex;
-      justify-content: space-around;
       align-items: center;
-      flex: 1;
+      //flex: 1;
       color: #ababab;
       &.active {
         color: red;
@@ -69,7 +69,7 @@
     }
   }
   .home-music {
-    position: absolute;
+    position: relative;
     top: 0;
     left: 0;
     width: 100%;
@@ -78,55 +78,44 @@
 
 
     .home-list {
-      position: absolute;
+      position: relative;
       left: 0;
-      top: 150px;
-      margin: 10px auto;
+      top: 0;
       height: 110px;
       width: 100%;
       display: flex;
       flex-direction: row;
       justify-content: space-around;
-
-      li {
+      a{
+        -webkit-tap-highlight-color: transparent;
         display: flex;
-        margin: 10px;
-        flex: 1;
-        float: left;
         flex-direction: column;
         justify-content: center;
-        align-content: center;
         align-items: center;
-        height: 100%;
-
-        a {
-          width: 60px;
-          height: 60px;
-          border-radius: 50%;
+        flex: 1;
+        color: #ababab;
+        i{
+          width: 40px;
+          height: 40px;
           text-align: center;
-          line-height: 60px;
-          border: 1px solid orangered;
-          display: inline-block;
-          &.active {
-            color: orangered;
-          }
-          i {
-            font-size: 25px;
-            color: orangered;
-          }
+          line-height: 40px;
+          border-radius: 50%;
+          color: red;
+          border: 1px solid red;
+          font-size: 20px;
+          font-weight: 500;
         }
-        span {
-          margin-top: 10px;
-          font-size: 14px;
-          color: #ababab;
+        span{
+          margin-top: 5px;
+          font-size: 11px;
         }
       }
     }
 
 
-    .music {
-      position: absolute;
-      top: 300px;
+    .musicList {
+      position: relative;
+      top: 0;
       left: 0;
       .music-title {
         i {
@@ -137,10 +126,10 @@
           line-height: 15px;
           color: white;
         }
-        h4 {
+        h5 {
           margin-left: 14px;
-          font-size: 18px;
-          font-weight: lighter;
+          font-size: 14px;
+          font-weight: normal;
           letter-spacing: 2px;
           i{
             position: relative;
@@ -195,7 +184,9 @@
 
     }
     .home-unique{
-      top: 720px;
+      position: relative;
+      left: 0;
+      top: 10px;
        ul{
          width: 100%;
          li{
@@ -212,9 +203,9 @@
        }
     }
     .home-new {
-      position: absolute;
-      top: 1140px;
+      position: relative;
       left: 0;
+      top: 10px;
         }
     .home-bottom{
       position: absolute;
@@ -279,7 +270,7 @@
        width: 100%;
        li{
          width: 100%;
-         height: 290px;
+         height: 240px;
 
          .video{
            position: absolute;
@@ -293,7 +284,7 @@
          .top{
            position: relative;
            width: 100%;
-           height: 230px;
+           height: 200px;
 
            .left{
              position: absolute;
@@ -331,9 +322,9 @@
              background: rgba(4,4,4,0.3);
              z-index: 10;
              text-align: center;
-             line-height:20px;
+             line-height:18px;
              span{
-               font-size: 14px;
+               font-size: 13px;
                color: white;
              }
            }
@@ -356,6 +347,7 @@
              color: white;
              font-size: 14px;
              i{
+
                font-size: 16px;
              }
            }
@@ -363,32 +355,35 @@
          }
          .bottom{
            width: 100%;
-           height: 60px;
+           height: 40px;
+           margin-top: 5px;
            p{
              float: left;
              margin-left: 5px;
              width: 55%;
              height: 60px;
              font-size: 14px;
-             line-height: 30px;
+             line-height: 20px;
            }
            .logo{
              float: right;
-             height: 60px;
+             height: 40px;
              margin-left: 2%;
              width: 40%;
              display: flex;
              justify-content: space-around;
              li{
-               height: 60px;
+               height: 40px;
                display: flex;
                flex: 1;
                flex-direction: column;
                justify-content: center;
                align-items: center;
-               font-size: 12px;
+               font-size: 10px;
+               color: grey;
                i{
-                 font-size: 20px;
+                 color: grey;
+                 font-size: 16px;
                }
              }
            }
@@ -398,7 +393,7 @@
   }
 
   .home-radio{
-    position: absolute;
+    position: relative;
     top: 0;
     left: 0;
     width: 100%;
@@ -442,7 +437,7 @@
           line-height: 15px;
           color: white;
         }
-        h4 {
+        h5 {
           margin-left: 14px;
           font-size: 18px;
           font-weight: lighter;

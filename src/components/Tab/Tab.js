@@ -15,7 +15,7 @@ export default class Tab extends React.Component {
             <i className="iconfont icon-wangyiyunyinyuemusic1193417easyiconnet"></i>
             <span>发现音乐</span>
           </NavLink>
-          <NavLink to={'/mymusic'}>
+          <NavLink to={'/mymusic'} className={this.props.location.pathname==='/latestplay'?'active':''}>
             <i className="iconfont icon-yinyue"></i>
             <span>我的音乐</span>
           </NavLink>

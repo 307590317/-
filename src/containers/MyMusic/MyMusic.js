@@ -1,13 +1,16 @@
 import React from 'react';
 import './index.less';
-import {Link} from 'react-router-dom';
+import {Link,Route} from 'react-router-dom';
+
 import EstablishList from "./EstablishList";
 import Shade from "./Shade";
 import MHeader from "../../components/MHeader/MHeader";
+import LatestPlay from "./LatestPlay/LatestPlay";
 import {connect} from 'react-redux';
 import actions from "../../store/actions/mymusic";
 /*import {getRecord} from "../../api/gjx";
 import 'babel-polyfill'*/
+
 @connect(state=>({...state.mymusicReducer}),actions)
 export default class MyMusic extends React.Component {
   constructor() {
@@ -56,7 +59,7 @@ export default class MyMusic extends React.Component {
               </Link>
             </li>
             <li>
-              <Link to='/'>
+              <Link to='/latestplay'>
                 <i className='iconfont icon-bofang2 front '></i>
                 <p>最近播放</p>
                 <span>{this.props.record.weekData.length}</span>
@@ -90,6 +93,7 @@ export default class MyMusic extends React.Component {
           </div>
           {this.state.isPopUp ? <Shade/> : null}
         </div>
+
       </div>
     )
   }
