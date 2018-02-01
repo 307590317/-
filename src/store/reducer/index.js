@@ -7,13 +7,9 @@ import mymusicReducer from './mymusic';
 import commentReducer from './comment';
 
 export default combineReducers({
-
     homeReducer,
-    regReducer,
     mymusicReducer,
     commentReducer,
     loginReducer,
-    profileReducer,
     userDetail,
-
 })
