@@ -8,6 +8,12 @@ export default class Profile extends React.Component {
   toLogin=()=>{
     this.props.history.push('/login')
   };
+  toProfileDetail=(e)=>{
+    this.props.history.push("/profileDetail");
+  };
+  sign=(e)=>{
+    e.stopPropagation();
+  };
   render() {
     return (
         <div className="profile">
@@ -20,20 +26,20 @@ export default class Profile extends React.Component {
           <div className="content">
             <div className="profile-header">
               {/*登录前的头部*/}
-              <div className="unlogin" style={{display:"block"}}>
+              <div className="unlogin" style={{display:"none"}}>
                 <p>登录网易云音乐</p>
                 <p>320k高音质无线下载，手机电脑多端同步</p>
                 <button onClick={this.toLogin}>立即登录</button>
               </div>
               {/*登录后的头部*/}
-              <div className="logined" style={{display:'none'}}>
-                <div className="Basic-info">
-                  <img src=""/>
+              <div className="logined" style={{display:'block'}}>
+                <div className="Basic-info" onClick={(e)=>{this.toProfileDetail(e)}}>
+                  <img src="" />
                   <div className="info-text">
                     <p className="name">机智的半夏</p>
                     <span className="grade">Lv.7</span>
                   </div>
-                  <span className="sign"><i className="iconfont icon-jinbi"></i>签到</span>
+                  <span className="sign" onClick={(e)=>{this.sign(e)}}><i className="iconfont icon-jinbi"></i>签到</span>
 
                 </div>
                 <ul>

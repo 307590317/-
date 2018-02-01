@@ -3,7 +3,6 @@
 
   .play-firend-dynamic-content {
     img {
-
       display: block;
       width: 100%;
       height: 200px;
@@ -19,7 +18,8 @@
     background: white;
     overflow-x: hidden;
     padding-top: 10px;
-    .header {
+
+    .friend-dynamic-user-profile-header {
       position: relative;
       left: 0;
       height: 55px;
@@ -27,42 +27,43 @@
       width: 98%;
       margin-right: 2%;
       margin-left: 2%;
-      img {
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        left: 0;
-        height: 35px;
-        width: 35px;
-        border-radius: 50%;
-      }
-      span {
+      .userimg-in-play-content{
         display: block;
-        line-height: 35px;
-        font-size: 16px;
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        left: 40px;
-        color: black;
-        font-family: Arial;
-        font-weight: 300;
+        img {
+          display: block;
+          background: green;
+           position: absolute;
+           top: 50%;
+           transform: translateY(-50%);
+           left: 0;
+          height: 35px;
+          width: 35px;
+          border-radius: 50%;
+        }
       }
 
-        .move-or-other-thing {
-          a{ -webkit-user-select: none;
-            font-family: Arial;
-            font-size: 20px;
-            font-weight: 300;
-            color: black;
+      .username-in-play-content{
+        display: block;
+        span{
+          display: block;
+          line-height: 35px;
+          font-size: 16px;
+          position: absolute;
+          top: 50%;
+          transform: translateY(-50%);
+          left: 40px;
+          color: black;
+          font-family: Arial;
+          font-weight: 300;
 
+        }
+       /* &:nth-child(1){
 
-          }
-
-
+        }*/
       }
 
       .notice-me {
+        display: block;
         position: absolute;
         top: 50%;
         right: 15px;
@@ -78,7 +79,7 @@
           font-size: 13px;
           font-family: Arial;
           position: absolute;
-          top: -8px;
+          top: 3px;
           left: 25px;
           letter-spacing: 3px;
           color: #ff0100;
@@ -91,74 +92,94 @@
 
     }
 
-  }
+    .movie-name {
+      a{
 
-  .news-source {
-    height: 55px;
-    .news-time {
-      width: 64%;
-      height: 35px;
-      padding-top: 10px;
-      padding-bottom: 10px;
-      display: flex;
-      margin-left: 10px;
+        -webkit-user-select: none;
+        font-family: Arial;
+        font-size: 20px;
+        font-weight: 300;
+        color: black;
+
+      }
+
+
+    }
+
+    .news-source {
+      height: 55px;
+      .news-time {
+        width: 64%;
+        height: 35px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        display: flex;
+        margin-left: 10px;
+        span {
+          display: flex;
+          flex: 1;
+          flex-direction: row;
+          align-content: center;
+          font-size: 16px;
+          color: grey;
+          font-family: Arial;
+
+        }
+
+      }
+    }
+
+    .news-type-container {
+      width: 100%;
+      clear: both;
       span {
+        float: left;
+        font-size: 13px;
+        color: grey;
+        height: 25px;
+        font-family: Arial;
+        border: 1px solid gainsboro;
+        background: transparent;
+        border-radius: 15px;
+        text-align: center;
+        line-height: 25px;
+        padding-left: 10px;
+        padding-right: 10px;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        &:nth-child(1) {
+          margin-left: 10px;
+          margin-right: 10px;
+        }
+
+      }
+    }
+
+    .about-news-footer {
+      display: flex;
+      height: 55px;
+      padding-bottom: 10px;
+      padding-top: 10px;
+      width: 100%;
+      i {
         display: flex;
         flex: 1;
         flex-direction: row;
         align-content: center;
+        justify-content: center;
         font-size: 16px;
         color: grey;
         font-family: Arial;
-
       }
-
     }
+
   }
 
-  .news-type-container {
-    width: 100%;
-    clear: both;
-    span {
-      float: left;
-      font-size: 13px;
-      color: grey;
-      height: 25px;
-      font-family: Arial;
-      border: 1px solid gainsboro;
-      background: transparent;
-      border-radius: 15px;
-      text-align: center;
-      line-height: 25px;
-      padding-left: 10px;
-      padding-right: 10px;
-      padding-top: 5px;
-      padding-bottom: 5px;
-      &:nth-child(1) {
-        margin-left: 10px;
-        margin-right: 10px;
-      }
 
-    }
-  }
 
-  .about-news-footer {
-    display: flex;
-    height: 55px;
-    padding-bottom: 10px;
-    padding-top: 10px;
-    width: 100%;
-    i {
-      display: flex;
-      flex: 1;
-      flex-direction: row;
-      align-content: center;
-      justify-content: center;
-      font-size: 16px;
-      color: grey;
-      font-family: Arial;
-    }
-  }
+
+
+
 
   .relative-guesste {
     height: 30px;
@@ -275,7 +296,11 @@
         -webkit-user-select: none;
         -webkit-appearance: none;
         border: 1px solid gainsboro;
-
+        outline: none;
+        padding-left: 10px;
+        font-size: 13px;
+        font-family: Arial;
+        color:black ;
       }
       .iconfont {
         position: absolute;

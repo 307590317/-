@@ -17,13 +17,16 @@ export default class PlayFriendDynamicContent extends Component {
                     {/*小编一级播放内容的来源，事事件，播放次数*/}
                     <div className="friend-profile-and-comment-and-more">
 
-                        <header className="header">
-                            <Link to={'/notice'}>
+                     {/*小编的头像和名字*/}
+                        <header className="friend-dynamic-user-profile-header">
+
+
+                            <Link className="userimg-in-play-content" to={'/notice'}>
                                 <img src={a} alt=""/>
                             </Link>
 
 
-                            <Link to={"/xxxxx"}>
+                            <Link  className="username-in-play-content" to={"/xxxxx"}>
                                  <span className="my-name">
                             小可爱baby
                                 </span>
@@ -37,11 +40,9 @@ export default class PlayFriendDynamicContent extends Component {
 
                         </header>
 
-                         <span className="move-or-other-thing">
-                             <NavLink to={"/xxxxx"}>  《电视剧恋爱先生》：我的是乐坛歌王</NavLink>
-                         </span>
+                     {/*播放区域的来源或者名字*/}
 
-
+                        {/*发布事件和播放的数量*/}
                         <div className="news-source">
                     <span className="news-time">
                         <span>发布:2018-01-31</span>
@@ -49,6 +50,7 @@ export default class PlayFriendDynamicContent extends Component {
                     </span>
                         </div>
 
+                        {/*播放内容的类型*/}
                         <div className="news-type-container">
 
                             <span>影视</span>
@@ -56,6 +58,9 @@ export default class PlayFriendDynamicContent extends Component {
 
                         </div>
 
+
+
+                        {/*下面四个图标字体*/}
                         <div className="about-news-footer">
                             <i className="iconfont icon-tianjiahaoyou"></i>
                             <i className="iconfont icon-tianjiahaoyou"></i>
@@ -79,7 +84,7 @@ export default class PlayFriendDynamicContent extends Component {
 
                         <div className="nearby-user-profile">
                             <NavLink to={"/friend/nearby/profile"}>
-                                <img src={a} alt=""/>
+                                <audio src={a} alt=""/>
                                 <span className="user-name">薛世洋</span>
                                 <span className="distance">
                                     <span className="distance-logo">220</span>
