@@ -28,3 +28,9 @@ export let getJingXuan=(id)=>axios.get(`/selections?id=${id}`);
 export let putJingXuan=(id)=>axios.put(`/selections?id=${id}`);
 //获取vip数据
 export let getVip=()=>axios.get(`/vip`);
+
+
+// 登录接口
+export let getLogin=(phone,password)=>axios.get(`/login/cellphone?phone=${phone}&password=${password}`);
+//获取用户详情信息
+export let getProfileDetail=(id)=>axios.get(`/user/playlist?uid=${id}`);

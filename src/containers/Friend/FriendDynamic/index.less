@@ -1,0 +1,147 @@
+.dynamic-nav{
+  position: relative;
+  height: 35px;
+  width: 100%;
+  border-bottom: 5px solid #F4F4F4;
+  div{
+    float: left;
+    font-size: 15px;
+    .iconfont.icon-music{
+      color: red;
+      height: 15px;
+    }
+  }
+
+  .left-one{
+    position: absolute;
+    top:50%;
+    transform: translateY(-50%);
+    right:240px;
+    .publish-dynamic{
+      margin-left: 15px;
+      letter-spacing: 2px;
+    }
+
+  }
+  .right-one{
+    position: absolute;
+    top:50%;
+    transform: translateY(-50%);
+    right: 84px;
+    .publish-audio{
+      margin-left: 15px;
+      letter-spacing: 2px;
+    }
+  }
+}
+
+.each-content{
+  position: relative;
+  top:0;
+  left: 0;
+  width: 100%;
+  clear: both;
+  .header{
+    position: relative;
+    top:0;
+    left:0;
+    background: aliceblue;
+    height: 50px;
+
+    img{
+      position: absolute;
+      top:0;
+      left:0;
+      height:50px;
+      width: 50px;
+      margin-left: 3px;
+      border-radius: 20%;
+    }
+
+    .next-to-img{
+      position: absolute;
+      top:0;
+      left:58px;
+      height:50px;
+      .my-name{
+        font-size: 16px;
+        max-width: 100px;
+        min-width: 1px;
+        width: 100%;
+        font-family: "Microsoft JhengHei";
+        font-weight: bold;
+      }
+      .dispatch-audio{
+        width: 100%;
+        font-family: "Agency FB";
+        font-size: 16px;
+        color: gray;
+        margin-left: 6px;
+
+      }
+
+    }
+
+    .lately{
+      position: absolute;
+      bottom: 0;
+      left:58px;
+      color: gainsboro;
+      font-size: 13px;
+      font-family: "Microsoft JhengHei";
+    }
+
+    .notice-me{
+      position: absolute;
+      top:50%;
+      right: 10px;
+      transform: translateY(-50%);
+      strong{
+        color: #ff0100;
+      }
+
+    }
+
+
+  }
+
+  .body{
+    position: relative;
+    height: 400px;
+    strong{
+      display: block;
+      margin-left: 58px;
+      width:350px;
+      word-wrap: break-word;
+      color: black;
+      margin-top: 10px;
+      margin-bottom: 10px;
+    }
+    /*图片的右边的距离是不固定的，它具体的宽度是根据标题的宽度来确定的*/
+    img{
+      display: block;
+      margin-left: 58px;
+      text-align: center;
+      height:300px;
+      width:350px;
+      margin-right: 10px;
+    }
+  }
+
+  .footer{
+    padding-left: 58px;
+      position: relative;
+      span{
+        display: inline-block;
+        margin-right: 50px;
+        font-size: 16px;
+        color: gray;
+      }
+      .more-thing{
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        margin-right: 0;
+      }
+  }
+}

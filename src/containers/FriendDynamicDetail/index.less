@@ -1,0 +1,208 @@
+
+.dynamic-detail-each-content{
+  position: relative;
+  top:0;
+  left: 0;
+  clear: both;
+  background: white;
+  overflow-x:hidden;
+  .header{
+    position: relative;
+    top:0;
+    left:0;
+    height: 50px;
+    background: white;
+    width: 98%;
+    margin-right: 2%;
+    margin-left: 2%;
+    img{
+      position: absolute;
+      top:0;
+      left:0;
+      height:50px;
+      width: 50px;
+      border-radius: 20%;
+    }
+
+    .next-to-img{
+      position: absolute;
+      top:0;
+      left:58px;
+      height:50px;
+      .my-name{
+        font-size: 15px;
+        max-width: 100px;
+        min-width: 1px;
+        width: 100%;
+        font-family: "Microsoft JhengHei";
+        font-weight: bold;
+      }
+      .dispatch-audio{
+        width: 100%;
+        font-family: "Agency FB";
+        font-size: 14px;
+        color: gray;
+        margin-left: 6px;
+      }
+
+    }
+
+    .lately{
+      position: absolute;
+      bottom: 0;
+      left:58px;
+      color: #93977f;
+      font-size: 12px;
+      font-family: "Microsoft JhengHei";
+    }
+
+    .notice-me{
+      position: absolute;
+      top:50%;
+      right:15px;
+      transform: translateY(-50%);
+      text-align: right;
+      strong{
+        color: #ff0100;
+      }
+
+    }
+
+
+  }
+
+  .body{
+    position: relative;
+    strong{
+      display: inline-block;
+      width:98%;
+      word-wrap: break-word;
+      color: black;
+      margin-right: 2%;
+      margin-left: 2%;
+    }
+    /*图片的右边的距离是不固定的，它具体的宽度是根据标题的宽度来确定的*/
+    img{
+      display: block;
+      height: 200px;
+      width: 98%;
+      margin-right: 2%;
+      margin-left: 2%;
+    }
+  }
+
+}
+
+.comment{
+  height: 30px;
+  width: 100%;
+  background: rgba(47, 213, 194, 0.05);
+  color: #8d8d8e;
+  font-size: 13px;
+  line-height: 13px;
+ font-family: Arial;
+  span{
+    position: relative;
+    display: inline-block;
+    top:9px;
+    left:10px;
+  }
+  margin-right:20px;
+
+}
+
+.praise-container{
+  height: 55px;
+  padding-top: 10px;
+  .who-is-praise{
+    height: 55px;
+    .praise{
+      margin-left: 10px;
+      margin-right: 10px;
+      padding-top: 10px;
+      color: grey;
+      font-family: Arial;
+      font-size: 12px;
+    }
+    a{
+      float: left;
+      img{
+        height: 35px;
+        width: 35px;
+        border-radius: 50%;
+        margin-right: 10px;
+      }
+    }
+  }
+}
+.each-nearby-user {
+  margin-left: 10px;
+  border-bottom: 1px solid #F4F4F4;
+  .nearby-user-profile {
+    border-top: 10px solid white;
+    position: relative;
+    img {
+      height: 50px;
+      width: 50px;
+      border-radius: 50%;
+    }
+    .user-name {
+      position: absolute;
+      top: 15%;
+      left: 58px;
+      color: black;
+      font-size: 14px;
+    }
+    .distance {
+      position: absolute;
+      top: 15%;
+      right: 0;
+      color:#c0c1c1;
+      font-size: 12px;
+      clear: both;
+      margin-right: 10px;
+      font-family: Arial;
+      span {
+        float: left;
+        &:last-of-type {
+          position: relative;
+          top:-3px;
+          margin-left: 3px;
+        }
+      }
+    }
+    .sex-and-news-from {
+      position: relative;
+      display: inline-block;
+      height: 20px;
+      width: 100px;
+      span {
+        position: absolute;
+        left: 8px;
+        bottom: 20%;
+        font-size: 12px;
+        color: #adb296;
+      }
+    }
+  }
+  .nearby-user-lately-listen-song{
+    position: relative;
+    display: inline-block;
+    height: 30px;
+    max-width: 300px;
+    width: 200px;
+    a{
+      .love-song{
+        position: absolute;
+        top:50%;
+        transform: translateY(-50%);
+        left: 0;
+        color: gray;
+        font-size:12px;
+        font-family: Arial;
+        font-weight: 300;
+      }
+    }
+  }
+
+}
