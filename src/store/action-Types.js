@@ -12,6 +12,9 @@ export const  GET_NEW='GET_NEW';
 export const TO_REG="TO_REG";
 /*获取评论*/
 export const GET_COMMENT='GET_COMMENT';
+/*登录*/
+export const LOGIN_NUMBER_LOGIN="LOGIN_NUMBER_LOGIN";
 
 
-
+/*获取个人中心*/
+export const GET_PROFILE="GET_PROFILE";

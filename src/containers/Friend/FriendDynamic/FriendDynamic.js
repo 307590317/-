@@ -6,7 +6,8 @@ import {Link} from 'react-router-dom';
 export default class FriendDynamic extends React.Component {
     render() {
         return (
-            <div>
+            <div className="friend-dynamic">
+                {/*头下面的导航*/}
                 <div className="dynamic-nav">
 
                     <div className="left-one">
@@ -23,13 +24,13 @@ export default class FriendDynamic extends React.Component {
 
                 <div className="each-content">
                     <header className="header">
-                        <Link to={'/notice'}>
+                        <Link className="user-photo" to={'/notice'}>
                             <img src={a} alt=""/>
                         </Link>
                         <div className="next-to-img">
-                                  <span className="my-name">
+                                  <Link to={"/xxvdsvd"} className="my-name">
                             小可爱baby
-                                </span>
+                                </Link>
                             <Link to={'/notice'} className="dispatch-audio">
                                 发布视频
                             </Link>
@@ -42,7 +43,7 @@ export default class FriendDynamic extends React.Component {
                         </Link>
                     </header>
 
-                    <span className="body">
+                    <span className="friend-dynamic-title-and-cotent">
                          <Link to={'/frienddynamicdetail'}>
                     <strong>我的是乐坛歌王，来挑战我吧我的是乐坛歌王，来挑战我吧我的是乐坛歌王，来挑战我吧我的是乐坛歌王，来挑战我吧</strong>
                     </Link>
@@ -52,7 +53,7 @@ export default class FriendDynamic extends React.Component {
                     </span>
 
 
-                    <footer className="footer">
+                    <footer className="friend-dynamic-number">
                         <span className="iconfont icon-music">123</span>
                         <span className="iconfont icon-music">345</span>
                         <span className="iconfont icon-music">7894</span>
