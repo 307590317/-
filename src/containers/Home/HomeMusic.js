@@ -51,7 +51,7 @@ export default class HomeMusic extends React.Component {
             {/*推荐歌单*/}
             <div className="musicList home-recommend">
                 <div className="music-title">
-                    <i className="iconfont icon-music"></i>
+                    <i className="iconfont icon-jian"></i>
                     <h5>推荐歌单 <i className='iconfont icon-fanhui2'></i></h5>
                 </div>
                 <ul>
@@ -76,7 +76,7 @@ export default class HomeMusic extends React.Component {
             {/*独家放送*/}
             <div className="musicList home-unique">
                 <div className="music-title">
-                    <i className="iconfont icon-music"></i>
+                    <i className="iconfont icon-jian"></i>
                     <h5>独家放送  <i className='iconfont icon-fanhui2'></i>   </h5>
                 </div>
                 <ul>
@@ -98,7 +98,7 @@ export default class HomeMusic extends React.Component {
             {/*最新音乐*/}
             <div className="musicList home-new">
                 <div className="music-title">
-                    <i className="iconfont icon-music"></i>
+                    <i className="iconfont icon-jian"></i>
                     <h5>最新音乐 <i className='iconfont icon-fanhui2'></i></h5>
                 </div>
                 <ul>
