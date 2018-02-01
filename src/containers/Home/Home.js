@@ -14,15 +14,21 @@ import './index.less';
 export default class Home extends React.Component {
 
 
-    render() {
+   songSearch=(e)=>{
+       if(e.keyCode===13){
+           let val=e.target.value.trim();
+       }
+   };
 
+
+    render() {
         return (
             <div className='home'>
                 <MHeader>
                     <i className="iconfont icon-shiwu-maikefeng"></i>
                     <div className='headerCenter'>
                         <i className="iconfont icon-sousuo"></i>
-                        <input type="text" placeholder="推荐好歌"/>
+                        <input type="text" placeholder="推荐好歌" onKeyUp={this.songSearch}/>
                     </div>
                 </MHeader>
 
