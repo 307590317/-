@@ -43,17 +43,18 @@
     font-size: 18px;
     display: flex;
     justify-content: space-around;
-    a {
+    a{
       -webkit-tap-highlight-color: transparent;
       display: flex;
       align-items: center;
       //flex: 1;
       color: #ababab;
+
       &.active {
         color: red;
         border-bottom: 1px solid red;
       }
-      span {
+      span{
         font-size: 11px;
       }
     }
@@ -74,8 +75,8 @@
     left: 0;
     width: 100%;
     height: 200%;
+    overflow-x: hidden;
     letter-spacing: 1px;
-
 
     .home-list {
       position: relative;
@@ -116,15 +117,17 @@
     .musicList {
       position: relative;
       top: 0;
-      left: 0;
+      left: -4px;
       .music-title {
-        i {
+        .icon-zhixian {
           position: absolute;
           left: 0;
           top: 0;
-          font-size: 10px;
-          line-height: 15px;
-          color: white;
+          width: 10px;
+          height: 10px;
+          font-size: 8px;
+          line-height: 20px;
+          color: red;
         }
         h5 {
           margin-left: 14px;
@@ -141,11 +144,12 @@
 
       ul{
         width: 100%;
+        overflow: hidden;
         li{
           float: left;
-          width: 33%;
+          width: 33.3%;
           height: 175px;
-          margin: 10px 1px 10px 0;
+          margin: 10px 0 10px 0;
           overflow: hidden;
           a{
             position: relative;
@@ -187,6 +191,11 @@
       position: relative;
       left: 0;
       top: 10px;
+      .icon-jian{
+          position: absolute;
+          top: 0;
+        left: 0;
+        }
        ul{
          width: 100%;
          li{
@@ -208,22 +217,27 @@
       top: 10px;
         }
     .home-bottom{
-      position: absolute;
+      position: relative;
       width: 100%;
-      bottom: 50px;
+      top: 30px;
       left: 0;
       text-align: center;
       span{
         margin: 30px auto ;
         height: 30px;
-        width: 60px;
+        width: 110px;
+        line-height: 30px;
         border-radius: 30px;
         border: 1px solid orangered;
         display: inline-block;
+        color: red;
+        font-size: 10px;
       }
       p{
-        font-size: 14px;
+        margin-top: -20px;
+        font-size: 10px;
         width: 100%;
+        height: 40px;
         text-align: center;
       }
     }
