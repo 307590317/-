@@ -1,23 +1,24 @@
-
 //公共部分
-@font-face {
-  font-family: 'iconfont';
-  src: url('//at.alicdn.com/t/font_558751_yom1d2kxgmygb9.eot');
-  src: url('//at.alicdn.com/t/font_558751_yom1d2kxgmygb9.eot?#iefix') format('embedded-opentype'),
-  url('//at.alicdn.com/t/font_558751_yom1d2kxgmygb9.woff') format('woff'),
-  url('//at.alicdn.com/t/font_558751_yom1d2kxgmygb9.ttf') format('truetype'),
-  url('//at.alicdn.com/t/font_558751_yom1d2kxgmygb9.svg#iconfont') format('svg');
-}
+
 .iconfont {
   color: #fff;
 }
-*{
+
+* {
   margin: 0;
   padding: 0;
+}
+
+ul, li {
+  list-style: none;
+}
+b{
+  font-weight: normal;
 }
 html {
   font-size: 100px;
 }
+
 .detail {
   position: absolute;
   left: 0;
@@ -37,13 +38,13 @@ html {
     background: #5c513c;
     border-bottom: .01rem solid #5c462f;
     .back {
-      position:absolute;
-      left:.11rem;
+      position: absolute;
+      left: .11rem;
     }
     .musicName {
       margin: 0 auto;
-      height:.45rem;
-      padding-top:.07rem;
+      height: .45rem;
+      padding-top: .07rem;
       span {
         display: block;
         font-size: .12rem;
@@ -56,19 +57,19 @@ html {
       .arrows {
         font-size: .12rem;
         position: absolute;
-        right:0;
-        left:0;
+        right: 0;
+        left: 0;
       }
     }
     .share {
       position: absolute;
       right: .11rem;
-      top:0;
+      top: 0;
       font-size: .22rem;
     }
   }
   .detailBody {
-    position:absolute;
+    position: absolute;
     top: .45rem;
     left: 0;
     bottom: 0;
@@ -86,9 +87,10 @@ html {
         margin: .26rem;
         font-size: .22rem;
       }
-      .icon-xin{
-        color:red;
+      .icon-xin {
+        color: red;
       }
+
     }
     .progress {
       position: absolute;
@@ -101,7 +103,7 @@ html {
         display: inline-block;
         font-size: .14rem;
       }
-      span{
+      span {
         font-size: .12rem;
       }
       .already {
@@ -109,7 +111,7 @@ html {
         left: -.2rem;
         bottom: 1.64rem;
       }
-      .total{
+      .total {
         position: absolute;
         right: -.2rem;
         bottom: 1.64rem;
@@ -117,7 +119,7 @@ html {
       .run {
         position: absolute;
         left: 50%;
-        bottom:2.9rem;
+        bottom: 2.9rem;
         margin: -1.2rem;
         width: 2.4rem;
         height: .02rem;
@@ -156,5 +158,136 @@ html {
       margin: 0 .24rem;
       font-size: .28rem;
     }
+    .playMask {
+      position: absolute;
+      left: 50%;
+      bottom: 1.2rem;
+      margin: -.55rem;
+      width: 1.1rem;
+      height: .45rem;
+      line-height: .45rem;
+      background: rgba(0, 0, 0, .3);
+      border-radius: .45rem;
+      font-size: .2rem;
+      color: #fff;
+    }
+  }
+  .downloadMask{
+    .dlMask {
+      z-index: 200;
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background: rgba(0, 0, 0, .4);
+      ul {
+        z-index: 201;
+        position: absolute;
+        left: 50%;
+        top: 40%;
+        margin: -1.14rem;
+        width: 2.29rem;
+        height: 2.84rem;
+        background: #fff;
+        border-radius: .03rem;
+        font-size: .18rem;
+        text-align: left;
+        text-indent: .2rem;
+        li {
+          height: .55rem;
+          line-height: .55rem;
+          span {
+            position: absolute;
+            left: 0;
+            top: .2rem;
+            display: block;
+            color: #8e8f93;
+            font-size: .14rem;
+          }
+          .icon-vip1 {
+            margin-left: .05rem;
+            color: red;
+          }
+        }
+      }
+    }
+  }
+  .musicdList {
+    z-index: 301;
+    position: absolute;
+    top: 40%;
+    background: #fff;
+    width: 100%;
+    overflow: scroll;
+    li{
+      font-size: .18rem;
+    }
+    .musicdListHeader {
+      ul {
+        overflow: auto;
+        border-bottom: .01rem solid #aaa;
+        padding-top: .15rem;
+        padding-bottom:.15rem;
+        i{
+          color: #8e8f93;
+        }
+        li {
+          float: left;
+          &:nth-child(1){
+            margin-left:.1rem;
+          }
+          &:nth-child(2){
+            margin-left:.1rem;
+          }
+          &:nth-child(3){
+            margin-left:.1rem;
+          }
+          &:nth-child(4){
+            float: right;
+            margin-left:.1rem;
+            margin-right:.1rem;
+          }
+          &:nth-child(5){
+            margin-left:.1rem;
+            float: right;
+          }
+          &:nth-child(6){
+            margin-left:.1rem;
+            float: right;
+          }
+        }
+      }
+    }
+    .musicdLists{
+      padding-left: .1rem;
+      padding-top: .05rem;
+      li {
+        position: relative;
+        height: .5rem;
+        line-height:.5rem;
+        font-size: .18rem;
+        border-top: .01rem solid #aaa;
+        .musicSinger,.closeMusic{
+          color: #aaa;
+        }
+        .closeMusic{
+          position: absolute;
+          top: 0;
+          right: .1rem;
+          font-style: normal;
+          font-size: .3rem;
+        }
+      }
+    }
+  }
+  .musicListMask{
+    z-index: 300;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0, 0, 0, .4);
   }
 }
