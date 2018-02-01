@@ -128,11 +128,18 @@ export default class HomeMusic extends React.Component {
                             <p>{item.name}</p>
                             <p>{item.song.artists[0].name}</p>
                         </li>
-                    ))};
+                    ))}
 
 
                 </ul>
             </div>
+
+            {/*<div className='home-bottom'>*/}
+
+                    {/*<span>调整栏目顺序</span>*/}
+
+                {/*<p>看视频，发现更多有趣内容></p>*/}
+            {/*</div>*/}
 
         </div>
     }

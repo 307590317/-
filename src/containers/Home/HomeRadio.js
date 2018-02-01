@@ -30,6 +30,28 @@ export default class HomeRadio extends React.Component {
             </li>
         </ul>
         <hr/>
+
+        <div className='radio-vip'>
+            <div className='radio-title'>
+                <i></i>
+                <h4 >付费精品 <i className='iconfont icon-fanhui2'></i></h4>
+            </div>
+            <ul >
+                <li>
+                    <div className='vip-left' >
+                        <img src="http://img1.imgtn.bdimg.com/it/u=2916390227,3292952952&fm=11&gp=0.jpg" alt=""/>
+                        <span>time</span>
+                    </div>
+
+                    <div className="vip-right">
+                        <h4>音乐时间</h4>
+                        <p vip-info>safddddddddddsaad</p>
+                        <p vip-name>safddddddddddsaad</p>
+                        <p vip-price>safddddddddddsaad</p>
+                    </div>
+                </li>
+            </ul>
+        </div>
     </div>
   }
 }
