@@ -6,8 +6,6 @@ export default class HomeSwiper extends React.Component {
         super();
         this.state={index:0}
     }
-
-
     render(){
         let opts={continuous: true,auto:2000,callback:(index)=>{
             this.setState({index});//每次循环后将索因 印射在组件上

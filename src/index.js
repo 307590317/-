@@ -39,7 +39,4 @@ render(<Provider store={store}>
             </Switch>
         </App>
     </Router>
-
 </Provider>, window.root);
-
-

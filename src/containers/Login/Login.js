@@ -4,7 +4,7 @@ import {NavLink} from 'react-router-dom'
 export default class Login extends React.Component {
   render(){
     return (
-      <div>
+      <div className='login'>
         <div className="container">
           <div className="goback">X</div>
           <div className="login-first">登录</div>
