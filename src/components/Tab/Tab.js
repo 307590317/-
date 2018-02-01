@@ -12,7 +12,7 @@ export default class Tab extends React.Component {
               /\/home/.test(this.props.location.pathname)||
               this.props.location.pathname==='/songList'
                   ?'active':''}>
-            <i className="iconfont icon-music"></i>
+            <i className="iconfont icon-wangyiyunyinyuemusic1193417easyiconnet"></i>
             <span>发现音乐</span>
           </NavLink>
           <NavLink to={'/mymusic'}>
