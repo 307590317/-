@@ -1,10 +1,11 @@
 import React from 'react';
 import './index.less';
-import {Link} from 'react-router-dom';
+import {Link,Route} from 'react-router-dom';
 
 import EstablishList from "./EstablishList";
 import Shade from "./Shade";
 import MHeader from "../../components/MHeader/MHeader";
+import LatestPlay from "./LatestPlay/LatestPlay";
 
 
 export default class MyMusic extends React.Component {
@@ -35,8 +36,6 @@ export default class MyMusic extends React.Component {
             我的音乐
           </div>
         </MHeader>
-
-
         <div className='content'>
           <ul className='select-list'>
             <li className='clearfix'>
@@ -48,7 +47,7 @@ export default class MyMusic extends React.Component {
               </Link>
             </li>
             <li>
-              <Link to='/'>
+              <Link to='/latestplay'>
                 <i className='iconfont icon-bofang2 front '></i>
                 <p>最近播放</p>
                 <span>100</span>
@@ -82,6 +81,7 @@ export default class MyMusic extends React.Component {
           </div>
           {this.state.isPopUp ? <Shade/> : null}
         </div>
+
       </div>
     )
   }

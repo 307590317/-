@@ -13,6 +13,7 @@ import NumLogin from "./containers/Login/NumLogin";
 import Reg from "./containers/Reg/Reg";
 import store from './store';
 import './common/index.less';
+import LatestPlay from "./containers/MyMusic/LatestPlay/LatestPlay";
 render(<Provider store={store}>
   <Router>
     <App>
@@ -20,6 +21,7 @@ render(<Provider store={store}>
         <Route path={'/'} exact={true} component={Home}/>
         <Route path={'/home'} component={Home}/>
         <Route path={'/mymusic'} component={MyMusic}/>
+        <Route path={'/latestplay'} component={LatestPlay}/>
         <Route path={'/friend'} component={Friend}/>
         <Route path={'/profile'} component={Profile}/>
         <Route path={'/detail/:id'} component={Detail}/>
