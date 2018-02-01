@@ -8,8 +8,13 @@
   display: flex;
   justify-content: space-around;
   border-radius: 5px 5px 0 0;
+  z-index: 9999;
   a{
     line-height: 40px;
+    display: none;
+    &.show{
+      display: block;
+    }
   }
   i{
     display: flex;

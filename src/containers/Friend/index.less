@@ -1,23 +1,23 @@
-.friend{
-  .friendCenter{
+.friend {
+  .friendCenter {
     position: relative;
     display: flex;
     width: 230px;
     height: 28px;
-    margin:6px 0;
+    margin: 6px 0;
     line-height: 28px;
     color: #fff;
     text-align: center;
     flex-direction: column;
     background: red;
-    .change{
+    .change {
       position: relative;
       width: 116px;
       margin: 0 auto;
-      height:26px;
+      height: 26px;
       border: 1px solid #fff;
       border-radius: 15px;
-      a{
+      a {
         position: absolute;
         -webkit-tap-highlight-color: transparent;
         top: -1px;
@@ -30,17 +30,26 @@
         font-weight: bold;
         font-family: "微软雅黑";
         border-radius: 15px;
-        &.select{
+        &.select {
           background: #fff;
           color: red;
         }
-        &:nth-of-type(1){
+        &:nth-of-type(1) {
           left: -1px;
         }
       }
     }
   }
-  .content{
+  .content {
+   width: 100%;
+    /*Nearby*/
+
   }
 }
-
+*{
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  -webkit-appearance: none;
+  -webkit-user-select: none;
+}

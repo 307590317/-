@@ -2,7 +2,7 @@ let HtmlWebpack=require('html-webpack-plugin');
 module.exports={
   entry:'./src/index.js',
   output:{
-    filename:'build.js',
+    filename:'[name].bundle.js',
     path:require('path').resolve('./dist')
   },
   module:{
@@ -13,6 +13,7 @@ module.exports={
       {test:/\.(png|gif|jpg)$/,use:'url-loader'},
     ]
   },
+  devtool: 'source-map',
   plugins:[
     new HtmlWebpack({
       template:'./index.html'

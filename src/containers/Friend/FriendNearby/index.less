@@ -1,0 +1,147 @@
+.nearby {
+  position: relative;
+  .nearby-logo {
+    position: relative;
+    margin-top: 10px;
+    padding-bottom: 10px;
+    border-bottom: 10px solid #F4F4F4;
+    .img-content {
+      img {
+       display: block;
+        width: 98%;
+        height: 200px;
+       margin: 10px auto;
+      }
+    }
+
+    .title-content {
+      width: 300px;
+      overflow: hidden;
+      white-space: nowrap;
+      word-wrap:break-word;
+      text-overflow: ellipsis;
+      margin-left: 10px;
+      margin-right: 10px;
+      display: block;
+      span {
+        font-weight: 400;
+        color: black;
+        max-width: 200px;
+        font-size: 14px;
+       font-family: "Arial Black";
+        word-spacing: 2px;
+      }
+
+    }
+
+    .location-content {
+      margin-left: 10px;
+      margin-right: 10px;
+      color: gray;
+      font-size: 12px;
+      font-family: Arial;
+      .show-logo {
+        display: inline-block;
+        margin-left: 8px;
+      }
+      .show-distance {
+        margin-left: 8px;
+      }
+
+    }
+
+  }
+
+  .each-nearby-user {
+    margin-left: 10px;
+    border-bottom: 10px solid #F4F4F4;
+    .nearby-user-profile {
+      border-top: 10px solid white;
+      position: relative;
+      border-bottom: 1px solid gainsboro;
+      img {
+        height: 50px;
+        width: 50px;
+        border-radius: 50%;
+      }
+      .user-name {
+        position: absolute;
+        top: 15%;
+        left: 58px;
+        color: black;
+        font-size: 14px;
+      }
+      .distance {
+        position: absolute;
+        top: 15%;
+        right: 0;
+        color:#c0c1c1;
+        font-size: 12px;
+        clear: both;
+        margin-right: 10px;
+        font-family: Arial;
+        span {
+          float: left;
+          &:last-of-type {
+            margin-left: 3px;
+          }
+        }
+      }
+      .sex-and-news-from {
+        position: relative;
+        display: inline-block;
+        height: 20px;
+        width: 50px;
+        i {
+          position: absolute;
+          left: 8px;
+          bottom: 20%;
+          font-size: 13px;
+          font-weight: bold;
+          font-family: Algerian;
+          color: lightskyblue;
+        }
+        img {
+          position: absolute;
+          display: inline-block;
+          left: 27px;
+          bottom: 25%;
+          height: 13px;
+          width: 13px;
+          border-radius: 50%;
+
+        }
+
+      }
+    }
+    .nearby-user-lately-listen-song{
+      position: relative;
+      display: inline-block;
+      height: 30px;
+      max-width: 300px;
+      width: 200px;
+      a{
+        .love-song{
+          position: absolute;
+          top:50%;
+          transform: translateY(-50%);
+          left: 0;
+          color: gray;
+          font-size:12px;
+          font-family: Arial;
+          font-weight: 300;
+        }
+        .time{
+          position: absolute;
+          top:50%;
+          transform: translateY(-50%);
+          right:-158px;
+          color:#c0c1c1;
+          font-size: 10px;
+        }
+      }
+    }
+  }
+}
+
+
