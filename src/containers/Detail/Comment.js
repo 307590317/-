@@ -1,10 +1,14 @@
 import React from 'react';
+import {connect} from 'react-redux';
 import MHeader from "../../components/MHeader/MHeader";
 import './comment.less';
 import {NavLink} from 'react-router-dom';
 import headPic from './img/touxiang.png';
 import headImg from './img/tx.png';
-
+import actions from '../../store/actions/comment';
+import {getComment} from "../../api/zsq"
+import 'babel-polyfill';
+@connect(state=>({...state.commentReducer}),actions)
 export default class Comment extends React.Component {
     constructor() {
         super();
@@ -15,10 +19,17 @@ export default class Comment extends React.Component {
         }
     }
 
+    componentDidMount(){
+        this.props.getCommentAPI('186016','1');
+      //   let data=await getComment('186016','1');
+        // console.log(data,111111111111);
+    }
+
     changeZan = () => {
         this.setState({zan: !this.state.zan});
     };
     render() {
+        console.log(this.props);
         return <div>
             <MHeader>
                 <NavLink to='/detail/:id'>

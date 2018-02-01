@@ -11,12 +11,12 @@ export default class FriendDynamic extends React.Component {
                 <div className="dynamic-nav">
 
                     <div className="left-one">
-                        <span className="iconfont icon-music"></span>
+                        <span className="logo iconfont icon-fenxiang-tianchong"></span>
                         <span className="publish-dynamic">动态</span>
                     </div>
 
                     <div className="right-one">
-                        <span className="iconfont icon-music"></span>
+                        <span className="logo iconfont icon-shipin"></span>
                         <span className="publish-audio">视频</span>
                     </div>
                 </div>
@@ -54,9 +54,9 @@ export default class FriendDynamic extends React.Component {
 
 
                     <footer className="friend-dynamic-number">
-                        <span className="iconfont icon-music">123</span>
-                        <span className="iconfont icon-music">345</span>
-                        <span className="iconfont icon-music">7894</span>
+                        <span className="iconfont icon-zan">123</span>
+                        <span className="iconfont icon-yduibianxie">345</span>
+                        <span className="iconfont icon-fenxiang-tianchong">7894</span>
                         <span className="more-thing">...</span>
                     </footer>
                     {/*

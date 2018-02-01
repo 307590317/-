@@ -16,4 +16,5 @@ centent
 2、MHeader组件可以传递show属性，值为布尔类型即可，控制的是右上角播放按钮的有无，
 值为true时，显示播放按钮，值为false时不显示播放按钮；默认值为true；
 
-
+nickname：用户昵称
+avatarUrl：用户头像

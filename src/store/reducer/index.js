@@ -4,13 +4,12 @@ import userDetail from "./userDetail";
 import loginReducer from "./login";
 import profileReducer from "./profile";
 import mymusicReducer from './mymusic';
-import comment from './comment';
+import commentReducer from './comment';
 
 export default combineReducers({
-  homeReducer,
-  userDetail,
-  mymusicReducer,
-  comment,
-  loginReducer,
-  profileReducer
+    homeReducer,
+    mymusicReducer,
+    commentReducer,
+    loginReducer,
+    userDetail,
 })

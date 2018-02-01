@@ -4,7 +4,6 @@ import {Route, NavLink} from 'react-router-dom';
 import MHeader from "../../components/MHeader/MHeader";
 import Dynamic from "./FriendDynamic/FriendDynamic";
 import Nearby from "./FriendNearby/FriendNearby";
-
 export default class Friend extends React.Component {
     render() {
         return (
@@ -20,6 +19,7 @@ export default class Friend extends React.Component {
                         </div>
                     </div>
                 </MHeader>
+
 
                 <div className="content">
                     <div className='router'>
