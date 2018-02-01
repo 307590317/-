@@ -1,11 +1,10 @@
 import React from 'react';
 import './index.less';
 import {NavLink} from 'react-router-dom';
-import a from './img/placeholder_disk_210.png';
-import b from './img/placeholder_disk_play_program.png';
-import c from './img/placeholder_disk_play_song.png';
-import d from './img/play_needle.png';
+import circle from './img/circle.png';
+import mPoint from './img/mPoint.png';
 import e from './img/play_disc.png';
+import f from './img/singer-d.png';
 
 export default class Detail extends React.Component {
     constructor() {
@@ -18,7 +17,8 @@ export default class Detail extends React.Component {
             showDownload2: {display: 'none'},
             appear: {display: 'none'},
             showMusicList: {display: 'none'},
-            showListMask: {display: 'none'}
+            showListMask: {display: 'none'},
+            playStyle:1,
         }
     }
 
@@ -49,6 +49,16 @@ export default class Detail extends React.Component {
         this.setState({showDownload1: {display: 'block'}, showDownload2: {display: 'block'}});
     };
 
+    changePlayState=()=>{
+            this.setState({appear: {display: 'block'}});
+            if (this.state.playStyle <= 3) {
+                this.setState({playStyle: this.state.playStyle + 1});
+                if (this.state.playStyle === 3) {
+                    this.setState({playStyle: 1});
+                }
+            }
+        };
+
     hideMask = () => {
         this.setState({showDownload1: {display: 'none'}, showDownload2: {display: 'none'}});
     };
@@ -73,18 +83,18 @@ export default class Detail extends React.Component {
                 </div>
                 <div className="detailBody">
                     <div className="imgDetailBox">
-                        {/*<img src={a}/>
-                        <img src={b}/>
-                        <img src={c}/>*/}
-                        <img src={d} className="img-d"/>
-                        <img src={e} className="img-e"/>
+                        <img src={circle} className="img-c"/>
+                        <img src={mPoint} className={this.state.flag1 ?"img-d":"img-d pointRun"}/>
+                        <img src={e} className={this.state.flag1 ?"img-e CDRun":"img-e"}/>
+                        <img src={f} className={this.state.flag1 ?"img-f CDRun":"img-f"}/>
+                        <div className="runCircle"></div>
                     </div>
                     <div className="btn">
                         {/*点击之前className：icon-aixin   点击之后：icon-xin*/}
                         <i className={this.state.flag ? "like iconfont icon-aixin" : "like iconfont icon-xin"}
                            onClick={this.changeClass}></i>
                         <i className="download iconfont icon-download" onClick={this.showDownloadMask}></i>
-                        <NavLink to='/comment'><i className="comment iconfont icon-pinglun"></i></NavLink>
+                        <NavLink to='/comment'><i className="comment-btn iconfont icon-pinglun"></i></NavLink>
                         <i className="details iconfont icon-101"></i>
                     </div>
                     <div className="progress">
@@ -106,7 +116,7 @@ export default class Detail extends React.Component {
                               style={this.state.appear}>{this.state.flag2 == 1 ? "循环播放" : (this.state.flag2 == 2 ? "随机播放" : "单曲循环")}</span>
                     </i>
                     <i className="playLeft iconfont icon-zuobofang"></i>
-                    <i className={this.state.flag1 ? "play iconfont icon-bofang1" : "play iconfont icon-bofang11"}
+                    <i className={this.state.flag1 ? "curMusicPlay iconfont icon-bofang1" : "curMusicPlay iconfont icon-bofang11"}
                        onClick={this.changeName}></i>
                     <i className="playRight iconfont icon-youbofang"></i>
                     <i className="list iconfont icon-liebiao2" onClick={this.showMusicList}></i>
@@ -126,9 +136,9 @@ export default class Detail extends React.Component {
                     <div className="musicdListHeader clearfix">
                         <ul>
                             <li>
-                                <i className="iconfont icon-suijibofang"></i>
+                                <i className={this.state.playStyle == 1 ? "goBack iconfont icon-fanhui11" : (this.state.playStyle == 2 ? "goBack iconfont icon-suijibofang" : "goBack iconfont icon-danquxunhuan")} onClick={this.changePlayState}></i>
                             </li>
-                            <li>随机播放</li>
+                            <li>{this.state.playStyle == 1 ? "循环播放" : (this.state.playStyle == 2 ? "随机播放" : "单曲循环")}</li>
                             <li>(90)</li>
                             <li><i className="iconfont icon-dustbin_icon"></i></li>
                             <li>收藏全部</li>

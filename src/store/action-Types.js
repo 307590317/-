@@ -10,6 +10,8 @@ export const  GET_UNIQUE='GET_UNIQUE';
 export const  GET_NEW='GET_NEW';
 /*注册*/
 export const TO_REG="TO_REG";
+/*获取评论*/
+export const GET_COMMENT='GET_COMMENT';
 
 
 

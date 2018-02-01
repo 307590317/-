@@ -1,20 +1,12 @@
 //公共部分
+b {
+  font-weight: normal;
+}
 
-.iconfont {
+.back, .share, .like, .download, .comment-btn, .details, .goBack, .playLeft, .curMusicPlay, .playRight, .list {
   color: #fff;
 }
 
-* {
-  margin: 0;
-  padding: 0;
-}
-
-ul, li {
-  list-style: none;
-}
-b{
-  font-weight: normal;
-}
 .detail {
   position: absolute;
   left: 0;
@@ -65,37 +57,83 @@ b{
   }
   .detailBody {
     position: absolute;
-    top:45px;
+    top: 45px;
     left: 0;
     bottom: 0;
     right: 0;
     width: 100%;
-    .imgDetailBox{
-      img{
+    .imgDetailBox {
+      .runCircle {
+        position: absolute;
+        left: 45%;
+        margin: -109px;
+        top: 170px;
+        width: 250px;
+        height: 250px;
+        background: rgba(0, 0, 0, .3);
+        border-radius: 50%;
+      }
+      img {
         z-index: 5;
         position: absolute;
         width: 240px;
         height: 240px;
       }
-      .img-d{
-        z-index: 11;
-        left: 150px;
-        top: 0;
-        width: 160px;
-        height: 100px;
+      .img-c {
+        width: 40px;
+        height: 10px;
+        left: 169px;
+        top:0;
+        z-index: 20;
       }
-      .img-e{
+      .pointRun {
+        transform: rotate(-28deg);
+      }
+      .img-d {
+        z-index: 11;
+        transform-origin: 1px 5px;
+        width: 96px;
+        height: 137px;
+        top: 0;
+        left: 172px;
+        background-size: contain;
+      }
+
+      .img-e {
         z-index: 10;
-        left: 50%;
-        top: 200px;
-        margin:-140px;
+        position: relative;
+        left: 55%;
+        top: 150px;
+        margin: -140px;
+      }
+      .img-f {
+        left: 48%;
+        top: 182px;
+        margin: -75px;
+        z-index: 12;
+        width: 160px;
+        height: 160px;
+        border-radius: 50%;
+      }
+      .CDRun {
+        animation: round 20s infinite both;
+      }
+      .img-e, .img-f {
+        @keyframes round {
+          0% {
+            transform: rotate(0deg);
+          }
+          100% {
+            transform: rotate(360deg);
+          }
+        }
       }
     }
     .btn {
       position: absolute;
       left: 50%;
       margin: -160px;
-      bottom: 280px;
+      bottom: 320px;
       width: 320px;
       text-align: center;
       i {
@@ -111,7 +149,7 @@ b{
       position: absolute;
       left: 50%;
       margin: -150px;
-      bottom: 80px;
+      bottom: 110px;
       color: #fff;
       width: 300px;
       span, div {
@@ -186,7 +224,7 @@ b{
       color: #fff;
     }
   }
-  .downloadMask{
+  .downloadMask {
     .dlMask {
       z-index: 200;
       position: absolute;
@@ -233,59 +271,63 @@ b{
     top: 40%;
     background: #fff;
     width: 100%;
-    overflow: scroll;
-    li{
+    li {
       font-size: 18px;
     }
     .musicdListHeader {
+      position: fixed;
+      z-index: 301;
+      left: 0;
+      background: #fff;
+      width: 100%;
+      height: 50px;
+      line-height: 50px;
+      border-bottom: 1px solid #aaa;
       ul {
-        overflow: auto;
-        border-bottom: 1px solid #aaa;
-        padding-top: 15px;
-        padding-bottom:15px;
-        i{
+        i {
           color: #8e8f93;
         }
         li {
           float: left;
-          &:nth-child(1){
-            margin-left:10px;
+          &:nth-child(1) {
+            margin-left: 10px;
           }
-          &:nth-child(2){
-            margin-left:10px;
+          &:nth-child(2) {
+            margin-left: 10px;
           }
-          &:nth-child(3){
-            margin-left:10px;
+          &:nth-child(3) {
+            margin-left: 10px;
           }
-          &:nth-child(4){
+          &:nth-child(4) {
             float: right;
-            margin-left:10px;
-            margin-right:10px;
+            margin-left: 10px;
+            margin-right: 10px;
           }
-          &:nth-child(5){
-            margin-left:10px;
+          &:nth-child(5) {
+            margin-left: 10px;
             float: right;
           }
-          &:nth-child(6){
-            margin-left:10px;
+          &:nth-child(6) {
+            margin-left: 10px;
             float: right;
           }
         }
       }
     }
-    .musicdLists{
+    .musicdLists {
+      overflow: scroll;
       padding-left: 10px;
-      padding-top: 5px;
+      //padding-top: 300px;
       li {
         position: relative;
         height: 50px;
-        line-height:50px;
+        line-height: 50px;
         font-size: 18px;
         border-top: 1px solid #aaa;
-        .musicSinger,.closeMusic{
+        .musicSinger, .closeMusic {
           color: #aaa;
         }
-        .closeMusic{
+        .closeMusic {
           position: absolute;
           top: 0;
           right: 10px;
@@ -295,7 +337,7 @@ b{
       }
     }
   }
-  .musicListMask{
+  .musicListMask {
     z-index: 300;
     position: absolute;
     top: 0;
@@ -305,3 +347,6 @@ b{
     background: rgba(0, 0, 0, .4);
   }
 }
+
+
+
