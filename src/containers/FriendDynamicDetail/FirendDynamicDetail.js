@@ -3,6 +3,8 @@ import './index.less';
 import a from './img/1.jpg'
 import {Link,NavLink} from 'react-router-dom'
 import MHeader from '../../components/MHeader/MHeader'
+import FriendComment from "../../components/FriendComment/FriendComment";
+import TitelInFriendDynamic from "../../components/TitleInFriendDynamic/TitelInFriendDynamic";
 export default class FriendDynamicDetail extends React.Component {
   render(){
     return (
@@ -58,39 +60,59 @@ export default class FriendDynamicDetail extends React.Component {
                         <Link to={"/profile"}><img src={a} alt=""/></Link>
                     </span>
                 </div>
-
                 </div>
+                <TitelInFriendDynamic>精彩评论</TitelInFriendDynamic>
+                <FriendComment/>
+                <FriendComment/>
+                <FriendComment/>
+                <FriendComment/>
+                <FriendComment/>
+                <FriendComment/>
+                <FriendComment/>
+                <FriendComment/>
+                <FriendComment/>
+                <FriendComment/>
+                <TitelInFriendDynamic>最新评论</TitelInFriendDynamic>
+                <FriendComment/>
+                <FriendComment/>
+                <FriendComment/>
+                <FriendComment/>
+                <FriendComment/>
+                <FriendComment/>
 
-                <div className="comment">
-                    <span>
-                        精彩评论
-                    </span>
 
-                </div>
 
-                <div className="each-nearby-user">
 
-                    <div className="nearby-user-profile">
-                        <NavLink to={"/friend/nearby/profile"}>
-                            <img src={a} alt=""/>
-                            <span className="user-name">薛世洋</span>
-                            <span className="distance">
-                                    <span className="distance-logo">220</span>
-                                    <span className="user-distance">👍</span>
-                                </span>
-                            <span className="sex-and-news-from">
-                                     <span className="sex">2月15日</span>
-                                </span>
+                {/*<div className="comment">*/}
+                    {/*<span>*/}
+                        {/*精彩评论*/}
+                    {/*</span>*/}
 
-                        </NavLink>
-                    </div>
+                {/*</div>*/}
 
-                    <div className="nearby-user-lately-listen-song">
-                        <NavLink to={"/song"}>
-                            <span className="love-song">我去。这个歌真的太好听了</span>
-                        </NavLink>
-                    </div>
-                </div>
+                {/*<div className="each-nearby-user">*/}
+
+                    {/*<div className="nearby-user-profile">*/}
+                        {/*<NavLink to={"/friend/nearby/profile"}>*/}
+                            {/*<img src={a} alt=""/>*/}
+                            {/*<span className="user-name">薛世洋</span>*/}
+                            {/*<span className="distance">*/}
+                                    {/*<span className="distance-logo">220</span>*/}
+                                    {/*<span className="user-distance">👍</span>*/}
+                                {/*</span>*/}
+                            {/*<span className="sex-and-news-from">*/}
+                                     {/*<span className="sex">2月15日</span>*/}
+                                {/*</span>*/}
+
+                        {/*</NavLink>*/}
+                    {/*</div>*/}
+
+                    {/*<div className="nearby-user-lately-listen-song">*/}
+                        {/*<NavLink to={"/song"}>*/}
+                            {/*<span className="love-song">我去。这个歌真的太好听了</span>*/}
+                        {/*</NavLink>*/}
+                    {/*</div>*/}
+                {/*</div>*/}
 
             </div>
         </div>

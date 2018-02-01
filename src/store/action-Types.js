@@ -11,5 +11,8 @@ export const  GET_NEW='GET_NEW';
 /*注册*/
 export const TO_REG="TO_REG";
 
+/*点击朋友动态栏中信息进入详情页，在这里我们获取评论的数*/
+export const GET_PREFECT_COMMENT_FROM_FRIEND_DYNAMIC='GET_PREFECT_COMMENT_FROM_FRIEND_DYNAMIC';
+
 
 
