@@ -14,7 +14,5 @@ export const TO_REG="TO_REG";
 export const GET_COMMENT='GET_COMMENT';
 /*登录*/
 export const LOGIN_NUMBER_LOGIN="LOGIN_NUMBER_LOGIN";
-
-
 /*获取个人中心*/
 export const GET_PROFILE="GET_PROFILE";

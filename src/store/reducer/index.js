@@ -5,13 +5,13 @@ import regReducer from "./reg";
 import loginReducer from "./login";
 import profileReducer from "./profile";
 import mymusicReducer from './mymusic';
-import comment from './comment';
+import commentReducer from './comment';
 
 export default combineReducers({
     homeReducer,
     regReducer,
     mymusicReducer,
-    comment,
+    commentReducer,
     loginReducer,
     profileReducer
 })
