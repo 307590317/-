@@ -1,12 +1,14 @@
 import React from 'react';
 import './index.less';
 import {Link} from 'react-router-dom';
-
 import EstablishList from "./EstablishList";
 import Shade from "./Shade";
 import MHeader from "../../components/MHeader/MHeader";
-
-
+import {connect} from 'react-redux';
+import actions from "../../store/actions/mymusic";
+/*import {getRecord} from "../../api/gjx";
+import 'babel-polyfill'*/
+@connect(state=>({...state.mymusicReducer}),actions)
 export default class MyMusic extends React.Component {
   constructor() {
     super();
@@ -15,7 +17,6 @@ export default class MyMusic extends React.Component {
       isPopUp: false
     }
   }
-
   clickShow = (e) => {
     this.setState({isShow: !this.state.isShow});
     e.stopPropagation();
@@ -24,9 +25,17 @@ export default class MyMusic extends React.Component {
     e.stopPropagation();
     this.setState({isPopUp: !this.state.isPopUp});
   };
-
-
+  /*async componentDidMount(){
+    console.log(await getRecord(''));
+  }*/
+  componentDidMount(){
+    this.props.getRecordAPI('248846943');
+  }
   render() {
+    let data=this.props.record||{},
+      weekData=data.weekData||[],
+      length=weekData.length;
+    console.log(length);
     return (
       <div className='mymusic'>
         <MHeader>
@@ -35,8 +44,6 @@ export default class MyMusic extends React.Component {
             我的音乐
           </div>
         </MHeader>
-
-
         <div className='content'>
           <ul className='select-list'>
             <li className='clearfix'>
@@ -51,7 +58,7 @@ export default class MyMusic extends React.Component {
               <Link to='/'>
                 <i className='iconfont icon-bofang2 front '></i>
                 <p>最近播放</p>
-                <span>100</span>
+                <span>{length}</span>
                 <i className='back iconfont icon-fanhui2'></i>
               </Link>
             </li>

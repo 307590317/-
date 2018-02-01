@@ -8,7 +8,7 @@ export default class Tab extends React.Component {
     return (
         <nav className='nav'>
           <NavLink to={'/'} exact={true} className={/\/home/.test(this.props.location.pathname)?'active':''}>
-            <i className="iconfont icon-music"></i>
+            <i className="iconfont icon-wangyiyunyinyuemusic1193417easyiconnet"></i>
             <span>发现音乐</span>
           </NavLink>
           <NavLink to={'/mymusic'}>
