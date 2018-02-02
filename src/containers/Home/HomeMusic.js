@@ -2,66 +2,63 @@ import React from 'react';
 import HomeSwiper from './HomeSwiper';
 import {connect} from 'react-redux';
 import actions from '../../store/actions/home';
-import { Route, Switch, NavLink} from 'react-router-dom';
-import  SongList from './HomeDetail/SongList';
+
+import {Route, Switch, NavLink} from 'react-router-dom';
+import SongList from './HomeDetail/SongList';
+import HomeTop from "./HomeTop";
 
 @connect(state => ({...state.homeReducer}), actions)
 export default class HomeMusic extends React.Component {
 
-    componentDidMount() {
-        this.props.getBannerAPI();
-        this.props.getTuiJiansAPI();
-        this.props.getDuJiasAPI();
-       this.props. getNewSongAPI();
-    }
+  componentDidMount() {
+    this.props.getBannerAPI();
+    this.props.getTuiJiansAPI();
+    this.props.getDuJiasAPI();
+    this.props.getNewSongAPI();
+  }
 
 
+  render() {
 
-    render() {
+    return <div className='home-music'>
+      {/*<HomeTop/>*/}
 
-        return <div className='home-music'>
-          {/*<HomeTop/>*/}
-
-            {/*slider*/}
-            <HomeSwiper lists={this.props.banners}/>
-
-
-            {/*每日排行*/}
-            <div className="home-list">
-
-                <NavLink to={'/detail/1'} >
-                    <i className="iconfont icon-radio"></i>
-                    <span>私人FM</span>
-                </NavLink>
-                <NavLink to={'/mymusic'}>
-                    <i className="iconfont icon-rili"></i>
-                    <span>每日推荐</span>
-                </NavLink>
-                <NavLink to={'/friend'}>
-                    <i className="iconfont icon-swticonyinle2"></i>
-                    <span>歌单</span>
-                </NavLink>
-                <NavLink to={'/profile'}>
-                    <i className="iconfont icon-PCbofangye_paihangbang"></i>
-                    <span>排行榜</span>
-                </NavLink>
-
-            </div>
+      {/*slider*/}
+      <HomeSwiper lists={this.props.banners}/>
 
 
-            {/*推荐歌单*/}
-            <div className="musicList home-recommend">
-                <div className="music-title">
-                    <i className="iconfont icon-zhixian"></i>
-                    <h5>推荐歌单 <i className='iconfont icon-fanhui2'></i></h5>
-                </div>
-                <ul>
-                    {this.props.recommend.result.slice(0,6).map((item,index)=>(
-                    <li key={index}>
-                        <NavLink to={'/songList'}>
-                            <img src={item.picUrl} alt=""/>
-                            <span>
->>>>>>> dada7ef1d12695798b127ae145ca3909ad6d5d12
+      {/*每日排行*/}
+      <div className="home-list">
+        <NavLink to={'/detail/1'}>
+          <i className="iconfont icon-radio"></i>
+          <span>私人FM</span>
+        </NavLink>
+        <NavLink to={'/mymusic'}>
+          <i className="iconfont icon-rili"></i>
+          <span>每日推荐</span>
+        </NavLink>
+        <NavLink to={'/friend'}>
+          <i className="iconfont icon-swticonyinle2"></i>
+          <span>歌单</span>
+        </NavLink>
+        <NavLink to={'/profile'}>
+          <i className="iconfont icon-PCbofangye_paihangbang"></i>
+          <span>排行榜</span>
+        </NavLink>
+
+      </div>
+      {/*推荐歌单*/}
+      <div className="musicList home-recommend">
+        <div className="music-title">
+          <i className="iconfont icon-zhixian"></i>
+          <h5>推荐歌单 <i className='iconfont icon-fanhui2'></i></h5>
+        </div>
+        <ul>
+          {this.props.recommend.result.slice(0, 6).map((item, index) => (
+            <li key={index}>
+              <NavLink to={'/songList'}>
+                <img src={item.picUrl} alt=""/>
+                <span>
                                   <i className="iconfont icon-headseterji"></i>
                                   <b>{Math.round(item.playCount / 10000).toFixed(1)}万</b>
                             </span>
@@ -73,7 +70,6 @@ export default class HomeMusic extends React.Component {
           ))}
         </ul>
       </div>
-
 
       {/*独家放送*/}
       <div className="musicList home-unique">
