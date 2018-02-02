@@ -1,24 +1,27 @@
 import React from 'react';
 import HomeSwiper from './HomeSwiper';
 import {connect} from 'react-redux';
-import actions from '../../store/actions/home';
-import { Route, Switch, NavLink} from 'react-router-dom';
+import home from '../../store/actions/home';
+import common from '../../store/actions/common';
+
+import { Route, Switch, Link,NavLink} from 'react-router-dom';
 import  SongList from './HomeDetail/SongList';
 
-@connect(state => ({...state.homeReducer}), actions)
+@connect(state => ({...state.homeReducer,...state.common}), {...home,...common})
 export default class HomeMusic extends React.Component {
 
-    componentDidMount() {
+   async componentDidMount() {
         this.props.getBannerAPI();
         this.props.getTuiJiansAPI();
         this.props.getDuJiasAPI();
        this.props. getNewSongAPI();
-    }
+
+   }
 
 
 
     render() {
-
+        console.log(this.props);
         return <div className='home-music'>
           {/*<HomeTop/>*/}
 
@@ -29,7 +32,7 @@ export default class HomeMusic extends React.Component {
             {/*每日排行*/}
             <div className="home-list">
 
-                <NavLink to={'/detail/1'} >
+                <NavLink to={'/detail/1' } >
                     <i className="iconfont icon-radio"></i>
                     <span>私人FM</span>
                 </NavLink>
@@ -58,14 +61,13 @@ export default class HomeMusic extends React.Component {
                 <ul>
                     {this.props.recommend.result.slice(0,6).map((item,index)=>(
                     <li key={index}>
-                        <NavLink to={'/songList'}>
+                        <Link  to={{pathname:`/songList`,state:item}}>
                             <img src={item.picUrl} alt=""/>
                             <span>
->>>>>>> dada7ef1d12695798b127ae145ca3909ad6d5d12
                                   <i className="iconfont icon-headseterji"></i>
                                   <b>{Math.round(item.playCount / 10000).toFixed(1)}万</b>
                             </span>
-              </NavLink>
+              </Link>
               <p className="title">
                 {item.name}
               </p>
@@ -118,6 +120,8 @@ export default class HomeMusic extends React.Component {
         </ul>
       </div>
 
+
+            {/*底部*/}
       <div className='home-bottom'>
 
         <span>调整栏目顺序</span>

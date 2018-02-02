@@ -43,6 +43,7 @@ export default class Home extends React.Component {
     let {songs} = this.state.lists.result;
     return (
       <div className='home'>
+
         <MHeader display={display == 'block' ? 'none' : 'block'}>
           {/*如果弹出层出现，胡同消失*/}
           <i className="iconfont icon-shiwu-maikefeng" style={{display: display == 'block' ? 'none' : 'flex'}}></i>
