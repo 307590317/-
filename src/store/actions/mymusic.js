@@ -8,6 +8,9 @@ let actions={
       dispatch({type:Types.GET_RECORD,payload:getRecord(id)});
     }
   }
+}
+export default actions;
+=======
 };
 export default actions;*/
 import {getRecord} from "../../api/gjx";
