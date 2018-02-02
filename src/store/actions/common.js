@@ -13,7 +13,7 @@ let actions={
   //获取用户歌单详情
   getUserListAPI:(id)=>{
     return function (dispatch,getState) {
-      dispatch({type:Types.GET_RECORD,payload:getUserList(id)});
+      dispatch({type:Types.GET_USERLIST,payload:getUserList(id)});
     }
   }
 };

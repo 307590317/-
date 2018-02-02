@@ -6,6 +6,7 @@ let actions={
     getCommentAPI(id,limit){
         return function (dispatch,getState) {
             dispatch({type:Types.GET_COMMENT,payload:getComment(id,limit)})
+
         }
     }
 };

@@ -21,8 +21,10 @@ export const GET_SEARCH='GET_SEARCH';
 /*注册*/
 export const TO_REG="TO_REG";
 
+
 /*点击朋友动态栏中信息进入详情页，在这里我们获取评论的数*/
 export const GET_PREFECT_COMMENT_FROM_FRIEND_DYNAMIC='GET_PREFECT_COMMENT_FROM_FRIEND_DYNAMIC';
+
 
 /*获取评论*/
 export const GET_COMMENT='GET_COMMENT';
@@ -33,9 +35,10 @@ export const LOGIN_NUMBER_LOGIN="LOGIN_NUMBER_LOGIN";
 /*获取个人中心*/
 export const GET_PROFILE="GET_PROFILE";
 
-
-
-
+/*
+获取动态*/
+export const GET_PROFILE_DYNAMIC="GET_PROFILE_DYNAMIC";
 
 /*获取最近播放数据*/
 export const GET_NEARLY='GET_NEARLY';
+
