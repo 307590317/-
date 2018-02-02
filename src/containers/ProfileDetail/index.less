@@ -1,11 +1,12 @@
 .profile-detail{
   position:absolute;
   top:0;
-  bottom:50px;
+  bottom:0;
   left:0;
   right:0;
   background:#fff;
   overflow: scroll;
+  z-index: 10;
   .header{
     background: transparent;
   }
@@ -196,9 +197,101 @@
   }
 }
 .profile-detail-dynamic{
-  padding-top:50px;
- text-align: center;
-  color:#ccc;
+ li{
+   border-bottom:1px solid #e1e2e4;
+   position: relative;
+   padding-bottom:10px;
+   &:nth-last-of-type(1){
+     border:none;
+   }
+   .dynamic-detail{
+     margin-left:70px;
+     padding-top:10px;
+     line-height:26px;
+     h4{
+       font-size:16px;
+        color:#51a7eb;
+     }
+     .time{
+       font-size:14px;
+       color:#4d4d4d;
+     }
+     .music-img{
+       width:150px;
+       margin-top:10px;
+       img{
+          width:100%;
+       }
+     }
+     .dynamic-content{
+       line-height: 30px;
+     }
+     .interactive{
+       overflow: hidden;
+       position:relative;
+       margin-top:10px;
+       span{
+         float: left;
+         margin-right:30px;
+         font-size:14px;
+         color:#5c5e5d;
+         padding-left:20px;
+         position:relative;
+         i{
+           position:absolute;
+           top:0;
+           left:0;
+           color:#2a2a2a;
+
+         }
+         &:nth-child(4){
+           position:absolute;
+           right:20px;
+           top:0;
+           margin:0;
+           i{
+             color:#5c5e5d;
+           }
+
+
+         }
+
+       }
+     }
+     .Sharing-music{
+       background: #eee;
+       height:44px;
+       position:relative;
+       padding:8px 0 8px 60px;
+       margin-right:10px;
+       line-height:22px;
+       img{
+         width:50px;
+         height:50px;
+         position:absolute;
+         top:5px;
+         left:5px;
+       }
+       h5{
+         font-size:16px;
+       }
+       p{
+         font-size:14px;
+         color:#444;
+       }
+     }
+   }
+   .avatar{
+     position:absolute;
+     width:50px;
+     height:50px;
+     border-radius:50%;
+     top:10px;
+     left:10px;
+   }
+
+
+ }
 }
 .headerCenter{
   width:185px ;

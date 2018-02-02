@@ -83,17 +83,24 @@ export default class SongList extends React.Component {
             <div className="song-play">
                 <div className="paly-all">
                     <div className='play-left'>
-                        <i className='iconfont icon-liebiao'></i>
-                        <p>播放全部<span>(共50首)</span></p>
+
+                        <i className='iconfont icon-bofang2'></i>
+                        <span>播放全部<span>(共50首)</span></span>
                     </div>
                     <div className='play-right'>
-                        <i className='iconfont icon-bofang2'></i>
-                        <p>多选</p>
+                        <i className='iconfont icon-liebiao'></i>
+                        <span>多选</span>
                     </div>
                 </div>
+
                 <ul className='every-song'>
                     <li>
-
+                   <span className='number'>1</span>
+                        <div className='songName'>
+                            <p >不萌</p>
+                            <span>1233</span>
+                        </div>
+                        <i className='iconfont icon-101'></i>
                     </li>
                 </ul>
             </div>

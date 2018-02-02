@@ -43,10 +43,10 @@
       background: rgba(255,255,255,255);
       i {
         position: absolute;
-        left: 20%;
+        left: 10%;
         top: 0;
         font-size: 25px;
-        color: #c9c9c9;
+        color: #b3b3b3;
       }
       input {
         position: absolute;
@@ -158,19 +158,70 @@
     }
   }
   .song-play{
-    margin: 20px;
-    width: 100%;
+    position: relative;
     .paly-all{
-      height: 40px;
-      width: 100%;
-      .play-left{
-        position: relative;
-        float: left;
-        .icon-liebiao{
-          position: absolute;
-          left:5px;
-          font-size: 14px;
+      position: relative;
+      height: 50px;
+      line-height: 50px;
+      width: 98%;
+      font-size: 16px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      border-bottom: 1px solid #e0e0df;
 
+      .play-left{
+        margin-left: 10px;
+        span{
+          margin-left: 5px;
+        }
+      }
+
+      .play-right{
+        margin-right: 10px;
+        .icon-liebiao{
+          margin-right: 5px;
+        }
+      }
+    }
+
+    .every-song{
+      overflow: hidden;
+      li {
+        font-size: 13px;
+        position: relative;
+        padding: 7px 0;
+
+        .number{
+          position: absolute;
+          left:15px;
+          line-height: 40px;
+          font-size: 16px;
+          margin-right: 10px;
+        }
+        .songName{
+          padding: 5px 0;
+          margin-left: 35px;
+          position: relative;
+          float: left;
+          width: 85%;
+          border-bottom: 1px solid #eee;
+         p{
+            font-size: 16px;
+            font-weight: normal;
+            color: #4d4d4d;
+          }
+
+          span{
+            font-size: 10px;
+            color: #ccc;
+          }
+        }
+
+        i.icon-101{
+          color: #ababab;
+          position: relative;
+          line-height: 40px;
         }
       }
     }

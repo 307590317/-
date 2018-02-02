@@ -11,6 +11,7 @@ export default class Profile extends React.Component {
     this.state={flag:false}
   }
   componentDidMount(){
+    console.log(this.props.userId);
     this.props.getProfile(this.props.userId);
   }
   toLogin=()=>{

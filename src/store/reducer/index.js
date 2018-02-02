@@ -5,7 +5,7 @@ import mymusciReducer from './mymusic';
 import comment from './comment';
 import common from './common';
 export default combineReducers({
-  homeReducer,
+ homeReducer,
   comment,
   common,
   mymusciReducer,

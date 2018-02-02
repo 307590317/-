@@ -4,6 +4,7 @@ function profileReducer(state={},action){
     case Types.GET_PROFILE:
       return {...state,userInfo:action.userInfo}
   }
+
   return state;
 }
 export default profileReducer;
