@@ -24,7 +24,6 @@ export default class Login extends React.Component {
               <NavLink to={'/'}>
                 游客试用
               </NavLink>
-
             </div>
         </div>
       </div>

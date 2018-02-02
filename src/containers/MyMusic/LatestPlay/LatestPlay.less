@@ -12,21 +12,52 @@
   .alone {
     height: 40px;
     line-height: 40px;
-     position: relative;
-     margin-left: 10px;
-     border-bottom: 1px solid #eee;
+    position: relative;
+    margin-left: 10px;
 
-    span:nth-of-type(1){
+    a.select{
+      display: none;
+    }
+
+    span.all-play{
       font-size: 14px;
       color: #000;
     }
-    span:nth-of-type(2){
+
+    span.total-song {
       color: #ccc;
       font-size: 12px;
     }
 
     i.first {
       margin-right: 10px;
+    }
+
+    .all-choice{
+      border-bottom: 1px solid #eee;
+
+      .choice-none {
+        font-size: 20px;
+        color: #ababab;
+        position: absolute;
+        left: -5px;
+        top: 50%;
+        transform: translateY(-50%);
+
+        &.active {
+          display: none;
+        }
+      }
+
+      span.all-check{
+        font-size: 14px;
+        margin-left: 22px;
+
+        &.active{
+          display: none;
+        }
+      }
+
     }
 
     .multiple-choice {
@@ -44,6 +75,23 @@
         font-size: 20px;
         position: relative;top: 2px;
       }
+
+      &.active{
+        display: none;
+      }
+    }
+
+    .finish{
+      position: absolute;
+      right: 8px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #ff0100;
+      font-size: 14px;
+
+      &.active{
+        display: none;
+      }
     }
   }
 
@@ -52,9 +100,9 @@
     li {
       font-family: 微软雅黑;
       font-size: 13px;
-      border-bottom: 1px solid #eee;
+
       position: relative;
-      padding: 5px;
+      padding: 7px 0;
 
       &.rubbish{
         position: relative;
@@ -62,6 +110,10 @@
         height: 30px;
         font-size: 12px;
         color: #ababab;
+
+        &.active{
+          display: none;
+        }
 
         span{
           position: absolute;
@@ -78,9 +130,26 @@
       }
 
       .song-name{
-          margin-left: 10px;
+        padding: 5px 0;
+        border-bottom: 1px solid #eee;
+        margin-left: 10px;
+        position: relative;
+
+        .choice-none{
+          font-size: 20px;
+          color: #ababab;
+          position: absolute;
+          left: -26px;
+          top: 50%;
+          transform: translateY(-50%);
+
+          &.active{
+            display: none;
+          }
+        }
 
         p{
+          font-size: 14px;
           color: #000;
         }
 
@@ -91,10 +160,19 @@
       }
 
       i.icon-more{
+        color: #ababab;
         position: absolute;
         right: 13px;
         top: 50%;
         transform: translateY(-50%);
+
+        &.active{
+          display: none;
+        }
+      }
+
+      &.active{
+        margin-left: 22px;
       }
     }
   }
@@ -108,15 +186,13 @@
     height: 100%;
     background: rgba(0,0,0,.2);
 
-
     .clear-list{
       margin: 0 10px;
       background: #fff;
       border-radius: 13px;
       position: relative;
-      bottom: -403px;
+      bottom: -428px;
       height: 90px;
-
 
       p{
         font-size: 12px;
@@ -152,12 +228,11 @@
       font-weight: 600;
       font-size: 14px;
       position: relative;
-      bottom: -411px;
+      bottom: -437px;
 
       &:focus{
         outline: none;
       }
     }
   }
-
 }

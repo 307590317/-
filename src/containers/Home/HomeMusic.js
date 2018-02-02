@@ -4,6 +4,7 @@ import {connect} from 'react-redux';
 import actions from '../../store/actions/home';
 import { Route, Switch, NavLink} from 'react-router-dom';
 import  SongList from './HomeDetail/SongList';
+import HomeTop from "./HomeTop";
 
 @connect(state => ({...state.homeReducer}), actions)
 export default class HomeMusic extends React.Component {
@@ -20,6 +21,7 @@ export default class HomeMusic extends React.Component {
     render() {
 
         return <div className='home-music'>
+          {/*<HomeTop/>*/}
 
             {/*slider*/}
             <HomeSwiper lists={this.props.banners}/>

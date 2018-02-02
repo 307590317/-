@@ -4,7 +4,7 @@ import MHeader from "../../components/MHeader/MHeader";
 import "./index.less";
 import {NavLink} from 'react-router-dom';
 import actions from "../../store/actions/profile";
-@connect(state=>({...state.loginReducer,...state.profileReducer}),actions)
+@connect(state=>({...state.common,...state.profileReducer}),actions)
 export default class Profile extends React.Component {
   constructor(){
     super();

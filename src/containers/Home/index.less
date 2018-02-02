@@ -1,488 +1,584 @@
 .home {
-  .headerCenter {
-    position: relative;
-    display: flex;
-    width: 230px;
-    height: 28px;
-    margin: 6px 0;
-    line-height: 28px;
-    border-radius: 15px;
-    flex-direction: column;
-    background: #fff;
-    justify-content: center;
-    i {
-      position: absolute;
-      left: 5px;
-      top: 0;
-      font-size: 25px;
-      color: #c9c9c9;
-    }
-    input {
-      position: absolute;
-      left: 30px;
-      top: 2px;
-      outline: none;
-      border: none;
-      height: 26px;
+    .headerCenter {
+      position: relative;
+      display: flex;
+      width: 230px;
+      height: 28px;
+      margin: 6px 0;
+      left: 10px;
       line-height: 28px;
-      width: 185px;
-      font-size: 14px;
+      border-radius: 15px;
+      flex-direction: column;
+      background: #fff;
+      justify-content: center;
+      align-items: center;
+      align-content: center;
+      i {
+        position: absolute;
+        left: 5px;
+        top: 0;
+        line-height: 28px;
+        font-size: 25px;
+        color: #c9c9c9;
+      }
+
+      input {
+        position: absolute;
+        left: 30px;
+        top: 2px;
+        outline: none;
+        border: none;
+        height: 26px;
+        line-height: 28px;
+        width: 185px;
+        font-size: 14px;
+      }
+
+      input::-webkit-input-placeholder {
+        color: #c9c9c9;
+      }
+
     }
-    input::-webkit-input-placeholder {
-      color: #c9c9c9;
+}
+
+.home-top {
+  position: fixed;
+  top: 40px;
+  left: 0;
+  width: 100%;
+  height: 40px;
+  background: #fff;
+  z-index: 20;
+  font-size: 18px;
+  display: flex;
+  justify-content: space-around;
+  a {
+    -webkit-tap-highlight-color: transparent;
+    display: flex;
+    align-items: center;
+    //flex: 1;
+    color: #ababab;
+
+    &.active {
+      color: red;
+      border-bottom: 1px solid red;
+    }
+    span {
+      font-size: 11px;
     }
   }
-  .home-top {
-    position: fixed;
-    top: 40px;
+}
+
+.router {
+  position: absolute;
+  top: 40px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  a {
+    color: #ababab;
+  }
+}
+
+.home-music {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 200%;
+  letter-spacing: 1px;
+  .home-list {
+    position: relative;
     left: 0;
+    top: 0;
+    height: 110px;
     width: 100%;
-    height: 40px;
-    background: #fff;
-    z-index: 20;
-    font-size: 18px;
     display: flex;
+    flex-direction: row;
     justify-content: space-around;
-    a{
+    a {
       -webkit-tap-highlight-color: transparent;
       display: flex;
+      flex-direction: column;
+      justify-content: center;
       align-items: center;
-      //flex: 1;
+      flex: 1;
       color: #ababab;
-
-      &.active {
+      i {
+        width: 40px;
+        height: 40px;
+        text-align: center;
+        line-height: 40px;
+        border-radius: 50%;
         color: red;
-        border-bottom: 1px solid red;
+        border: 1px solid red;
+        font-size: 20px;
+        font-weight: 500;
       }
-      span{
+      span {
+        margin-top: 5px;
         font-size: 11px;
       }
     }
   }
-  .router {
-    position: absolute;
-    top: 40px;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    a{
-      color: #ababab;
-    }
-  }
-  .home-music {
+
+  .musicList {
     position: relative;
     top: 0;
-    left: 0;
-    width: 100%;
-    height: 200%;
-    overflow-x: hidden;
-    letter-spacing: 1px;
-
-    .home-list {
-      position: relative;
-      left: 0;
-      top: 0;
-      height: 110px;
-      width: 100%;
-      display: flex;
-      flex-direction: row;
-      justify-content: space-around;
-      a{
-        -webkit-tap-highlight-color: transparent;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        flex: 1;
-        color: #ababab;
-        i{
-          width: 40px;
-          height: 40px;
-          text-align: center;
-          line-height: 40px;
-          border-radius: 50%;
-          color: red;
-          border: 1px solid red;
-          font-size: 20px;
-          font-weight: 500;
-        }
-        span{
-          margin-top: 5px;
-          font-size: 11px;
-        }
-      }
-    }
-
-
-    .musicList {
-      position: relative;
-      top: 0;
-      left: -4px;
-      .music-title {
-        .icon-zhixian {
-          position: absolute;
-          left: 0;
-          top: 0;
-          width: 10px;
-          height: 10px;
-          font-size: 8px;
-          line-height: 20px;
-          color: red;
-        }
-        h5 {
-          margin-left: 14px;
-          font-size: 14px;
-          font-weight: normal;
-          letter-spacing: 2px;
-          i{
-            position: relative;
-            font-size: 14px;
-            color: #3b3b3b;
-          }
-        }
-      }
-
-      ul{
-        width: 100%;
-        overflow: hidden;
-        li{
-          float: left;
-          width: 33.3%;
-          height: 175px;
-          margin: 10px 0 10px 0;
-          overflow: hidden;
-          a{
-            position: relative;
-            width: 100%;
-            height: 135px;
-            display: block;
-            img{
-              width: 100%;
-              height: 100%;
-              display: block;
-            }
-            span{
-              position: absolute;
-              top: 5px;
-              left: 50px;
-              font-size: 5px;
-              color: white;
-              b{
-                margin-left: 6px;
-              }
-            }
-          }
-
-          p{
-            width: 90%;
-            margin: 3px auto;
-            height: 40px;
-            font-size: 14px;
-            line-height:20px;
-            overflow: hidden;
-            color: #4d4d4d;
-            letter-spacing: 1px;
-          }
-        }
-      }
-
-    }
-    .home-unique{
-      position: relative;
-      left: 0;
-      top: 10px;
-      .icon-jian{
-          position: absolute;
-          top: 0;
+    left: -4px;
+    .music-title {
+      .icon-zhixian {
+        position: absolute;
         left: 0;
-        }
-       ul{
-         width: 100%;
-         li{
-           margin-top: 10px;
-           float: left;
-           width: 49.4%;
-           margin-left:0.2%;
-           height: 175px;
-           overflow: hidden;
-           &:nth-last-child(1){
-             width: 100%;
-           }
-         }
-       }
-    }
-    .home-new {
-      position: relative;
-      left: 0;
-      top: 10px;
-        }
-    .home-bottom{
-      position: relative;
-      width: 100%;
-      top: 30px;
-      left: 0;
-      text-align: center;
-      span{
-        margin: 30px auto ;
-        height: 30px;
-        width: 110px;
-        line-height: 30px;
-        border-radius: 30px;
-        border: 1px solid orangered;
-        display: inline-block;
+        top: 0;
+        width: 10px;
+        height: 10px;
+        font-size: 8px;
+        line-height: 20px;
         color: red;
-        font-size: 10px;
       }
-      p{
-        margin-top: -20px;
-        font-size: 10px;
-        width: 100%;
-        height: 40px;
-        text-align: center;
-      }
-    }
-      }
-
-    }
-
-
-  .home-swiper {
-    position: relative;
-    top: 0;
-    left: 0;
-    width: 100%;
-    .dots{
-      position: absolute;
-      width: 100%;
-      bottom: 20px;
-      left: 0;
-      text-align: center;
-      span{
-        display: inline-block;
-        width: 8px;
-        height: 8px;
-        background: #dfdfdf;
-        border-radius: 50%;
-        margin: 5px;
-        &.active{
-          background: #51a7eb;
-        }
-      }
-    }
-    img {
-      width: 100%;
-    }
-  }
-   hr{
-    border: 0.3px solid #eeeeef;
-  }
-  .home-video{
-    width: 100%;
-    overflow-y: scroll;
-    letter-spacing:1px;
-     ul{
-       width: 100%;
-       li{
-         width: 100%;
-         height: 240px;
-
-         .video{
-           position: absolute;
-           top: 0;
-           left: 0;
-           height: 100%;
-           width: 100%;
-           display: block;
-         }
-
-         .top{
-           position: relative;
-           width: 100%;
-           height: 200px;
-
-           .left{
-             position: absolute;
-             width: 60%;
-             float: left;
-             left: 5px;
-             top: 5px;
-             z-index: 10;
-             color: white;
-             .image{
-               float: left;
-               width: 20px;
-               height: 20px;
-               border-radius: 50%;
-               img{
-                 width: 100%;
-                 height: 100%;
-                 display: inline-block;
-               }
-             }
-             span{
-               margin-left: 5px;
-               font-size: 14px;
-             }
-           }
-
-           .right{
-             position: absolute;
-             right: 5px;
-             top: 5px;
-             height: 25px;
-             width: 50px;
-             border-radius: 10px;
-             border: 0.5px solid gainsboro;
-             background: rgba(4,4,4,0.3);
-             z-index: 10;
-             text-align: center;
-             line-height:18px;
-             span{
-               font-size: 13px;
-               color: white;
-             }
-           }
-
-           .left-bot{
-             position: absolute;
-             bottom: 5px;
-             left: 5px;
-             color: white;
-             font-size: 14px;
-             i{
-               font-size: 18px;
-             }
-           }
-
-           .right-bot{
-             position: absolute;
-             bottom: 5px;
-             right: 5px;
-             color: white;
-             font-size: 14px;
-             i{
-
-               font-size: 16px;
-             }
-           }
-
-         }
-         .bottom{
-           width: 100%;
-           height: 40px;
-           margin-top: 5px;
-           p{
-             float: left;
-             margin-left: 5px;
-             width: 55%;
-             height: 60px;
-             font-size: 14px;
-             line-height: 20px;
-           }
-           .logo{
-             float: right;
-             height: 40px;
-             margin-left: 2%;
-             width: 40%;
-             display: flex;
-             justify-content: space-around;
-             li{
-               height: 40px;
-               display: flex;
-               flex: 1;
-               flex-direction: column;
-               justify-content: center;
-               align-items: center;
-               font-size: 10px;
-               color: grey;
-               i{
-                 color: grey;
-                 font-size: 16px;
-               }
-             }
-           }
-         }
-       }
-     }
-  }
-
-  .home-radio{
-    position: relative;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 200%;
-    overflow-y: scroll;
-    letter-spacing: 1px;
-    .two-icon{
-      height: 65px;
-      width: 100%;
-      display: flex;
-      justify-content: space-around;
-
-      li{
-        display: flex;
-        justify-content: center;
-        line-height: 65px;
-        i{
-          font-size: 22px;
-          color: red;
-        }
-         span{
-           margin-left: 10px;
-           font-size: 16px;
-         }
-      }
-
-    }
-    hr{
-      border: 0.5px solid #efefef;
-    }
-
-    .radio-vip{
-      margin-top: 30px;
-      position: relative;
-      .radio-title{
+      h5 {
+        margin-left: 14px;
+        font-size: 14px;
+        font-weight: normal;
+        letter-spacing: 2px;
         i {
-          position: absolute;
-          left: 0;
-          top: 0;
-          font-size: 10px;
-          line-height: 15px;
-          color: white;
-        }
-        h5 {
-          margin-left: 14px;
-          font-size: 18px;
-          font-weight: lighter;
-          letter-spacing: 2px;
-          i{
-            position: relative;
-            font-size: 14px;
-            color: #3b3b3b;
-          }
+          position: relative;
+          font-size: 14px;
+          color: #3b3b3b;
         }
       }
-      ul{
-        width: 100%;
-        margin-top: 20px;
-        li{
+    }
+
+    ul {
+      width: 100%;
+      overflow: hidden;
+      li {
+        float: left;
+        width: 33.3%;
+        height: 175px;
+        margin: 10px 0 10px 0;
+        overflow: hidden;
+        a {
+          position: relative;
           width: 100%;
           height: 135px;
+          display: block;
+          img {
+            width: 100%;
+            height: 100%;
+            display: block;
+          }
+          span {
+            position: absolute;
+            top: 5px;
+            left: 50px;
+            font-size: 5px;
+            color: white;
+            b {
+              margin-left: 6px;
+            }
+          }
+        }
 
-         .vip-left{
-           height: 135px;
-           width: 135px;
-           img{
-             height: 100%;
-             width: 100%;
-           }
-         }
+        p {
+          width: 90%;
+          margin: 3px auto;
+          height: 40px;
+          font-size: 14px;
+          line-height: 20px;
+          overflow: hidden;
+          color: #4d4d4d;
+          letter-spacing: 1px;
+        }
+      }
+    }
+
+  }
+  .home-unique {
+    position: relative;
+    left: 0;
+    top: 10px;
+    .icon-jian {
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+    ul {
+      width: 100%;
+      li {
+        margin-top: 10px;
+        float: left;
+        width: 49.4%;
+        margin-left: 0.2%;
+        height: 175px;
+        overflow: hidden;
+        &:nth-last-child(1) {
+          width: 100%;
+        }
+      }
+    }
+  }
+  .home-new {
+    position: relative;
+    left: 0;
+    top: 10px;
+  }
+  .home-bottom {
+    position: relative;
+    width: 100%;
+    top: 30px;
+    left: 0;
+    text-align: center;
+    span {
+      margin: 30px auto;
+      height: 30px;
+      width: 110px;
+      line-height: 30px;
+      border-radius: 30px;
+      border: 1px solid orangered;
+      display: inline-block;
+      color: red;
+      font-size: 10px;
+    }
+    p {
+      margin-top: -20px;
+      font-size: 10px;
+      width: 100%;
+      height: 40px;
+      text-align: center;
+    }
+  }
+}
+
+.home-swiper {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  .dots {
+    position: absolute;
+    width: 100%;
+    bottom: 20px;
+    left: 0;
+    text-align: center;
+    span {
+      display: inline-block;
+      width: 8px;
+      height: 8px;
+      background: #dfdfdf;
+      border-radius: 50%;
+      margin: 5px;
+      &.active {
+        background: #51a7eb;
+      }
+    }
+  }
+  img {
+    width: 100%;
+  }
+}
+
+hr {
+  border: 0.3px solid #eeeeef;
+}
+
+.home-video {
+  width: 100%;
+  overflow-y: scroll;
+  letter-spacing: 1px;
+  ul {
+    width: 100%;
+    li {
+      width: 100%;
+      height: 240px;
+
+      .video {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        display: block;
+      }
+
+      .top {
+        position: relative;
+        width: 100%;
+        height: 200px;
+
+        .left {
+          position: absolute;
+          width: 60%;
+          float: left;
+          left: 5px;
+          top: 5px;
+          z-index: 10;
+          color: white;
+          .image {
+            float: left;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            img {
+              width: 100%;
+              height: 100%;
+              display: inline-block;
+            }
+          }
+          span {
+            margin-left: 5px;
+            font-size: 14px;
+          }
+        }
+
+        .right {
+          position: absolute;
+          right: 5px;
+          top: 5px;
+          height: 25px;
+          width: 50px;
+          border-radius: 10px;
+          border: 0.5px solid gainsboro;
+          background: rgba(4, 4, 4, 0.3);
+          z-index: 10;
+          text-align: center;
+          line-height: 18px;
+          span {
+            font-size: 13px;
+            color: white;
+          }
+        }
+
+        .left-bot {
+          position: absolute;
+          bottom: 5px;
+          left: 5px;
+          color: white;
+          font-size: 14px;
+          i {
+            font-size: 18px;
+          }
+        }
+
+        .right-bot {
+          position: absolute;
+          bottom: 5px;
+          right: 5px;
+          color: white;
+          font-size: 14px;
+          i {
+
+            font-size: 16px;
+          }
+        }
+
+      }
+      .bottom {
+        width: 100%;
+        height: 40px;
+        margin-top: 5px;
+        p {
+          float: left;
+          margin-left: 5px;
+          width: 55%;
+          height: 60px;
+          font-size: 14px;
+          line-height: 20px;
+        }
+        .logo {
+          float: right;
+          height: 40px;
+          margin-left: 2%;
+          width: 40%;
+          display: flex;
+          justify-content: space-around;
+          li {
+            height: 40px;
+            display: flex;
+            flex: 1;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            font-size: 10px;
+            color: grey;
+            i {
+              color: grey;
+              font-size: 16px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.home-radio {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 200%;
+  overflow-y: scroll;
+  letter-spacing: 1px;
+  .two-icon {
+    height: 65px;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+
+    li {
+      display: flex;
+      justify-content: center;
+      line-height: 65px;
+      i {
+        font-size: 22px;
+        color: red;
+      }
+      span {
+        margin-left: 10px;
+        font-size: 16px;
+      }
+    }
+
+  }
+  hr {
+    border: 0.5px solid #efefef;
+  }
+
+  .radio-vip {
+    margin-top: 30px;
+    position: relative;
+    .radio-title {
+      .icon-zhixian {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 10px;
+        height: 10px;
+        font-size: 8px;
+        line-height: 20px;
+        color: red;
+      }
+      h5{
+        margin-left: 14px;
+        font-size: 14px;
+        font-weight: normal;
+        letter-spacing: 2px;
+        i {
+          position: relative;
+          font-size: 14px;
+          color: #3b3b3b;
         }
       }
 
     }
+    ul {
+      width: 100%;
+      margin-top: 10px;
+
+      li {
+        width: 100%;
+        height: 110px;
+        display: flex;
+        border-bottom: 1px solid #e0e0df;
+        justify-content: flex-start;
+
+        .vip-left {
+          height: 110px;
+          width: 110px;
+          img {
+            height: 100%;
+            width: 100%;
+          }
+          span{
+            position: absolute;
+            bottom: 5px;
+            font-size: 10px;
+            color: white;
+            left: 5%;
+          }
+        }
+        .vip-right{
+          margin-left: 10px;
+          height: 110px;
+          h4{
+            font-size: 16px;
+            font-weight:normal;
+          }
+          .vip-info{
+            font-size: 12px;
+            margin-top: 10px;
+          }
+          .vip-name{
+            font-size: 12px;
+            margin-top: 10px;
+          }
+          .vip-price{
+            margin-top: 10px;
+            color: red;
+            font-size: 14px;
+            span{
+              font-size: 10px;
+            }
+          }
+        }
+      }
+    }
+
   }
+}
+
+.home-search{
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  height: 300%;
+  background: white;
+  z-index: 21;
+
+  .enterSongs{
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    li {
+      font-size: 13px;
+      position: relative;
+      padding: 7px 0;
+      .songName{
+        padding: 5px 0;
+        border-bottom: 1px solid #eee;
+        margin-left: 10px;
+        position: relative;
+        h5{
+          font-size: 16px;
+          font-weight: normal;
+          color: #4d4d4d;
+        }
+
+        p{
+          font-size: 10px;
+          color: #ccc;
+        }
+      }
+
+      i.icon-101{
+        color: #ababab;
+        position: absolute;
+        right: 13px;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+      }
+
+
+      }
+
+
+    }
+
+
 
 
 
