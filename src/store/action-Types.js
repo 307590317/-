@@ -27,3 +27,10 @@ export const LOGIN_NUMBER_LOGIN="LOGIN_NUMBER_LOGIN";
 
 /*获取个人中心*/
 export const GET_PROFILE="GET_PROFILE";
+
+
+
+
+
+/*获取最近播放数据*/
+export const GET_NEARLY='GET_NEARLY';
