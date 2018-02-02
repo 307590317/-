@@ -1,9 +1,14 @@
 import React from 'react';
 import {Link,NavLink} from 'react-router-dom';
+import {connect} from 'react-redux';
+
 
 import MHeader from "../../../components/MHeader/MHeader";
 import './LatestPlay.less'
+import index from "../../../store/reducer";
+import actions from "../../../store/actions/mymusic";
 
+@connect((state)=>({...state.mymusicReducer}),actions)
 export default class LatestPlay extends React.Component {
 
   constructor(){
@@ -11,9 +16,10 @@ export default class LatestPlay extends React.Component {
     this.state={
       isArise:false,
       isTurn:false,
-      isCheck:false
+      isClear:false,
+      /*isAllCheck:false,
+      isSingleCheck:false*/
     }
-
   }
 
   clickDelete=()=>{
@@ -28,9 +34,24 @@ export default class LatestPlay extends React.Component {
    this.setState({isCheck:this.state.isCheck});
   };
 
+  /*清除播放记录*/
+  clickClear=()=>{
+    this.setState({isClear:!this.state.isClear});
+  };
+
+
+  /*this.props.record.weekData
+item
+音乐名称：item.song.name
+作者+专辑：`${item.song.ar[0].name} - ${item.song.al.name}`
+作者+专辑：`${item.song.ar[0].name}/${item.song.ar[1].name} - ${item.song.al.name}`*/
+
 
 
   render() {
+
+    let data=this.props.record.weekData.slice(0,10);
+
     return (
       <div>
         <MHeader>
@@ -41,9 +62,7 @@ export default class LatestPlay extends React.Component {
         </MHeader>
 
         <div className="content">
-
           <div className='alone'>
-
             <NavLink to={'/'} className={`${this.state.isTurn?'select':''}`}>
               <i className='first iconfont icon-bofang11'></i>
               <span className='all-play'>播放全部</span>
@@ -52,7 +71,7 @@ export default class LatestPlay extends React.Component {
 
             <div className='all-choice'>
             <i className={`choice-none iconfont icon-weixuanzhongyuanquan${!this.state.isTurn?' active':''}`}></i>
-            <span className={`all-check${!this.state.isTurn?' active':''}`} onClick={this.clickSelectAll}>全选</span>
+            <span className={`all-check${!this.state.isTurn?' active':''}`}>全选</span>
               {/*<i className='choiced iconfont icon-2xuanzhong'></i>*/}
             </div>
 
@@ -68,38 +87,34 @@ export default class LatestPlay extends React.Component {
           </div>
 
           <ul className='songs'>
-            <li className={this.state.isTurn?' active':''}>
-              <Link to={'/'}>
-              <div className='song-name'>
-                <i className={`choice-none iconfont icon-weixuanzhongyuanquan${!this.state.isTurn?' active':''}`}></i>
-                <p>彩虹</p>
-                <span>周杰伦 - 主打</span>
-              </div>
-                <i className={`iconfont icon-more${this.state.isTurn?' active':''}`}></i>
-              </Link>
-            </li>
+            {this.props.record.weekData.map((item,index)=>{
+              return(
+                <li className={this.state.isTurn?' active':''} key={index}>
+                  <Link to={'/'}>
+                    <div className='song-name'>
+                      <i className={`choice-none iconfont icon-weixuanzhongyuanquan${!this.state.isTurn?' active':''}`}></i>
+                      <p>{item.song.name}</p>
+                      <span>{item.song.ar.length===1?`${item.song.ar[0].name} - ${item.song.al.name}`:`${item.song.ar[0].name}/${item.song.ar[1].name} - ${item.song.al.name}`}</span>
+                    </div>
+                    <i className={`iconfont icon-more${this.state.isTurn?' active':''}`}></i>
+                  </Link>
+                </li>
+              )
+            })}
 
-            <li className={this.state.isTurn?' active':''}>
-              <Link to={'/'}>
-              <div className='song-name'>
-                <i className={`choice-none iconfont icon-weixuanzhongyuanquan${!this.state.isTurn?' active':''}`}></i>
-                <p>彩虹</p>
-                <span>周杰伦 - 主打</span>
-              </div>
-                <i className={`iconfont icon-more${this.state.isTurn?' active':''}`}></i>
-              </Link>
-            </li>
 
-             <li className={`rubbish${this.state.isTurn?' active':''}`} onClick={this.clickDelete} >
+             <li className={`rubbish${this.state.isTurn?' active':''}`} onClick={this.clickDelete}>
               <span><i className='iconfont icon-dustbin_icon'></i>清除播放记录</span>
               {this.state.isArise?<div className='layer-delete'>
                 <div className='clear-list'>
                   <p>确定清除播放记录</p>
-                  <button className='clear-away'>清除</button>
+                  <button className='clear-away' onClick={this.clickClear}>清除</button>
+                  {!this.state.isClear?}
                 </div>
 
                 <button className='call-off'>取消</button>
               </div>:null}
+
             </li>
           </ul>
 
