@@ -27,3 +27,6 @@ export const LOGIN_NUMBER_LOGIN="LOGIN_NUMBER_LOGIN";
 
 /*获取个人中心*/
 export const GET_PROFILE="GET_PROFILE";
+/*
+获取动态*/
+export const GET_PROFILE_DYNAMIC="GET_PROFILE_DYNAMIC";

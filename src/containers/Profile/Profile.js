@@ -11,8 +11,8 @@ export default class Profile extends React.Component {
     this.state={flag:false}
   }
   componentDidMount(){
-    console.log(this.props.userId);
-    this.props.getProfile(this.props.userId);
+    console.log(this.props);
+    this.props.getProfileAPI();
   }
   toLogin=()=>{
     this.props.history.push('/login')
@@ -167,9 +167,10 @@ export default class Profile extends React.Component {
                   </ul>
                 </div>
               </div>
-              <div className="exit">
+              {this.props.userId?<div className="exit">
                 <NavLink to={""}>退出登录</NavLink>
-              </div>
+              </div>:null}
+
             </div>
           </div>
         </div>
