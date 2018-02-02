@@ -19,8 +19,6 @@ export default class Home extends React.Component {
            let val=e.target.value.trim();
        }
    };
-
-
     render() {
         return (
             <div className='home'>
