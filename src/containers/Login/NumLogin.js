@@ -2,14 +2,14 @@ import React from 'react';
 import "./index.less";
 import MHeader from "../../components/MHeader/MHeader";
 import {connect} from "react-redux";
-import actions from "../../store/actions/login";
-@connect(state=>({...state.loginReducer}),actions)
-export default class NumLogin extends React.Component {
+import actions from "../../store/actions/common";
 
+@connect(state=>({...state.common}),actions)
+export default class NumLogin extends React.Component {
   loginNow=()=>{
     let number=this.phoneNumber.value;
     let password=this.password.value;
-    this.props.numberLogin(number,password,this.props.history);
+    this.props.getUserIdAPI(number,password,this.props.history);
     this.phoneNumber.value='';
     this.password.value='';
   };
@@ -18,7 +18,7 @@ export default class NumLogin extends React.Component {
         <div>
           <MHeader show={false}>
             <i className='iconfont icon-fanhui' onClick={()=>{this.props.history.goBack()}}></i>
-            <div className='numberLoginCenter'>
+            <div className='headerCenter'>
               手机号登录
             </div>
           </MHeader>

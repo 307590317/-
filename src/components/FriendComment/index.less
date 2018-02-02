@@ -1,5 +1,5 @@
 .friend-dynamic-comment {
-
+overflow-x: hidden;
  /* .container-title {
     width: 100%;
     height: 35px;
@@ -15,7 +15,7 @@
 
   }*/
   .each-user {
-    background: #f6fffe;
+    background: #fbfcfd;
     width: 96%;
     margin-left: 2%;
     margin-right: 2%;
@@ -24,41 +24,45 @@
     .click-to-userprofile {
       display: block;
       img {
-        display: block;
+       position: relative;
+        top:0;
+        left:0;
         height: 35px;
         width: 35px;
         border-radius: 50%;
       }
       .user-name {
         position: relative;
+        display: block;
         top: -25px;
         right: -42px;
         color: gray;
         font-family: Arial;
        font-size: 14px;
+        width: 150px;
+        text-overflow:clip;
 
       }
-      .praisenumber-number{
-        font-style: normal;
-        word-spacing: 5px;
-        font-family: Arial;
-        position: relative;
-        top: -25px;
-        left: 245px;
-        color: #8d8d8e;
-      }
-      .praisenumber {
-        font-style: normal;
-        word-spacing: 5px;
-        font-family: Arial;
-        position: relative;
-        top: -25px;
-        left: 258px;
-        color: #8d8d8e;
-      }
+
+
 
     }
-
+    .praisenumber-container{
+      position: relative;
+      top:-43px;
+      left:255px;
+      width: 80%;
+      overflow: hidden;
+      i{
+        &:nth-child(2){
+          margin-left:4px;
+        }
+        float: left;
+        font-style: normal;
+        font-family: Arial;
+        color:#616162;
+      }
+    }
     .comment-content{
       color: black;
       font-family: Arial;
@@ -66,6 +70,8 @@
       margin-left: 12%;
       margin-top: -5%;
       border-bottom: 1px solid lightgrey;
+      width: 300px;
+      word-wrap: break-word;
     }
 
   }

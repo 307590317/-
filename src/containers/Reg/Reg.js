@@ -1,16 +1,15 @@
 import React from 'react';
 import {connect} from "react-redux";
-import actions from "../../store/actions/reg";
 import MHeader from "../../components/MHeader/MHeader";
 import "./index.less";
 
 export default class Reg extends React.Component {
   render(){
     return (
-        <div className="reg">
+        <div className="content reg">
           <MHeader show={false}>
             <i className='iconfont icon-fanhui' onClick={()=>{this.props.history.goBack()}}></i>
-            <div className='RegCenter'>
+            <div className='headerCenter'>
               手机号注册
             </div>
           </MHeader>
