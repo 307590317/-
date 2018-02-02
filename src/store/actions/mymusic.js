@@ -7,5 +7,5 @@ let actions={
       dispatch({type:Types.GET_RECORD,payload:getRecord(id)});
     }
   }
-};
+}
 export default actions;
