@@ -12,4 +12,5 @@ export default combineReducers({
     commentReducer,
     loginReducer,
     userDetail,
+    profileReducer
 })

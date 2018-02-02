@@ -1,5 +1,5 @@
 import * as Types from "../action-Types";
-import {getLogin} from "../../api/txl.js";
+import {getLogin} from "../../api/common";
 let actions={
   numberLogin:(phone,password,history)=>{
     return function(dispatch,getState){
