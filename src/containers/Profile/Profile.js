@@ -11,7 +11,6 @@ export default class Profile extends React.Component {
     this.state={flag:false}
   }
   componentDidMount(){
-    console.log(this.props);
     this.props.getProfileAPI();
   }
   toLogin=()=>{
@@ -32,7 +31,7 @@ export default class Profile extends React.Component {
         <div>
           <MHeader>
             <i className='empty'></i>
-            <div className='ProfileCenter'>
+            <div className='headerCenter'>
               账号
             </div>
           </MHeader>
