@@ -1,19 +1,25 @@
 import React, {Component} from 'react';
 import './index.less'
-import {Link} from 'react-router-dom'
+import {Link,withRouter} from 'react-router-dom'
 import a from './img/1.jpg'
-
 import FriendComment from "../../components/FriendComment/FriendComment";
 import LoadMoreThing from "../../components/LoadMoreThing/LoadMoreThing";
 import TitelInFriendDynamic from "../../components/TitleInFriendDynamic/TitelInFriendDynamic";
-
+@withRouter
 export default class PlayFriendDynamicContent extends Component {
+    goBack=()=>{
+        this.props.history.push('/friend/dynamic');
+    };
+
     render() {
         return (
             <div className="play-firend-dynamic-content-outer-container">
                 {/*播放的内容*/}
                 <div className="play-firend-dynamic-content">
                     <img src={a} alt=""/>
+                    <i className="gobackbutton iconfont icon-zuojiantou"
+                     onClick={this.goBack}
+                    ></i>
                 </div>
 
 
@@ -67,45 +73,21 @@ export default class PlayFriendDynamicContent extends Component {
 
                     {/*相关推荐的标题*/}
                     <TitelInFriendDynamic>相关推荐</TitelInFriendDynamic>
-                    <LoadMoreThing/>
-                    <LoadMoreThing/>
-                    <LoadMoreThing/>
-                    <LoadMoreThing/>
-                    <LoadMoreThing/>
-                    <LoadMoreThing/>
-                    <LoadMoreThing/>
-                    <LoadMoreThing/>
-                    <LoadMoreThing/>
-                    <LoadMoreThing/>
-                    <LoadMoreThing/>
-                    <LoadMoreThing/>
-                    <LoadMoreThing/>
-                    <LoadMoreThing/>
+                    <FriendComment/>
                     <TitelInFriendDynamic>精彩评论</TitelInFriendDynamic>
-                    <FriendComment/>
-                    <FriendComment/>
-                    <FriendComment/>
-                    <FriendComment/>
-                    <FriendComment/>
-                    <FriendComment/>
-                    <FriendComment/>
-                    <FriendComment/>
                     <FriendComment/>
                     <TitelInFriendDynamic>最新评论</TitelInFriendDynamic>
                     <FriendComment/>
-                    <FriendComment/>
-                    <FriendComment/>
-                    <FriendComment/>
-                    <FriendComment/>
-                    更多推荐
+                    <TitelInFriendDynamic>    更多推荐
+                    </TitelInFriendDynamic>
                    {/* <div className="relative-recommend-title">
                     <span>
                         相关推荐
                     </span>
 
                     </div>*/}
-
-                   {/* 相似的资源
+                    <LoadMoreThing/>
+                    {/* 相似的资源
                     <div className="relative-recommend-content">
 
                         <div className="every-relative-recommend-content">

@@ -11,8 +11,7 @@ export default class Profile extends React.Component {
     this.state={flag:false}
   }
   componentDidMount(){
-    console.log(this.props.userId);
-    this.props.getProfile(this.props.userId);
+    this.props.getProfileAPI();
   }
   toLogin=()=>{
     this.props.history.push('/login')
@@ -32,7 +31,7 @@ export default class Profile extends React.Component {
         <div>
           <MHeader>
             <i className='empty'></i>
-            <div className='ProfileCenter'>
+            <div className='headerCenter'>
               账号
             </div>
           </MHeader>
@@ -167,9 +166,10 @@ export default class Profile extends React.Component {
                   </ul>
                 </div>
               </div>
-              <div className="exit">
+              {this.props.userId?<div className="exit">
                 <NavLink to={""}>退出登录</NavLink>
-              </div>
+              </div>:null}
+
             </div>
           </div>
         </div>

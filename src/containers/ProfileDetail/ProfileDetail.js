@@ -5,19 +5,21 @@ import {connect} from "react-redux";
 import MHeader from "../../components/MHeader/MHeader";
 import "./index.less";
 let background=require("./images/bg.jpg");
-import avatar from "./images/avator.png";
 import Dynamic from "./Dynamic";
 import AboutMe from "./AboutMe";
 import Music from "./Music";
+import actions from "../../store/actions/profile";
 
-@connect(state=>({...state.loginReducer,...state.profileReducer}))
+@connect(state=>({...state.profileReducer}),actions)
 export default class ProfileDetail extends React.Component {
+  componentDidMount(){
+  }
   render(){
     let style={
       backgroundImage:`url(${background})`,
       backgroundSize:"100% 100%"
     };
-    console.log(this.props);
+    //console.log(this.props);
     let userProfile=this.props.userInfo||{};
     let {nickname,avatarUrl,follows,followeds,eventCount,gender,playlistCount}=userProfile.profile||{};
     return (
@@ -48,7 +50,7 @@ export default class ProfileDetail extends React.Component {
           <div className="detail-info">
             <ul className="nav-level2">
               <li>
-                <NavLink to={"/profileDetail/music"} className={this.props.location.pathname==='/profileDetail'?'active':''}>
+                <NavLink to={{pathname:"/profileDetail/music"}} className={this.props.location.pathname==='/profileDetail'?'active':''}>
                   <span>音乐</span>
                   <span className="number">{playlistCount}</span>
                 </NavLink>
@@ -64,7 +66,7 @@ export default class ProfileDetail extends React.Component {
               <li>
                 <NavLink to={"/profileDetail/aboutMe"}>
                   <span>关于我</span>
-                  {/*<span className="number">3</span>*/}
+                  {<span className="number">{}</span>}
                 </NavLink>
 
               </li>
