@@ -8,15 +8,22 @@ import HomeRadio from "./HomeRadio";
 import {connect} from 'react-redux';
 import actions from '../../store/actions/home';
 import HomeTop from "./HomeTop";
+import 'babel-polyfill';
+import {search} from '../'
 import './index.less';
 
 @connect(state => ({...state}), actions)
 export default class Home extends React.Component {
 
 
+
    songSearch=(e)=>{
        if(e.keyCode===13){
            let val=e.target.value.trim();
+
+          }
+       async  function searchAPI(){
+           let result=await search();
        }
    };
 

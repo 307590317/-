@@ -1,6 +1,6 @@
 import * as Types from '../action-Types';
 
-import {getBanner,getTuiJians,getDuJias,getNewSong} from "../../api/zsh";
+import {getBanner,getTuiJians,getDuJias,getNewSong,get} from "../../api/zsh";
 
 
 let actions={
@@ -24,6 +24,7 @@ let actions={
             dispatch({type:Types.GET_NEW,payload:getNewSong()});
         }
     },
+
 };
 
 
