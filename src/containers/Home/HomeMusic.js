@@ -20,6 +20,7 @@ export default class HomeMusic extends React.Component {
     render() {
 
         return <div className='home-music'>
+          {/*<HomeTop/>*/}
 
             {/*slider*/}
             <HomeSwiper lists={this.props.banners}/>
@@ -60,73 +61,74 @@ export default class HomeMusic extends React.Component {
                         <NavLink to={'/songList'}>
                             <img src={item.picUrl} alt=""/>
                             <span>
+>>>>>>> dada7ef1d12695798b127ae145ca3909ad6d5d12
                                   <i className="iconfont icon-headseterji"></i>
-                                  <b>{Math.round(item.playCount/10000).toFixed(1)}万</b>
+                                  <b>{Math.round(item.playCount / 10000).toFixed(1)}万</b>
                             </span>
-                        </NavLink>
-                        <p className="title">
-                            {item.name}
-                        </p>
-                    </li>
-                    ))}
-                </ul>
-            </div>
+              </NavLink>
+              <p className="title">
+                {item.name}
+              </p>
+            </li>
+          ))}
+        </ul>
+      </div>
 
 
-            {/*独家放送*/}
-            <div className="musicList home-unique">
-                <div className="music-title">
-                    <i className="iconfont icon-zhixian"></i>
-                    <h5>独家放送  <i className='iconfont icon-fanhui2'></i>   </h5>
-                </div>
-                <ul>
-                    {this.props.unique.result.map((item,index)=>(
-                    <li key={index}>
-                        <a href="">
+      {/*独家放送*/}
+      <div className="musicList home-unique">
+        <div className="music-title">
+          <i className="iconfont icon-zhixian"></i>
+          <h5>独家放送 <i className='iconfont icon-fanhui2'></i></h5>
+        </div>
+        <ul>
+          {this.props.unique.result.map((item, index) => (
+            <li key={index}>
+              <a href="">
                             <span>
                                  <i className="iconfont icon-shipinbofangyingpian"></i>
                             </span>
-                            <img src={item.picUrl}/>
-                        </a>
-                        <p>{item.name}</p>
-                    </li>
-                    ))}
-                </ul>
-            </div>
+                <img src={item.picUrl}/>
+              </a>
+              <p>{item.name}</p>
+            </li>
+          ))}
+        </ul>
+      </div>
 
 
-            {/*最新音乐*/}
-            <div className="musicList home-new">
-                <div className="music-title">
-                    <i className="iconfont icon-zhixian"></i>
-                    <h5>最新音乐 <i className='iconfont icon-fanhui2'></i></h5>
-                </div>
-                <ul>
-                    {this.props.new.result.slice(0,6).map((item,index)=>(
-                        <li key={index}>
-                            <a href="">
-                                <img src={item.song.album.picUrl} alt=""/>
-                            </a>
-                            <p>{item.name}</p>
-                            <p>{item.song.artists[0].name}</p>
-                        </li>
-                    ))}
-
-
-                </ul>
-            </div>
-
-            <div className='home-bottom'>
-
-                    <span>调整栏目顺序</span>
-
-                <NavLink to='/home/video'>
-                    <p>看视频，发现更多有趣内容></p>
-                </NavLink>
-            </div>
-
+      {/*最新音乐*/}
+      <div className="musicList home-new">
+        <div className="music-title">
+          <i className="iconfont icon-zhixian"></i>
+          <h5>最新音乐 <i className='iconfont icon-fanhui2'></i></h5>
         </div>
-    }
+        <ul>
+          {this.props.new.result.slice(0, 6).map((item, index) => (
+            <li key={index}>
+              <a href="">
+                <img src={item.song.album.picUrl} alt=""/>
+              </a>
+              <p>{item.name}</p>
+              <p>{item.song.artists[0].name}</p>
+            </li>
+          ))}
+
+
+        </ul>
+      </div>
+
+      <div className='home-bottom'>
+
+        <span>调整栏目顺序</span>
+
+        <NavLink to='/home/video'>
+          <p>看视频，发现更多有趣内容></p>
+        </NavLink>
+      </div>
+
+    </div>
+  }
 }
 
 
