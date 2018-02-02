@@ -5,9 +5,9 @@ import mymusicReducer from './mymusic';
 import comment from './comment';
 import common from './common';
 export default combineReducers({
-  homeReducer,
-  mymusicReducer,
-  comment,
-  common,
-  profileReducer
+    homeReducer,
+    mymusicReducer,
+    profileReducer,
+    comment,
+    common,
 })

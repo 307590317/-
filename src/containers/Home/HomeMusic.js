@@ -59,7 +59,7 @@ export default class HomeMusic extends React.Component {
                 <ul>
                     {this.props.recommend.result.slice(0,6).map((item,index)=>(
                     <li key={index}>
-                        <NavLink to='/songList'>
+                        <NavLink to={'/songList'}>
                             <img src={item.picUrl} alt=""/>
                             <span>
                                   <i className="iconfont icon-headseterji"></i>
