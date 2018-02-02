@@ -18,7 +18,9 @@ import ProfileDetail from "./containers/ProfileDetail/ProfileDetail";
 import SongList from "./containers/Home/HomeDetail/SongList";
 import store from './store';
 import './common/index.less';
+
 import LatestPlay from "./containers/MyMusic/LatestPlay/LatestPlay";
+
 render(<Provider store={store}>
   <Router>
     <App>

@@ -1,8 +1,7 @@
 import React from 'react';
 import './index.less'
 import {NavLink} from 'react-router-dom'
-import a from "./img/b.jpg"
-import b from './img/c.jpg'
+import a from "./img/1.jpg"
 import FriendComment from "../../../components/FriendComment/FriendComment";
 import TitelInFriendDynamic from "../../../components/TitleInFriendDynamic/TitelInFriendDynamic";
 
@@ -39,7 +38,7 @@ export default class FriendNearby extends React.Component {
                                 </span>
                                 <span className="sex-and-news-from">
                                      <i className="sex">♂</i>
-                                 <img src={b} alt=""/>
+                                 <img src={a} alt=""/>
                                 </span>
 
                             </NavLink>

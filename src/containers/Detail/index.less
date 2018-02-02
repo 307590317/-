@@ -1,5 +1,5 @@
 //公共部分
-b {
+b{
   font-weight: normal;
 }
 
@@ -8,16 +8,18 @@ b {
 }
 
 .detail {
-  position: absolute;
+  position: fixed;
   left: 0;
   top: 0;
   right: 0;
   bottom: 0;
   background: #764d31;
   z-index: 10;
-  overflow: hidden;
+  width: 375px;
+  height: 667px;
+  overflow: auto;
   .detailHeader {
-    position: relative;
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
@@ -56,7 +58,7 @@ b {
     }
   }
   .detailBody {
-    position: absolute;
+    position: fixed;
     top: 45px;
     left: 0;
     bottom: 0;
@@ -271,6 +273,8 @@ b {
     top: 40%;
     background: #fff;
     width: 100%;
+    height: 60%;
+    overflow: scroll;
     li {
       font-size: 18px;
     }
@@ -315,9 +319,7 @@ b {
       }
     }
     .musicdLists {
-      overflow: scroll;
       padding-left: 10px;
-      //padding-top: 300px;
       li {
         position: relative;
         height: 50px;
@@ -346,6 +348,14 @@ b {
     left: 0;
     background: rgba(0, 0, 0, .4);
   }
+}
+.scrollBox{
+  position: fixed;
+  left: 0;
+  bottom: 150px;
+  overflow: hidden;
+  height: 400px;
+  width: 375px;
 }
 
 

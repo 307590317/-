@@ -132,72 +132,73 @@ export default class Detail extends React.Component {
                         </ul>
                     </div>
                 </div>
-                <div className="musicdList"  style={this.state.showMusicList}>
-                    <div className="musicdListHeader clearfix">
-                        <ul>
+
+                    <div className="musicdList"  style={this.state.showMusicList}>
+                        <div className="musicdListHeader clearfix">
+                            <ul>
+                                <li>
+                                    <i className={this.state.playStyle == 1 ? "goBack iconfont icon-fanhui11" : (this.state.playStyle == 2 ? "goBack iconfont icon-suijibofang" : "goBack iconfont icon-danquxunhuan")} onClick={this.changePlayState}></i>
+                                </li>
+                                <li>{this.state.playStyle == 1 ? "循环播放" : (this.state.playStyle == 2 ? "随机播放" : "单曲循环")}</li>
+                                <li>(90)</li>
+                                <li><i className="iconfont icon-dustbin_icon"></i></li>
+                                <li>收藏全部</li>
+                                <li><i className="iconfont icon-shoucang1"></i></li>
+                            </ul>
+                        </div>
+                        <ul className="musicdLists">
                             <li>
-                                <i className={this.state.playStyle == 1 ? "goBack iconfont icon-fanhui11" : (this.state.playStyle == 2 ? "goBack iconfont icon-suijibofang" : "goBack iconfont icon-danquxunhuan")} onClick={this.changePlayState}></i>
+                                <span className="musicName">歌名歌名</span>
+                                <b className="musicSinger"> - 歌手</b>
+                                <i className="closeMusic">×</i>
                             </li>
-                            <li>{this.state.playStyle == 1 ? "循环播放" : (this.state.playStyle == 2 ? "随机播放" : "单曲循环")}</li>
-                            <li>(90)</li>
-                            <li><i className="iconfont icon-dustbin_icon"></i></li>
-                            <li>收藏全部</li>
-                            <li><i className="iconfont icon-shoucang1"></i></li>
+                            <li>
+                                <span className="musicName">歌名歌名111</span>
+                                <b className="musicSinger"> - 歌手1111</b>
+                                <i className="closeMusic">×</i>
+                            </li>
+                            <li>
+                                <span className="musicName">歌名歌名</span>
+                                <b className="musicSinger"> - 歌手</b>
+                                <i className="closeMusic">×</i>
+                            </li>
+                            <li>
+                                <span className="musicName">歌名歌名111</span>
+                                <b className="musicSinger"> - 歌手1111</b>
+                                <i className="closeMusic">×</i>
+                            </li>
+                            <li>
+                                <span className="musicName">歌名歌名</span>
+                                <b className="musicSinger"> - 歌手</b>
+                                <i className="closeMusic">×</i>
+                            </li>
+                            <li>
+                                <span className="musicName">歌名歌名111</span>
+                                <b className="musicSinger"> - 歌手1111</b>
+                                <i className="closeMusic">×</i>
+                            </li>
+                            <li>
+                                <span className="musicName">歌名歌名</span>
+                                <b className="musicSinger"> - 歌手</b>
+                                <i className="closeMusic">×</i>
+                            </li>
+                            <li>
+                                <span className="musicName">歌名歌名111</span>
+                                <b className="musicSinger"> - 歌手1111</b>
+                                <i className="closeMusic">×</i>
+                            </li>
+                            <li>
+                                <span className="musicName">歌名歌名111</span>
+                                <b className="musicSinger"> - 歌手1111</b>
+                                <i className="closeMusic">×</i>
+                            </li>
+                            <li>
+                                <span className="musicName">歌名歌名111</span>
+                                <b className="musicSinger"> - 歌手1111</b>
+                                <i className="closeMusic">×</i>
+                            </li>
                         </ul>
                     </div>
-                    <ul className="musicdLists">
-                        <li>
-                            <span className="musicName">歌名歌名</span>
-                            <b className="musicSinger"> - 歌手</b>
-                            <i className="closeMusic">×</i>
-                        </li>
-                        <li>
-                            <span className="musicName">歌名歌名111</span>
-                            <b className="musicSinger"> - 歌手1111</b>
-                            <i className="closeMusic">×</i>
-                        </li>
-                        <li>
-                            <span className="musicName">歌名歌名</span>
-                            <b className="musicSinger"> - 歌手</b>
-                            <i className="closeMusic">×</i>
-                        </li>
-                        <li>
-                            <span className="musicName">歌名歌名111</span>
-                            <b className="musicSinger"> - 歌手1111</b>
-                            <i className="closeMusic">×</i>
-                        </li>
-                        <li>
-                            <span className="musicName">歌名歌名</span>
-                            <b className="musicSinger"> - 歌手</b>
-                            <i className="closeMusic">×</i>
-                        </li>
-                        <li>
-                            <span className="musicName">歌名歌名111</span>
-                            <b className="musicSinger"> - 歌手1111</b>
-                            <i className="closeMusic">×</i>
-                        </li>
-                        <li>
-                            <span className="musicName">歌名歌名</span>
-                            <b className="musicSinger"> - 歌手</b>
-                            <i className="closeMusic">×</i>
-                        </li>
-                        <li>
-                            <span className="musicName">歌名歌名111</span>
-                            <b className="musicSinger"> - 歌手1111</b>
-                            <i className="closeMusic">×</i>
-                        </li>
-                        <li>
-                            <span className="musicName">歌名歌名111</span>
-                            <b className="musicSinger"> - 歌手1111</b>
-                            <i className="closeMusic">×</i>
-                        </li>
-                        <li>
-                            <span className="musicName">歌名歌名111</span>
-                            <b className="musicSinger"> - 歌手1111</b>
-                            <i className="closeMusic">×</i>
-                        </li>
-                    </ul>
-                </div>
                 <div className="musicListMask" style={this.state.showListMask} onClick={this.hideListMask}></div>
             </div>
         )

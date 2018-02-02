@@ -30,6 +30,10 @@ export default class SongList extends React.Component {
 
                     <div className="song-cover">
                         <img src="http://img1.imgtn.bdimg.com/it/u=2916390227,3292952952&fm=11&gp=0.jpg" alt=""/>
+                        <span className='song-erji'>
+                                  <i className="iconfont icon-headseterji"></i>
+                                  <b>1万</b>
+                            </span>
                     </div>
 
                     <div className='song-name'>
@@ -46,21 +50,57 @@ export default class SongList extends React.Component {
 
                 <ul className="song-icon4">
                     <li>
-                        <i className='icongont icon-addfile'></i>
+                        <a href="#">
+                            <i className='iconfont icon-addfile'></i>
+                        </a>
+
                         <span>123</span>
                     </li>
 
                     <li>
-                        <i className='icongont icon-buoumaotubiao48'></i>
+                        <a href="#">
+                            <i className='iconfont icon-buoumaotubiao48'></i>
+                        </a>
+
                         <span>123</span>
                     </li>
                     <li>
-                        <i className='icongont icon-fenxiang1'></i>
+                        <a href="#">
+                            <i className='iconfont icon-fenxiang1'></i>
+                        </a>
+
                         <span>123</span>
                     </li>
                     <li>
-                        <i className='icongont icon-download'></i>
+                        <a href="#">
+                            <i className='iconfont icon-download'></i>
+                        </a>
                         <span>123</span>
+                    </li>
+                </ul>
+            </div>
+
+            <div className="song-play">
+                <div className="paly-all">
+                    <div className='play-left'>
+
+                        <i className='iconfont icon-bofang2'></i>
+                        <span>播放全部<span>(共50首)</span></span>
+                    </div>
+                    <div className='play-right'>
+                        <i className='iconfont icon-liebiao'></i>
+                        <span>多选</span>
+                    </div>
+                </div>
+
+                <ul className='every-song'>
+                    <li>
+                   <span className='number'>1</span>
+                        <div className='songName'>
+                            <p >不萌</p>
+                            <span>1233</span>
+                        </div>
+                        <i className='iconfont icon-101'></i>
                     </li>
                 </ul>
             </div>

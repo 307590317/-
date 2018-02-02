@@ -1,11 +1,11 @@
 import * as Types from '../action-Types';
-let initState={};
+let initState={id:0,limit:10};
 
-let commentReducer=function(state=initState,action){
+function  commentReducer(state=initState,action){
     switch (action.type){
         case Types.GET_COMMENT:
-            return {...state,...action.commentData}
+            return {...state,value:action.payload}
     }
     return state;
-};
+}
 export default commentReducer;
