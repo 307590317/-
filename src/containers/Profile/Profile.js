@@ -4,8 +4,8 @@ import MHeader from "../../components/MHeader/MHeader";
 import "./index.less";
 import {NavLink} from 'react-router-dom';
 import actions from "../../store/actions/profile";
-
-@connect(state=>({...state.common,...state.profileReducer}),actions)
+import commonActions from "../../store/actions/common";
+@connect(state=>({...state.common,...state.profileReducer}),{...actions,...commonActions})
 export default class Profile extends React.Component {
   constructor(){
     super();
@@ -25,8 +25,8 @@ export default class Profile extends React.Component {
     e.stopPropagation();
   };
   exit=()=>{
-   this.props.exitLoginAPI();
-    // this.props.clearUserIdAPI();
+  // this.props.exitLoginAPI();
+    this.props.clearUserIdAPI();
     this.props.history.push("/");
   };
   render() {

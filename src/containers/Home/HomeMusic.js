@@ -18,7 +18,6 @@ export default class HomeMusic extends React.Component {
 
 
     render() {
-
         return <div className='home-music'>
 
             {/*slider*/}
@@ -26,7 +25,7 @@ export default class HomeMusic extends React.Component {
 
             {/*每日排行*/}
             <div className="home-list">
-                <NavLink to={'/detail/1'}>
+                <NavLink to={'/'}>
                     <i className="iconfont icon-radio"></i>
                     <span>私人FM</span>
                 </NavLink>

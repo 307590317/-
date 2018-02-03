@@ -3,11 +3,18 @@ import {connect} from "react-redux";
 import "./index.less";
 import avatar from  "./images/avator.png";
 import actions from "../../store/actions/profile";
+import commonActions from "../../store/actions/common";
+
 import {NavLink} from "react-router-dom";
-@connect(state=>({...state.common}),actions)
+@connect(state=>({...state.common}),{...actions,...commonActions})
 export default class Music extends React.Component {
   componentDidMount(){
-    this.props.getMusicListAPI();
+    let id=this.props.userId;
+    let list=this.props.userList.playlist;
+    if(id&&list.length===0){
+      this.props.getUserListAPI(id);
+    }
+
   }
   render(){
    //console.log(this.props);

@@ -41,7 +41,7 @@ export default class PlayFriendDynamicContent extends Component {
                             小可爱baby
                                 </span>
                             </Link>
-                            <Link to={'/notice'} className="notice-me">
+                            <Link to={'/profile'} className="notice-me">
                                 <strong>＋</strong>
                                 <strong>关注</strong>
                             </Link>

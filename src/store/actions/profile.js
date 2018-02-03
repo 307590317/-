@@ -16,19 +16,19 @@ let actions={
 
     }
   },
-  getMusicListAPI:()=>{
-    console.log(1);
-    return function(dispatch,getState){
-      console.log(2);
-      let id=getState().common.userId;
-      let list=getState().common.userList.playlist;
-      console.log(id,list);
-      if(id&&list.length===0){
-
-        commonActions.getUserListAPI(id)(dispatch,getState);
-      }
-    }
-  },
+ /* // getMusicListAPI:()=>{
+  //   console.log(1);
+  //   return function(dispatch,getState){
+  //     console.log(2);
+  //     let id=getState().common.userId;
+  //     let list=getState().common.userList.playlist;
+  //     console.log(id,list);
+  //     if(id&&list.length===0){
+  //
+  //       commonActions.getUserListAPI(id)(dispatch,getState);
+  //     }
+  //   }
+  // },*/
   getDynamicAPI:()=>{
     return function(dispatch,getState){
       //let id='248846943';
@@ -39,10 +39,13 @@ let actions={
       }
     }
   },
-  exitLoginAPI:()=>{
+ /* exitLoginAPI:()=>{
     return function(dispatch,getState){
       commonActions.clearUserIdAPI()(dispatch,getState);
     }
-  }
+  }*/
+ exitLoginAPI:()=>{
+   return {type:Types.EXIT_LOGIN}
+ }
 };
 export default actions;

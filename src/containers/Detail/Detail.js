@@ -37,7 +37,6 @@ export default class Detail extends React.Component {
         let url = result.data[0].url;
         this.setState({url});
         this.props.getSongDetailAPI(this.props.match.params.id);
-
         this.$runline = this.refs.runline;
         /*默认线*/
         this.$runBtn = this.refs.runBtn;
@@ -159,12 +158,23 @@ export default class Detail extends React.Component {
     this.setState({showListMask: {display: 'none'}, showMusicList: {display: 'none'}})
   };
   lastSong = async () => {
-    this.props.history.push(`/detail/${parseInt(this.props.match.params.id) - 1}`);
-    let result = await getMP3(this.props.history.location.pathname.slice(9));
-    let url = result.data[0].url;
-    this.setState({url});
-    this.props.getSongDetailAPI(this.props.history.location.pathname.slice(9));
-}
+
+    // this.props.history.push(`/detail/${parseInt(this.props.match.params.id) - 1}`);
+    // let result = await getMP3(this.props.history.location.pathname.slice(9));
+    // let url = result.data[0].url;
+    // this.setState({url});
+    // this.props.getSongDetailAPI(this.props.history.location.pathname.slice(9));
+
+  };
+  //跳转到跳回来的页面
+  go=()=>{
+    console.log(1);
+    if(!this.props.location.state){
+      this.props.history.push('/');
+      return;
+    }
+    this.props.history.push(this.props.location.state.path)
+  };
 nextSong = async () => {
     this.props.history.push(`/detail/${parseInt(this.props.match.params.id) + 1}`);
     let result = await getMP3(this.props.history.location.pathname.slice(9));

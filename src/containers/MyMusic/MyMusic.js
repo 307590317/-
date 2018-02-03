@@ -44,12 +44,14 @@ export default class MyMusic extends React.Component {
     }
     /*点击清除时，修改标识，再次切换到此组件后，最近播放数据仍然为空*/
     this.props.flag?this.props.getRecordAPI(this.props.userId):null;
-
     this.props.getUserDjAPI(this.props.userId);
     //对应新建歌单
     this.props.getUserListAPI(this.props.userId);
   }
-
+  /*清空数据后再次登录数据为空*/
+  handelKeep=()=>{
+    this.props.keepEmpty();
+  };
 
 
   render() {
@@ -91,7 +93,7 @@ export default class MyMusic extends React.Component {
               <li>
                 <i className='front iconfont icon-diantai'></i>
                 <p>我的电台</p>
-                <span>{this.props.dj.count||0}</span>
+                <span>{this.props.userId?this.props.dj.count:0}</span>
                 <i className='back iconfont icon-fanhui2'></i>
               </li>
             </Link>
