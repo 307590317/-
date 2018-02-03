@@ -2,8 +2,8 @@ import React, {Component} from 'react';
 import {Link} from 'react-router-dom';
 import './index.less';
 import './utils.min'
-import a from './img/a.jpg'
-import b from './img/e.jpg'
+import a from './img/4.jpg'
+import b from './3.jpg'
 import Data from './user'
 
 export default class FriendDynamicContent extends Component {
@@ -50,7 +50,7 @@ export default class FriendDynamicContent extends Component {
                 <strong>{contentTitle}</strong>
               </Link>
               <Link to={'/playfrienddynamiccontent'}>
-                <img src={a} alt=""/>
+                <img src={b} alt=""/>
               </Link>
             </span>
             <p className="content-document">~~我们是超级无敌的逗逼视频~~</p>
