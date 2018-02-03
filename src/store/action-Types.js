@@ -39,11 +39,13 @@ export const LOGIN_NUMBER_LOGIN="LOGIN_NUMBER_LOGIN";
 
 export const GET_PROFILE="GET_PROFILE";
 
+/*获取最近播放数据*/
+export const GET_NEARLY='GET_NEARLY';
+/*获取我的电台*/
+export const GET_RADIO='GET_RADIO';
 
 /*
 获取动态*/
 export const GET_PROFILE_DYNAMIC="GET_PROFILE_DYNAMIC";
 
-/*获取最近播放数据*/
-export const GET_NEARLY='GET_NEARLY';
 

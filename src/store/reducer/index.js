@@ -1,10 +1,11 @@
 import {combineReducers} from 'redux';
 import homeReducer from './home';
 import profileReducer from "./profile";
-import commentReducer from './comment';
-import mymusicReducer from './mymusic';
-import mymusciReducer from './mymusic';
+
+import mymusicReducer from './mymusic'
 import friendReducer from './friend'
+import commentReducer from './comment';
+
 import common from './common';
 
 export default combineReducers({
@@ -12,6 +13,6 @@ export default combineReducers({
     profileReducer,
     friendReducer,
     common,
-    mymusciReducer,
+    mymusicReducer,
     commentReducer,
 });
