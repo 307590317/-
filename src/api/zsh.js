@@ -21,3 +21,6 @@ export let getDuJias=()=>axios.get(`/personalized/privatecontent`);
 export let getNewSong=()=>axios.get(`/personalized/newsong`);
 //推荐mv
 export let getMV=()=>axios.get(`/personalized/mv`);
+
+//精品节目
+export let getBest=()=>axios.get('/personalized/djprogram');
