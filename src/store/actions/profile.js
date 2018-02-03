@@ -16,7 +16,9 @@ let actions={
     }
   },
   getMusicListAPI:()=>{
+    console.log(1);
     return function(dispatch,getState){
+      console.log(2);
       let id=getState().common.userId;
       let list=getState().common.userList;
       if(id&&Object.keys(list).length===0){

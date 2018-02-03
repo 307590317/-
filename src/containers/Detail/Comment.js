@@ -23,11 +23,14 @@ export default class Comment extends React.Component {
         //dispatch=>dispatch(getCommentAPI.aplly(this,...args))
         this.props.getCommentAPI('186016', '15');
         //console.log(this.props.getCommentAPI('186016', '15'),'aaaa');//为 undefined ？？？
-        this.props.getSongDetailAPI(33894312);
+        // this.props.getSongDetailAPI(33894312);
     };
 
     changeZan = () => {
         this.setState({zan: !this.state.zan});
+    };
+    go=()=>{
+        this.props.history.go(-1);
     };
     render() {
         //console.log(this.props,'props');
@@ -50,10 +53,8 @@ export default class Comment extends React.Component {
 
         return <div>
             <MHeader>
-                <NavLink to='/detail/33894312'>
-                    <i className="commentBack iconfont icon-fanhui"></i>
-                </NavLink>
-                <div className="headerCenter">评论(1234)</div>
+              <i className="iconfont icon-fanhui" onClick={this.go}></i>
+              <div className="headerCenter">评论(1234)</div>
             </MHeader>
             <div className="content">
                     <div className="musicDetail">

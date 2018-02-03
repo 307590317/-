@@ -7,7 +7,10 @@ import actions from "../../store/actions/common";
 @connect((state)=>({...state.common}),actions)
 export default class EstablishList extends React.Component {
   componentDidMount(){
-    this.props.getUserListAPI('248846943');
+    if(!this.props.userId){
+      return;
+    }
+    this.props.getUserListAPI(this.props.userId);
   }
 
   //对象.playlist

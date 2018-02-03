@@ -8,12 +8,13 @@ import Shade from "./Shade";
 import MHeader from "../../components/MHeader/MHeader";
 import {connect} from 'react-redux';
 import actions from "../../store/actions/mymusic";
+import commonActions from "../../store/actions/common";
 import LatestPlay from "./LatestPlay/LatestPlay";
 
 /*import {getRecord} from "../../api/gjx";
 import 'babel-polyfill'*/
 
-@connect((state)=>({...state.mymusicReducer}),actions)
+@connect((state)=>({...state.mymusicReducer,...state.common}),{...actions,...commonActions})
 export default class MyMusic extends React.Component {
   constructor() {
     super();
@@ -38,8 +39,12 @@ export default class MyMusic extends React.Component {
   }*/
 
   componentDidMount(){
-     this.props.getRecordAPI('248846943');
-    this.props.getUserDjAPI('248846943');
+    if(!this.props.userId){
+      return;
+    }
+    this.props.getRecordAPI(this.props.userId);
+    this.props.getUserDjAPI(this.props.userId);
+    this.props.getUserListAPI(this.props.userId);
   }
 
   render() {
@@ -72,7 +77,7 @@ export default class MyMusic extends React.Component {
               <li>
                 <i className='iconfont icon-bofang2 front '></i>
                 <p>最近播放</p>
-                <span>{this.props.record.weekData.length}</span>
+                <span>{this.props.record.weekData.length||0}</span>
                 <i className='back iconfont icon-fanhui2'></i>
               </li>
             </Link>
@@ -81,7 +86,7 @@ export default class MyMusic extends React.Component {
               <li>
                 <i className='front iconfont icon-diantai'></i>
                 <p>我的电台</p>
-                <span>{this.props.dj.count}</span>
+                <span>{this.props.dj.count||0}</span>
                 <i className='back iconfont icon-fanhui2'></i>
               </li>
             </Link>
@@ -90,7 +95,7 @@ export default class MyMusic extends React.Component {
               <li className='last'>
                 <i className='front iconfont icon-shoucang'></i>
                 <p>我的收藏</p>
-                <span>33</span>
+                <span>{this.props.userId?3:0}</span>
                 <i className='back iconfont icon-fanhui2'></i>
               </li>
             </Link>
@@ -99,7 +104,7 @@ export default class MyMusic extends React.Component {
           <div className='song-list'>
             <div className='song-text' onClick={this.clickShow}>
               <i className='forwards iconfont icon-fanhui2'></i>
-              <span>我创建的歌单(111)</span>
+              <span>我创建的歌单({`${this.props.userList.playlist?this.props.userList.playlist.length:0}`})</span>
               <i className='backwards iconfont icon-more' onClick={this.clickPopUp}></i>
               {this.state.isShow ? <EstablishList/> : null}
             </div>

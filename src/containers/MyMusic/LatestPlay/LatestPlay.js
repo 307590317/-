@@ -53,7 +53,9 @@ item
     let length = this.props.record.weekData.slice(0, 2);//2
     this.state.isSelNum === length ? this.state.isAllCheck = true : null;
   };
-
+  go=()=>{
+    this.props.history.go(-1);
+  };
   render() {
 
     let data=this.props.record.weekData.slice(0,10);
@@ -61,7 +63,7 @@ item
     return (
       <div>
         <MHeader>
-          <i className="iconfont icon-fanhui"></i>
+          <i className="iconfont icon-fanhui" onClick={this.go}></i>
           <div className='headerCenter'>
             最近播放的歌曲
           </div>
@@ -98,7 +100,7 @@ item
             {this.props.record.weekData.map((item,index)=>{
               return(
                 <li className={this.state.isTurn?' active':''} key={index}>
-                  <Link to={'/'}>
+                  <Link to={`/detail/${item.song.id}`}>
                     <div className='song-name'>
                       <i className={`choice-none iconfont icon-weixuanzhongyuanquan${!this.state.isTurn?' active':''}`}></i>
                       <p>{item.song.name}</p>
