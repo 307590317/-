@@ -2,12 +2,12 @@ import React from 'react';
 import HomeSwiper from './HomeSwiper';
 import {connect} from 'react-redux';
 import actions from '../../store/actions/home';
+import { Route, Switch, Link,NavLink} from 'react-router-dom';
+import  SongList from './HomeDetail/SongList';
 
-import {Route, Switch, NavLink} from 'react-router-dom';
-import SongList from './HomeDetail/SongList';
-import HomeTop from "./HomeTop";
 
-@connect(state => ({...state.homeReducer}), actions)
+
+@connect(state => ({...state.homeReducer}),actions)
 export default class HomeMusic extends React.Component {
 
   componentDidMount() {
@@ -21,7 +21,6 @@ export default class HomeMusic extends React.Component {
   render() {
 
     return <div className='home-music'>
-      {/*<HomeTop/>*/}
 
       {/*slider*/}
       <HomeSwiper lists={this.props.banners}/>
@@ -56,12 +55,12 @@ export default class HomeMusic extends React.Component {
         <ul>
           {this.props.recommend.result.slice(0, 6).map((item, index) => (
             <li key={index}>
-              <NavLink to={'/songList'}>
+              <NavLink to={{pathname:'/songList',state:item}}>
                 <img src={item.picUrl} alt=""/>
                 <span>
-                                  <i className="iconfont icon-headseterji"></i>
-                                  <b>{Math.round(item.playCount / 10000).toFixed(1)}万</b>
-                            </span>
+                 <i className="iconfont icon-headseterji"></i>
+                 <b>{Math.round(item.playCount / 10000).toFixed(1)}万</b>
+                 </span>
               </NavLink>
               <p className="title">
                 {item.name}
@@ -114,6 +113,8 @@ export default class HomeMusic extends React.Component {
         </ul>
       </div>
 
+
+            {/*底部*/}
       <div className='home-bottom'>
 
         <span>调整栏目顺序</span>
