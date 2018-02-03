@@ -1,6 +1,6 @@
 import React from 'react';
 import './index.less';
-import {NavLink} from 'react-router-dom';
+import {Link, NavLink} from 'react-router-dom';
 import circle from './img/circle.png';
 import mPoint from './img/mPoint.png';
 import e from './img/play_disc.png';
@@ -31,9 +31,8 @@ export default class Detail extends React.Component {
         }
     }
 
+
     async componentDidMount() {
-        /*此处的id需要用this.props.match.params.id*/
-        console.log(this.props.match.params.id);
         let result = await getMP3(this.props.match.params.id);
         let url = result.data[0].url;
         this.setState({url});
@@ -61,7 +60,6 @@ export default class Detail extends React.Component {
             this.audio.pause();
         }
     };
-
     //计算已经播放时间
     computedAlready = () => {
         this.audio = document.getElementById('audio');
@@ -120,46 +118,60 @@ export default class Detail extends React.Component {
         clearInterval(this.autoTimer);
     };
 
-    changeClassName = () => {
-        this.setState({appear: {display: 'block'}});
-        if (this.state.flag2 <= 3) {
-            this.setState({flag2: this.state.flag2 + 1});
-            if (this.state.flag2 === 3) {
-                this.setState({flag2: 1});
-            }
-        }
-        //=>用定时器控制切换播放方式按钮
-        this.timer = setTimeout(() => {
-            this.setState({appear: {display: 'none'}});
-        }, 3000)
-    };
 
-    showDownloadMask = () => {
-        this.setState({showDownload1: {display: 'block'}, showDownload2: {display: 'block'}});
-    };
+  changeClassName = () => {
+    this.setState({appear: {display: 'block'}});
+    if (this.state.flag2 <= 3) {
+      this.setState({flag2: this.state.flag2 + 1});
+      if (this.state.flag2 === 3) {
+        this.setState({flag2: 1});
+      }
+    }
+    //=>用定时器控制切换播放方式按钮
+    this.timer = setTimeout(() => {
+      this.setState({appear: {display: 'none'}});
+    }, 3000)
+  };
 
-    changePlayState = () => {
-        this.setState({appear: {display: 'block'}});
-        if (this.state.playStyle <= 3) {
-            this.setState({playStyle: this.state.playStyle + 1});
-            if (this.state.playStyle === 3) {
-                this.setState({playStyle: 1});
-            }
-        }
-    };
+  showDownloadMask = () => {
+    this.setState({showDownload1: {display: 'block'}, showDownload2: {display: 'block'}});
+  };
 
-    hideMask = () => {
-        this.setState({showDownload1: {display: 'none'}, showDownload2: {display: 'none'}});
-    };
+  changePlayState = () => {
+    this.setState({appear: {display: 'block'}});
+    if (this.state.playStyle <= 3) {
+      this.setState({playStyle: this.state.playStyle + 1});
+      if (this.state.playStyle === 3) {
+        this.setState({playStyle: 1});
+      }
+    }
+  };
 
-    showMusicList = () => {
-        this.setState({showMusicList: {display: 'block'}, showListMask: {display: 'block'}});
-    };
+  hideMask = () => {
+    this.setState({showDownload1: {display: 'none'}, showDownload2: {display: 'none'}});
+  };
 
-    hideListMask = () => {
-        this.setState({showListMask: {display: 'none'}, showMusicList: {display: 'none'}})
-    };
+  showMusicList = () => {
+    this.setState({showMusicList: {display: 'block'}, showListMask: {display: 'block'}});
+  };
 
+  hideListMask = () => {
+    this.setState({showListMask: {display: 'none'}, showMusicList: {display: 'none'}})
+  };
+  lastSong = async () => {
+    this.props.history.push(`/detail/${parseInt(this.props.match.params.id) - 1}`);
+    let result = await getMP3(this.props.history.location.pathname.slice(9));
+    let url = result.data[0].url;
+    this.setState({url});
+    this.props.getSongDetailAPI(this.props.history.location.pathname.slice(9));
+}
+nextSong = async () => {
+    this.props.history.push(`/detail/${parseInt(this.props.match.params.id) + 1}`);
+    let result = await getMP3(this.props.history.location.pathname.slice(9));
+    let url = result.data[0].url;
+    this.setState({url});
+    this.props.getSongDetailAPI(this.props.history.location.pathname.slice(9));
+};
     //隐藏详情页
     detailPageHide=()=>{
         this.setState({
@@ -243,79 +255,80 @@ export default class Detail extends React.Component {
                 </div>
 
                 <div className="musicdList" style={this.state.showMusicList}>
-                    <div className="musicdListHeader clearfix">
-                        <ul>
-                            <li>
-                                <i className={this.state.playStyle == 1 ? "goBack iconfont icon-fanhui11" : (this.state.playStyle == 2 ? "goBack iconfont icon-suijibofang" : "goBack iconfont icon-danquxunhuan")}
-                                   onClick={this.changePlayState}></i>
-                            </li>
-                            <li>{this.state.playStyle == 1 ? "循环播放" : (this.state.playStyle == 2 ? "随机播放" : "单曲循环")}</li>
-                            <li>(90)</li>
-                            <li><i className="iconfont icon-dustbin_icon"></i></li>
-                            <li>收藏全部</li>
-                            <li><i className="iconfont icon-shoucang1"></i></li>
-                        </ul>
-                    </div>
-                    <ul className="musicdLists">
-                        <li>
-                            <span className="musicName">你要的全拿走</span>
-                            <b className="musicSinger"> - 胡彦斌</b>
-                            <i className="closeMusic">×</i>
-                        </li>
-                        <li>
-                            <span className="musicName">远走高飞</span>
-                            <b className="musicSinger"> - 金志文</b>
-                            <i className="closeMusic">×</i>
-                        </li>
-                        <li>
-                            <span className="musicName">差一步</span>
-                            <b className="musicSinger"> - 大壮</b>
-                            <i className="closeMusic">×</i>
-                        </li>
-                        <li>
-                            <span className="musicName">成都</span>
-                            <b className="musicSinger"> - 赵雷</b>
-                            <i className="closeMusic">×</i>
-                        </li>
-                        <li>
-                            <span className="musicName">醉赤壁</span>
-                            <b className="musicSinger"> - 林俊杰</b>
-                            <i className="closeMusic">×</i>
-                        </li>
-                        <li>
-                            <span className="musicName">带你去旅行</span>
-                            <b className="musicSinger"> - 校长</b>
-                            <i className="closeMusic">×</i>
-                        </li>
-                        <li>
-                            <span className="musicName">文爱</span>
-                            <b className="musicSinger"> - CG</b>
-                            <i className="closeMusic">×</i>
-                        </li>
-                        <li>
-                            <span className="musicName">晴天</span>
-                            <b className="musicSinger"> - 周杰伦</b>
-                            <i className="closeMusic">×</i>
-                        </li>
-                        <li>
-                            <span className="musicName">Psycho</span>
-                            <b className="musicSinger"> - Russ</b>
-                            <i className="closeMusic">×</i>
-                        </li>
-                        <li>
-                            <span className="musicName">说散就散</span>
-                            <b className="musicSinger"> - JC</b>
-                            <i className="closeMusic">×</i>
-                        </li>
-                        <li>
-                            <span className="musicName">Time</span>
-                            <b className="musicSinger"> - MKJ</b>
-                            <i className="closeMusic">×</i>
-                        </li>
-                    </ul>
-                </div>
-                <div className="musicListMask" style={this.state.showListMask} onClick={this.hideListMask}></div>
-            </div>
-        )
-    }
+          <div className="musicdListHeader clearfix">
+            <ul>
+              <li>
+                <i
+                  className={this.state.playStyle == 1 ? "goBack iconfont icon-fanhui11" : (this.state.playStyle == 2 ? "goBack iconfont icon-suijibofang" : "goBack iconfont icon-danquxunhuan")}
+                  onClick={this.changePlayState}></i>
+              </li>
+              <li>{this.state.playStyle == 1 ? "循环播放" : (this.state.playStyle == 2 ? "随机播放" : "单曲循环")}</li>
+              <li>(90)</li>
+              <li><i className="iconfont icon-dustbin_icon"></i></li>
+              <li>收藏全部</li>
+              <li><i className="iconfont icon-shoucang1"></i></li>
+            </ul>
+          </div>
+          <ul className="musicdLists">
+            <li>
+              <span className="musicName">你要的全拿走</span>
+              <b className="musicSinger"> - 胡彦斌</b>
+              <i className="closeMusic">×</i>
+            </li>
+            <li>
+              <span className="musicName">远走高飞</span>
+              <b className="musicSinger"> - 金志文</b>
+              <i className="closeMusic">×</i>
+            </li>
+            <li>
+              <span className="musicName">差一步</span>
+              <b className="musicSinger"> - 大壮</b>
+              <i className="closeMusic">×</i>
+            </li>
+            <li>
+              <span className="musicName">成都</span>
+              <b className="musicSinger"> - 赵雷</b>
+              <i className="closeMusic">×</i>
+            </li>
+            <li>
+              <span className="musicName">醉赤壁</span>
+              <b className="musicSinger"> - 林俊杰</b>
+              <i className="closeMusic">×</i>
+            </li>
+            <li>
+              <span className="musicName">带你去旅行</span>
+              <b className="musicSinger"> - 校长</b>
+              <i className="closeMusic">×</i>
+            </li>
+            <li>
+              <span className="musicName">文爱</span>
+              <b className="musicSinger"> - CG</b>
+              <i className="closeMusic">×</i>
+            </li>
+            <li>
+              <span className="musicName">晴天</span>
+              <b className="musicSinger"> - 周杰伦</b>
+              <i className="closeMusic">×</i>
+            </li>
+            <li>
+              <span className="musicName">Psycho</span>
+              <b className="musicSinger"> - Russ</b>
+              <i className="closeMusic">×</i>
+            </li>
+            <li>
+              <span className="musicName">说散就散</span>
+              <b className="musicSinger"> - JC</b>
+              <i className="closeMusic">×</i>
+            </li>
+            <li>
+              <span className="musicName">Time</span>
+              <b className="musicSinger"> - MKJ</b>
+              <i className="closeMusic">×</i>
+            </li>
+          </ul>
+        </div>
+        <div className="musicListMask" style={this.state.showListMask} onClick={this.hideListMask}></div>
+      </div>
+    )
+  }
 }

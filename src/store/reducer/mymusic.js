@@ -11,13 +11,17 @@ let mymusicReducer = function (state = initState, action) {
   return state;
 };
 export default mymusicReducer*/
-let initState={weekData:[]};
+let initState={record:{weekData:[]},dj:{},collect:{}};
 let mymusicReducer=function (state=initState,action) {
   switch (action.type){
     case Types.GET_NEARLY:
-      return {...state,...action.payload}
-      // return {...state,"weekData":[],"code": 200}
-  }
+     return{...state,record:action.payload};
+  // return {...state,"weekData":[],"code": 200}
+   case Types.GET_RADIO:
+     return{...state,dj:action.payload};
+    case Types.GET_NEARLY_EMPTY_:
+      return{}
+ }
   return state;
 };
 export default mymusicReducer;

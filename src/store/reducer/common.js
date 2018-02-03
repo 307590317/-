@@ -1,5 +1,6 @@
 import * as Types from "../action-Types";
-let initState={userId:null,userList:{}};
+let initState={userId:null,userList:{playlist:[]}};
+//let initState={userId:"1352132331",userList:{playlist:[]}};
 
 let getUserId=(state=initState,action)=>{
   switch (action.type){
@@ -7,6 +8,9 @@ let getUserId=(state=initState,action)=>{
       return {...state,userId:action.id};
     case Types.GET_USERLIST:
       return {...state,userList:action.payload};
+    case Types.EXIT_LOGIN:
+
+      return {...state,userId:action.id}
   }
   return state;
 };

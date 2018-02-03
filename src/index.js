@@ -18,7 +18,7 @@ import ProfileDetail from "./containers/ProfileDetail/ProfileDetail";
 import SongList from "./containers/Home/HomeDetail/SongList";
 import store from './store';
 import './common/index.less';
-
+import SubmitDynamic from "./components/SubmitDynamic/SubmitDynamic";
 import LatestPlay from "./containers/MyMusic/LatestPlay/LatestPlay";
 
 render(<Provider store={store}>
@@ -41,6 +41,7 @@ render(<Provider store={store}>
         <Route path={'/frienddynamicdetail'} component={FriendDynamicDetail}/>
         <Route path={'/playfrienddynamiccontent'} component={PlayDynamicContent}/>
         <Route path={'/comment'} component={Comment}/>
+        <Route path={"/submitdynamic"} component={SubmitDynamic}/>
       </Switch>
     </App>
   </Router>

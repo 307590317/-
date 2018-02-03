@@ -7,7 +7,6 @@ import HomeVideo from "./HomeVideo";
 import HomeRadio from "./HomeRadio";
 import {connect} from 'react-redux';
 import actions from '../../store/actions/home';
-import HomeTop from "./HomeTop";
 import 'babel-polyfill';
 import {search} from '../../api/zsh';
 import './index.less';
@@ -43,6 +42,7 @@ export default class Home extends React.Component {
     let {songs} = this.state.lists.result;
     return (
       <div className='home'>
+
         <MHeader display={display == 'block' ? 'none' : 'block'}>
           {/*如果弹出层出现，胡同消失*/}
           <i className="iconfont icon-shiwu-maikefeng" style={{display: display == 'block' ? 'none' : 'flex'}}></i>

@@ -2,7 +2,6 @@ import React from 'react';
 import HomeSwiper from "./HomeSwiper";
 import {connect} from 'react-redux';
 import actions from '../../store/actions/home';
-import HomeTop from "./HomeTop";
 
 
 @connect(state => ({...state.homeReducer}), actions)
@@ -11,8 +10,7 @@ export default class HomeRadio extends React.Component {
 
   render() {
     return <div className='home-radio'>
-      <HomeSwiper lists={this.props.banners}/>
-
+        {this.props.banners.length?<HomeSwiper lists={this.props.banners}/>:null}
       <ul className="two-icon">
         <li>
           <a href="#">

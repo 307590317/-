@@ -13,6 +13,8 @@ export let search=(value)=>axios.get(`/search?keywords=${value}`);
 export let getBanner=()=>axios.get(`/banner`);
 //获取推荐歌单
 export let getTuiJians=()=>axios.get(`/personalized`);
+//获取推荐歌单详情 playlist/detail?id=24381616
+export let getTuiJiansDetail=(id)=>axios.get(`playlist/detail?id=${id}`);
 //获取独家放送
 export let getDuJias=()=>axios.get(`/personalized/privatecontent`);
 //最新音乐

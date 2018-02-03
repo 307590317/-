@@ -7,7 +7,6 @@ let initState = {
     total: '',
     more: true,
     code: '',
-
     songs:[
         {
             name:"",
