@@ -20,7 +20,6 @@ export default class EstablishList extends React.Component {
   歌单名称:item.name
   几首歌:item.trackCount*/
 
-
   render(){
     return <div>
       <ul className='layer-left'>
