@@ -2,7 +2,6 @@ import React from 'react';
 import HomeSwiper from "./HomeSwiper";
 import {connect} from 'react-redux';
 import actions from '../../store/actions/home';
-import HomeTop from "./HomeTop";
 
 
 @connect(state => ({...state.homeReducer}), actions)

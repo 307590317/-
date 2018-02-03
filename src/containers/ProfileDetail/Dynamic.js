@@ -17,7 +17,13 @@ export default class Dynamic extends React.Component {
         <div className="profile-detail-dynamic">
           <ul>
             {list.map((item,index)=>{
-              let originUrl=item.pics.length>0?item.pics[0].originUrl:JSON.parse(item.json).event.pics[0].originUrl;
+              let originUrl='';
+              if(item.pics.length>0){
+                originUrl=item.pics[0].originUrl;
+              }else if(JSON.parse(item.json).event){
+                originUrl=JSON.parse(item.json).event.pics[0].originUrl;
+              }
+
               let songName='';
               if(JSON.parse(item.json).song){
                  songName=JSON.parse(item.json).song.name;
@@ -26,6 +32,7 @@ export default class Dynamic extends React.Component {
                     songName=JSON.parse(JSON.parse(item.json).event.json).song.name;
                   }
               }
+
               let personName='';
               if(JSON.parse(item.json).song){
                 personName=JSON.parse(item.json).song.artists[0].name;
@@ -66,7 +73,7 @@ export default class Dynamic extends React.Component {
 
             )}
 
-            {/*<li>
+           {/* <li>
               <img src={avatar} className="avatar"/>
               <div className="dynamic-detail">
                 <h4>熊博士的音乐</h4>
@@ -88,6 +95,7 @@ export default class Dynamic extends React.Component {
                 </div>
               </div>
             </li>*/}
+
           </ul>
         </div>
     )

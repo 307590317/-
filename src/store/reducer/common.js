@@ -7,6 +7,9 @@ let getUserId=(state=initState,action)=>{
       return {...state,userId:action.id};
     case Types.GET_USERLIST:
       return {...state,userList:action.payload};
+    case Types.EXIT_LOGIN:
+
+      return {...state,userId:action.id}
   }
   return state;
 };
