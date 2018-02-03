@@ -4,3 +4,4 @@ import axios from './index';
 export let getRecord=(id)=>axios.get(`/user/record?uid=${id}&type=1`);
 //获取用户电台信息
 export let getUserDj=(id)=>axios.get(`/user/dj?uid=${id}`);
+

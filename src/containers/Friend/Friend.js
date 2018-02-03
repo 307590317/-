@@ -22,7 +22,7 @@ export default class Friend extends React.Component {
 
 
                 <div className="content">
-                    <div className='router'>
+                    <div>
                         <Route path={'/friend'} exact={true} component={Dynamic}/>
                         <Route path={'/friend/dynamic'} component={Dynamic}/>
                         <Route path={'/friend/nearby'} component={Nearby}/>

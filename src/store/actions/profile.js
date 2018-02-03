@@ -18,20 +18,27 @@ let actions={
   getMusicListAPI:()=>{
     return function(dispatch,getState){
       let id=getState().common.userId;
-      let list=getState().common.userList;
-      if(id&&Object.keys(list).length===0){
+      let list=getState().common.userList.playlist;
+      console.log(id,list);
+      if(id&&list.length===0){
+
         commonActions.getUserListAPI(id)(dispatch,getState);
       }
     }
   },
   getDynamicAPI:()=>{
     return function(dispatch,getState){
-     // let id='1352132331';
+      //let id='248846943';
       let id=getState().common.userId;
       if(id){
         dispatch({type:Types.GET_PROFILE_DYNAMIC,payload:getUserDynamic(id)});
       }
     }
   },
+  exitLoginAPI:()=>{
+    return function(dispatch,getState){
+      commonActions.clearUserIdAPI()(dispatch,getState);
+    }
+  }
 };
 export default actions;

@@ -18,3 +18,8 @@ centent
 
 nickname：用户昵称
 avatarUrl：用户头像
+
+
+
+
+http://localhost:3000//user/playlist?uid=248846943
