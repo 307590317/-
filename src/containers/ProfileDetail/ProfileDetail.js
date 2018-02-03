@@ -19,14 +19,17 @@ export default class ProfileDetail extends React.Component {
       backgroundImage:`url(${background})`,
       backgroundSize:"100% 100%"
     };
-    //console.log(this.props);
+    console.log(this.props);
     let userProfile=this.props.userInfo||{};
     let {nickname,avatarUrl,follows,followeds,eventCount,gender,playlistCount}=userProfile.profile||{};
     return (
         <div className="profile-detail">
           <div className="Essential" style={style}>
             <MHeader>
-              <i className='iconfont icon-fanhui' onClick={()=>{this.props.history.push("/profile")}}></i>
+              <i className='iconfont icon-fanhui' onClick={()=>{
+                this.props.history.push("/profile")
+                //this.props.history.go(-1);
+              }}></i>
               <div className="headerCenter">
               </div>
               <i className="iconfont icon-fenxiang1"></i>

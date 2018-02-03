@@ -5,7 +5,8 @@ let actions={
   getProfileAPI:()=>{
     return function(dispatch,getState){
       let id=getState().common.userId;
-      if(id){
+      let profile=getState().profileReducer.userInfo.profile;
+      if(id&&Object.keys(profile).length===0){
         getUserDetail(id).then(function(data){
           //console.log(data);
           let val={...data};
@@ -30,7 +31,8 @@ let actions={
     return function(dispatch,getState){
       //let id='248846943';
       let id=getState().common.userId;
-      if(id){
+      let list=getState().profileReducer.userDynamic.events;
+      if(id&&list.length===0){
         dispatch({type:Types.GET_PROFILE_DYNAMIC,payload:getUserDynamic(id)});
       }
     }

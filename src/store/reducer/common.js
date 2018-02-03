@@ -1,5 +1,6 @@
 import * as Types from "../action-Types";
 let initState={userId:null,userList:{playlist:[]}};
+//let initState={userId:"1352132331",userList:{playlist:[]}};
 
 let getUserId=(state=initState,action)=>{
   switch (action.type){

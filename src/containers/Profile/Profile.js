@@ -30,8 +30,8 @@ export default class Profile extends React.Component {
     this.props.history.push("/");
   };
   render() {
-    let data=this.props.userInfo||{};
-    let userProfile=data.profile||{};
+    let data=this.props.userInfo;
+    let userProfile=data.profile;
     let {nickname,avatarUrl,follows,followeds,eventCount}=userProfile;
     return (
         <div>
