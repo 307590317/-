@@ -37,7 +37,7 @@ export default class Profile extends React.Component {
         <div>
           <MHeader>
             <i className='empty'></i>
-            <div className='headerCenter'>
+            <div className='headerCenter ProfileCenter'>
               账号
             </div>
           </MHeader>
