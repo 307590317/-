@@ -7,7 +7,6 @@ import HomeVideo from "./HomeVideo";
 import HomeRadio from "./HomeRadio";
 import {connect} from 'react-redux';
 import actions from '../../store/actions/home';
-import HomeTop from "./HomeTop";
 import 'babel-polyfill';
 import {search} from '../../api/zsh';
 import './index.less';
