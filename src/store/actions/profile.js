@@ -36,10 +36,7 @@ let actions={
     }
   },
   exitLoginAPI:()=>{
-    console.log(2);
     return function(dispatch,getState){
-      console.log(3);
-      console.log(commonActions);
       commonActions.clearUserIdAPI()(dispatch,getState);
     }
   }

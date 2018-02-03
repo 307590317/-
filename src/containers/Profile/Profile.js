@@ -25,7 +25,6 @@ export default class Profile extends React.Component {
     e.stopPropagation();
   };
   exit=()=>{
-    console.log(1);
    this.props.exitLoginAPI();
     // this.props.clearUserIdAPI();
     this.props.history.push("/");

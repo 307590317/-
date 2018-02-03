@@ -18,7 +18,6 @@ let actions={
   },
   //退出登录
   clearUserIdAPI:()=>{
-    console.log(4);
     return function (dispatch,getState) {
       dispatch({type:Types.EXIT_LOGIN,id:''});
     }
