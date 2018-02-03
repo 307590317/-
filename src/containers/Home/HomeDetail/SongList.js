@@ -11,7 +11,8 @@ export default class SongList extends React.Component {
     }
    async componentDidMount(){
        let id=this.props.location.state.id;
-        let result=await getTuiJiansDetail(id);
+       console.log(id);
+       let result=await getTuiJiansDetail(id);
      this.setState({...result});
    }
     render() {

@@ -1,6 +1,6 @@
 import React from 'react';
 import './index.less'
-
+import {Link} from 'react-router-dom'
 import {connect} from 'react-redux';
 import FriendDynamicContent from "./FriendSDynamicContent/FriendDynamicContent";
 @connect(state=>({...state.common}))
@@ -11,10 +11,12 @@ export default class FriendDynamic extends React.Component {
     }
     handlePraise=()=>{
       this.setState({praise:!this.state.praise});
-    };
+    }
+
     render() {
         let PraiseStyle={color:"red"};
         let noPraiseStyle={color:"#616162"};
+        let flag=this.props.userId;
         return (
             <div className="friend-dynamic">
                 {/*头下面的导航*/}
@@ -22,7 +24,9 @@ export default class FriendDynamic extends React.Component {
 
                     <div className="left-one">
                         <span className="logo iconfont icon-fenxiang-tianchong"></span>
-                        <span className="publish-dynamic">动态</span>
+
+                        <Link className="publish-dynamic" to={flag?"/login":"/submitdynamic"}>动态</Link>
+
                     </div>
 
                     <div className="right-one">
