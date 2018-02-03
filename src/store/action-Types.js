@@ -48,5 +48,9 @@ export const GET_RADIO='GET_RADIO';
 获取动态*/
 export const GET_PROFILE_DYNAMIC="GET_PROFILE_DYNAMIC";
 
+
+/*获取数据为空*/
+export const GET_NEARLY_EMPTY_='GET_NEARLY_EMPTY_';
+
 /*退出登录*/
 export const EXIT_LOGIN="EXIT_LOGIN";
