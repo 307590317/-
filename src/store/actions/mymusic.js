@@ -33,16 +33,11 @@ let actions={
     }
   },
 
-  getNearlyEmpty(){
+  /*清除数据的同时修改标识*/
+  clearNearlyEmpty(){
     return(dispatch,getState)=>{
       dispatch({type:Types.GET_NEARLY_EMPTY})
     }
   },
-
-  keepEmpty(){
-   return(dispatch,getState)=>{
-     dispatch({type:Types.KEEP_EMPTY})
-   }
-  }
 };
 export default actions;

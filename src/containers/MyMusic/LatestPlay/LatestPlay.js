@@ -7,7 +7,6 @@ import './LatestPlay.less'
 import index from "../../../store/reducer";
 import actions from "../../../store/actions/mymusic";
 
-
 @connect((state)=>({...state.mymusicReducer}),actions)
 export default class LatestPlay extends React.Component {
   constructor() {
@@ -37,16 +36,14 @@ export default class LatestPlay extends React.Component {
 
   /*清除播放记录*/
   clickClear=()=>{
-    this.props.getNearlyEmpty()
+    this.props.clearNearlyEmpty();
   };
-
 
   /*this.props.record.weekData
 item
 音乐名称：item.song.name
 作者+专辑：`${item.song.ar[0].name} - ${item.song.al.name}`
 作者+专辑：`${item.song.ar[0].name}/${item.song.ar[1].name} - ${item.song.al.name}`*/
-
 
   handleClick = (e) => {
     e.target.isSelscted = true;
@@ -75,7 +72,7 @@ item
             <NavLink to={'/'} className={`${this.state.isTurn?'select':''}`}>
               <i className='first iconfont icon-bofang11'></i>
               <span className='all-play'>播放全部</span>
-              <span className='total-song'>（共3首）</span>
+              <span className='total-song'>（共{this.props.record.weekData.length}首）</span>
             </NavLink>
 
             <div className='all-choice'>

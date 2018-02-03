@@ -51,5 +51,8 @@ export const GET_NEARLY_EMPTY='GET_NEARLY_EMPTY';
 /*退出登录*/
 export const EXIT_LOGIN="EXIT_LOGIN";
 
-/*清除数据后再次登录数据为空*/
-export const KEEP_EMPTY='KEEP_EMPTY';
+/*点击清除数据后修改标识*/
+export const FLAG_CHANGE='FLAG_CHANGE';
+
+
+
