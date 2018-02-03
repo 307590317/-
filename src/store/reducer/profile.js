@@ -13,6 +13,11 @@ function profileReducer(state=initState,action){
       return {...state,userInfo:action.userInfo};
     case Types.GET_PROFILE_DYNAMIC:
       return {...state,userDynamic:action.payload};
+    case Types.EXIT_LOGIN:
+      return {...initState}
+
+
+
   }
 
   return state;

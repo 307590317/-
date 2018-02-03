@@ -9,8 +9,9 @@ let getUserId=(state=initState,action)=>{
     case Types.GET_USERLIST:
       return {...state,userList:action.payload};
     case Types.EXIT_LOGIN:
+      return {...initState}
 
-      return {...state,userId:action.id}
+
   }
   return state;
 };
