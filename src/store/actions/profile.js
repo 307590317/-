@@ -44,7 +44,7 @@ let actions={
       commonActions.clearUserIdAPI()(dispatch,getState);
     }
   }*/
- exitLogin:()=>{
+ exitLoginAPI:()=>{
    return {type:Types.EXIT_LOGIN}
  }
 };

@@ -19,8 +19,9 @@ let mymusicReducer=function (state=initState,action) {
   // return {...state,"weekData":[],"code": 200}
    case Types.GET_RADIO:
      return{...state,dj:action.payload};
-    case Types.GET_NEARLY_EMPTY_:
-      return{}
+    case Types.GET_NEARLY_EMPTY:
+      return{...state,record:{weekData:[]}};
+    //{record:{weekData:[]},dj:{},collect:{},record:{weekData:[]}}
  }
   return state;
 };

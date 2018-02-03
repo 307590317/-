@@ -27,7 +27,6 @@ export default class Profile extends React.Component {
   exit=()=>{
   // this.props.exitLoginAPI();
     this.props.clearUserIdAPI();
-    //this.props.exitLogin();
     this.props.history.push("/");
   };
   render() {
@@ -38,7 +37,7 @@ export default class Profile extends React.Component {
         <div>
           <MHeader>
             <i className='empty'></i>
-            <div className='headerCenter'>
+            <div className='headerCenter ProfileCenter'>
               账号
             </div>
           </MHeader>

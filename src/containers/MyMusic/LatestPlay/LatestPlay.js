@@ -6,6 +6,8 @@ import MHeader from "../../../components/MHeader/MHeader";
 import './LatestPlay.less'
 import index from "../../../store/reducer";
 import actions from "../../../store/actions/mymusic";
+
+
 @connect((state)=>({...state.mymusicReducer}),actions)
 export default class LatestPlay extends React.Component {
   constructor() {
@@ -34,9 +36,8 @@ export default class LatestPlay extends React.Component {
   };
 
   /*清除播放记录*/
- /*isClear:!this.state.isClear*/
   clickClear=()=>{
-    dispatch()
+    this.props.getNearlyEmpty()
   };
 
 
@@ -99,7 +100,8 @@ item
             {this.props.record.weekData.map((item,index)=>{
               return(
                 <li className={this.state.isTurn?' active':''} key={index}>
-                  <Link to={`/detail/${item.song.id}`}>
+                  <Link to={{pathname:`/detail${item.song.id}`,state:{path:`/detail`}}}>
+                  {/*<Link to={`/detail/${item.song.id}`}>*/}
                     <div className='song-name'>
                       <i className={`choice-none iconfont icon-weixuanzhongyuanquan${!this.state.isTurn?' active':''}`}></i>
                       <p>{item.song.name}</p>
@@ -118,7 +120,7 @@ item
                   <button className='clear-away' onClick={this.clickClear}>清除</button>
                 </div>
 
-                <button className='call-off'>取消</button>
+                <button className='call-off' onClick={this.clickDelete}>取消</button>
               </div>:null}
             </li>
           </ul>

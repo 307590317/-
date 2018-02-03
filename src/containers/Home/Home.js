@@ -8,7 +8,7 @@ import HomeRadio from "./HomeRadio";
 import {connect} from 'react-redux';
 import actions from '../../store/actions/home';
 import 'babel-polyfill';
-import {search} from '../../api/zsh';
+import {search,getBanner} from '../../api/zsh';
 import './index.less';
 import HomeSearch from "./HomeSearch";
 
@@ -23,12 +23,12 @@ export default class Home extends React.Component {
     }
   }
 
+
   songSearch = async (e) => {
     if (e.keyCode === 13) {
       let val = e.target.value.trim();
       let result = await search(val);
       this.setState({...this.state, flag: true, lists: {...result}});
-      console.log(this.state);
     }
 
   };
@@ -40,7 +40,7 @@ export default class Home extends React.Component {
   render() {
     let {display} = this.state;
     let {songs} = this.state.lists.result;
-    return (
+      return (
       <div className='home'>
 
         <MHeader display={display == 'block' ? 'none' : 'block'}>
@@ -84,13 +84,13 @@ export default class Home extends React.Component {
 
 
           <div className='home-top'>
-            <NavLink to={'/home/music'} className={this.props.location.pathname === '/' ? 'active' : ''}>
+            <NavLink to={{pathname:'/home/music'}} className={this.props.location.pathname === '/' ? 'active' : ''}>
               <span>音乐</span>
             </NavLink>
             <NavLink to={'/home/video'}>
               <span>视频</span>
             </NavLink>
-            <NavLink to={'/home/radio'}>
+            <NavLink  to={{pathname:'/home/radio'}}>
               <span>电台</span>
             </NavLink>
           </div>

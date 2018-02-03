@@ -13,7 +13,6 @@ export default class HomeSwiper extends React.Component {
                 this.setState({index});//每次循环后将索因 印射在组件上
             }
         };
-        console.log(2);
         return (
             <div className="home-swiper">
                 <ReactSwipe swipeOptions={opts}>

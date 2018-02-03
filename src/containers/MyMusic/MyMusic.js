@@ -42,10 +42,16 @@ export default class MyMusic extends React.Component {
     if(!this.props.userId){
       return;
     }
+
     this.props.getRecordAPI(this.props.userId);
     this.props.getUserDjAPI(this.props.userId);
     this.props.getUserListAPI(this.props.userId);
   }
+  /*清空数据后再次登录数据为空*/
+  handelKeep=()=>{
+    this.props.keepEmpty();
+  };
+
 
   render() {
     //console.log(this.props.record.weekData.length);
@@ -53,7 +59,7 @@ export default class MyMusic extends React.Component {
     //   weekData=data.weekData||[],
     //   length=weekData.length;
     // console.log(length);
-    console.log(this.props);
+    //console.log(this.props);
     return (
       <div className='mymusic'>
         <MHeader data={this.state.data}>
@@ -86,7 +92,7 @@ export default class MyMusic extends React.Component {
               <li>
                 <i className='front iconfont icon-diantai'></i>
                 <p>我的电台</p>
-                <span>{this.props.dj.count||0}</span>
+                <span>{this.props.userId?this.props.dj.count:0}</span>
                 <i className='back iconfont icon-fanhui2'></i>
               </li>
             </Link>
@@ -101,14 +107,13 @@ export default class MyMusic extends React.Component {
             </Link>
 
           </ul>
+
           <div className='song-list'>
             <div className='song-text' onClick={this.clickShow}>
               {this.state.isShow?
                 <i className="forwards iconfont icon-xiangxiajiantou"></i>:
                 <i className='forwards iconfont icon-fanhui2'></i>
-
               }
-
               <span>我创建的歌单({`${this.props.userList.playlist?this.props.userList.playlist.length:0}`})</span>
               <i className='backwards iconfont icon-more' onClick={this.clickPopUp}></i>
               {this.state.isShow ? <EstablishList/> : null}

@@ -9,7 +9,7 @@ export default class HomeVideo extends React.Component {
     }
 
     render() {
-        console.log(this.state);
+
         return <div className="home-video">
             {/*<HomeTop/>*/}
             <ul>
