@@ -12,7 +12,8 @@ let initState = {
             name:"",
             id:0,
             ar:[{name:''}],
-            al:{picUrl:""}
+            al:{picUrl:""},
+            dt:0
         }
     ]
 };

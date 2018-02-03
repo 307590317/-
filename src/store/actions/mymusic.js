@@ -20,6 +20,7 @@ let actions={
   getRecordAPI(id){//id='248846943'
     //getRecord(id);
     //return {type:Types.GET_NEARLY,data:getRecord(id).then()};
+
     return (dispatch,getState)=>{
       dispatch({type:Types.GET_NEARLY,payload:getRecord(id)})
   // dispatch({type:Types.GET_NEARLY,payload:{"weekData":[],"code": 200}})
@@ -31,5 +32,17 @@ let actions={
     dispatch({type:Types.GET_RADIO,payload:getUserDj(id)})
     }
   },
+
+  getNearlyEmpty(){
+    return(dispatch,getState)=>{
+      dispatch({type:Types.GET_NEARLY_EMPTY})
+    }
+  },
+
+  keepEmpty(){
+   return(dispatch,getState)=>{
+     dispatch({type:Types.KEEP_EMPTY})
+   }
+  }
 };
 export default actions;

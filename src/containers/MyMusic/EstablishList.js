@@ -3,7 +3,6 @@ import {connect} from 'react-redux';
 
 import index from "../../store/reducer";
 import actions from "../../store/actions/common";
-
 @connect((state)=>({...state.common}),actions)
 export default class EstablishList extends React.Component {
   componentDidMount(){
@@ -12,7 +11,6 @@ export default class EstablishList extends React.Component {
     }
     this.props.getUserListAPI(this.props.userId);
   }
-
   //对象.playlist
   /*
   playlist.length

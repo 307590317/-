@@ -1,5 +1,5 @@
 //公共部分
-b{
+b {
   font-weight: normal;
 }
 
@@ -13,7 +13,7 @@ b{
   top: 0;
   right: 0;
   bottom: 0;
-  background: #764d31;
+  background: linear-gradient(rgba(51, 22, 91, 0.65), #000);
   z-index: 10;
   width: 375px;
   height: 667px;
@@ -31,6 +31,7 @@ b{
       left: 11px;
     }
     .musicName {
+      width: 300px;
       margin: 0 auto;
       height: 45px;
       padding-top: 7px;
@@ -85,12 +86,18 @@ b{
         width: 40px;
         height: 10px;
         left: 169px;
-        top:0;
+        top: 0;
         z-index: 20;
       }
       .pointRun {
         transform: rotate(-28deg);
+        transition:.3s;
       }
+      .pointStopRun {
+        transform: rotate(0);
+        transition:.3s;
+      }
+
       .img-d {
         z-index: 11;
         transform-origin: 1px 5px;
@@ -118,7 +125,7 @@ b{
         border-radius: 50%;
       }
       .CDRun {
-        animation: round 20s infinite both;
+        animation: round 20s linear infinite;
       }
       .img-e, .img-f {
         @keyframes round {
@@ -181,7 +188,7 @@ b{
         background: #cfc7c1;
         .runBtn {
           position: relative;
-          left: 20px;
+          left: 0; /*left动态计算*/
           top: -7px;
           width: 14px;
           height: 14px;
@@ -196,6 +203,16 @@ b{
             background: red;
             border-radius: 50%;
           }
+        }
+        /*播放线*/
+        .playLine {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 0; /*宽度动态计算*/
+          height: 100%;
+          background: red;
+          transition: .33s;
         }
       }
 
@@ -350,13 +367,9 @@ b{
     background: rgba(0, 0, 0, .4);
   }
 }
-.scrollBox{
-  position: fixed;
-  left: 0;
-  bottom: 150px;
-  overflow: hidden;
-  height: 400px;
-  width: 375px;
+
+.detailHide{
+  visibility: hidden;
 }
 
 
