@@ -10,7 +10,7 @@ export default class Music extends React.Component {
     this.props.getMusicListAPI();
   }
   render(){
-   // console.log(this.props);
+   //console.log(this.props);
     let list=this.props.userList.playlist||[];
     return (
         <div className="profile-detail-music">
