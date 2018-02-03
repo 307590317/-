@@ -42,9 +42,10 @@ export default class MyMusic extends React.Component {
     if(!this.props.userId){
       return;
     }
-
-    this.props.getRecordAPI(this.props.userId);
+    /*点击清除时，修改标识，再次切换到此组件后，最近播放数据仍然为空*/
+    this.props.flag?this.props.getRecordAPI(this.props.userId):null;
     this.props.getUserDjAPI(this.props.userId);
+    //对应新建歌单
     this.props.getUserListAPI(this.props.userId);
   }
   /*清空数据后再次登录数据为空*/
@@ -79,7 +80,7 @@ export default class MyMusic extends React.Component {
               </li>
             </Link>
 
-            <Link to='/latestplay'>
+            <Link to={{pathname:'/latestplay'}}>
               <li>
                 <i className='iconfont icon-bofang2 front '></i>
                 <p>最近播放</p>

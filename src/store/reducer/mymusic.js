@@ -11,7 +11,12 @@ let mymusicReducer = function (state = initState, action) {
   return state;
 };
 export default mymusicReducer*/
-let initState={record:{weekData:[]},dj:{},collect:{}};
+let initState={
+  record:{weekData:[]},
+  dj:{},
+  collect:{},
+  flag:true
+};
 let mymusicReducer=function (state=initState,action) {
   switch (action.type){
     case Types.GET_NEARLY:
@@ -20,8 +25,17 @@ let mymusicReducer=function (state=initState,action) {
    case Types.GET_RADIO:
      return{...state,dj:action.payload};
     case Types.GET_NEARLY_EMPTY:
-      return{...state,record:{weekData:[]}};
-    //{record:{weekData:[]},dj:{},collect:{},record:{weekData:[]}}
+      /*返回的状态为清空后的数据，和修改后的标识*/
+      return{...state,record:{weekData:[]},flag:!state.flag};
+    //{
+    //  record:{weekData:[100tiao]},
+    //  dj:{},
+    //  collect:{},
+    //  record:{weekData:[]}，
+    //  flag:true
+    // }
+    // case Types.FLAG_CHANGE:
+    //   return{...state,flag:}
  }
   return state;
 };

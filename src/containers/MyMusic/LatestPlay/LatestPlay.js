@@ -35,7 +35,7 @@ export default class LatestPlay extends React.Component {
   };
   /*清除播放记录*/
   clickClear=()=>{
-    this.props.getNearlyEmpty()
+    this.props.clearNearlyEmpty();
   };
 
   /*this.props.record.weekData
@@ -43,7 +43,6 @@ item
 音乐名称：item.song.name
 作者+专辑：`${item.song.ar[0].name} - ${item.song.al.name}`
 作者+专辑：`${item.song.ar[0].name}/${item.song.ar[1].name} - ${item.song.al.name}`*/
-
 
   handleClick = (e) => {
     e.target.isSelscted = true;
@@ -89,9 +88,7 @@ item
 
             <span className={`finish${!this.state.isTurn ? ' active' : ''}`}
                   onClick={this.clickCompile}>完成</span>
-
           </div>
-
           <ul className='songs'>
             {this.props.record.weekData.map((item,index)=>{
               return(
@@ -115,7 +112,6 @@ item
                   <p>确定清除播放记录</p>
                   <button className='clear-away' onClick={this.clickClear}>清除</button>
                 </div>
-
                 <button className='call-off' onClick={this.clickDelete}>取消</button>
               </div>:null}
             </li>
