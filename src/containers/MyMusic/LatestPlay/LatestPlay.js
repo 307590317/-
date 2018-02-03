@@ -7,8 +7,7 @@ import './LatestPlay.less'
 import index from "../../../store/reducer";
 import actions from "../../../store/actions/mymusic";
 
-
-@connect((state)=>({...state.mymusicReducer}),actions)
+@connect((state)=>({...state.mymusicReducer,...state.common}),actions)
 export default class LatestPlay extends React.Component {
   constructor() {
     super();
@@ -34,12 +33,10 @@ export default class LatestPlay extends React.Component {
   clickSelectAll = () => {
     this.setState({isCheck: this.state.isCheck});
   };
-
   /*清除播放记录*/
   clickClear=()=>{
     this.props.getNearlyEmpty()
   };
-
 
   /*this.props.record.weekData
 item
@@ -58,7 +55,6 @@ item
     this.props.history.go(-1);
   };
   render() {
-
     let data=this.props.record.weekData.slice(0,10);
 
     return (
@@ -75,7 +71,7 @@ item
             <NavLink to={'/'} className={`${this.state.isTurn?'select':''}`}>
               <i className='first iconfont icon-bofang11'></i>
               <span className='all-play'>播放全部</span>
-              <span className='total-song'>（共3首）</span>
+              <span className='total-song'>（共{this.props.record.weekData.length}首）</span>
             </NavLink>
 
             <div className='all-choice'>
@@ -100,7 +96,7 @@ item
             {this.props.record.weekData.map((item,index)=>{
               return(
                 <li className={this.state.isTurn?' active':''} key={index}>
-                  <Link to={{pathname:`/detail${item.song.id}`,state:{path:`/detail`}}}>
+                  <Link to={{state:{musicId:`${item.song.id}`}}}>
                   {/*<Link to={`/detail/${item.song.id}`}>*/}
                     <div className='song-name'>
                       <i className={`choice-none iconfont icon-weixuanzhongyuanquan${!this.state.isTurn?' active':''}`}></i>
@@ -111,7 +107,7 @@ item
                   </Link>
                 </li>
               )
-            })}
+            }):''}
              <li className={`rubbish${this.state.isTurn?' active':''}`} onClick={this.clickDelete}>
               <span><i className='iconfont icon-dustbin_icon'></i>清除播放记录</span>
               {this.state.isArise ? <div className='layer-delete'>

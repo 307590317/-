@@ -1,7 +1,7 @@
 import React from 'react';
 import './index.less'
 import {NavLink} from 'react-router-dom'
-import logo from "./img/logo.png";
+import logo from "./img/musicLogo.jpg";
 export default class Login extends React.Component {
   render(){
     return (

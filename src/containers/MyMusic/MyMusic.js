@@ -92,7 +92,7 @@ export default class MyMusic extends React.Component {
               <li>
                 <i className='front iconfont icon-diantai'></i>
                 <p>我的电台</p>
-                <span>{this.props.userId?this.props.dj.count:0}</span>
+                <span>{this.props.dj.count||0}</span>
                 <i className='back iconfont icon-fanhui2'></i>
               </li>
             </Link>

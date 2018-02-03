@@ -45,14 +45,13 @@ export const GET_RADIO='GET_RADIO';
 export const GET_PROFILE_DYNAMIC="GET_PROFILE_DYNAMIC";
 
 
-/*退出登录后把redux数据清空*/
+/*/!*退出登录后把redux数据清空*!/
 export const GET_NEARLY_EMPTY='GET_NEARLY_EMPTY';
 
-/*退出登录*/
 
+/!*清除数据后再次登录数据为空*!/
+export const KEEP_EMPTY='KEEP_EMPTY';*/
+/*退出登录*/
 export const EXIT_LOGIN="EXIT_LOGIN";
 
-
-/*清除数据后再次登录数据为空*/
-export const KEEP_EMPTY='KEEP_EMPTY';
 
