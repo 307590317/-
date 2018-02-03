@@ -21,7 +21,7 @@ export default class Comment extends React.Component {
 
     componentDidMount(){
         //dispatch=>dispatch(getCommentAPI.aplly(this,...args))
-        this.props.getCommentAPI('186016', '15');
+        this.props.getCommentAPI('186016');//想获取总评论数
         //console.log(this.props.getCommentAPI('186016', '15'),'aaaa');//为 undefined ？？？
         // this.props.getSongDetailAPI(33894312);
     };
@@ -36,10 +36,11 @@ export default class Comment extends React.Component {
         //console.log(this.props,'props');
         // console.log(this.props.hotComments,'hotComments');
         let hotComments=this.props.hotComments;
+        let commentNum=hotComments.length;
         let moreHot=this.props.moreHot;
         let code=this.props.code;
         let songs=this.props.songs;
-
+        console.log(commentNum,'长度');
         // console.log(songs[0].name,'songs');
 
        /* let ary=[{name:'zsq',age:10}];
@@ -53,8 +54,13 @@ export default class Comment extends React.Component {
 
         return <div>
             <MHeader>
-              <i className="iconfont icon-fanhui" onClick={this.go}></i>
-              <div className="headerCenter">评论(1234)</div>
+                {/*<NavLink to='/detail/:id'>
+                    <i className="commentBack iconfont icon-fanhui"></i>
+                </NavLink>*/}
+                <i className="iconfont icon-fanhui" onClick={this.go}></i>
+                <div className="headerCenter">评论({commentNum})</div>
+
+
             </MHeader>
             <div className="content">
                     <div className="musicDetail">

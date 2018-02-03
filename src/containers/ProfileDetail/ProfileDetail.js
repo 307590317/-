@@ -19,7 +19,7 @@ export default class ProfileDetail extends React.Component {
       backgroundImage:`url(${background})`,
       backgroundSize:"100% 100%"
     };
-    //console.log(this.props);
+    console.log(this.props);
     let userProfile=this.props.userInfo||{};
     let {nickname,avatarUrl,follows,followeds,eventCount,gender,playlistCount}=userProfile.profile||{};
     return (
@@ -27,10 +27,9 @@ export default class ProfileDetail extends React.Component {
           <div className="Essential" style={style}>
             <MHeader>
               <i className='iconfont icon-fanhui' onClick={()=>{this.props.history.push("/profile")}}></i>
-              <div className="headerCenter">
+              <div className="headerCenter ProfileDetailCenter">
               </div>
               <i className="iconfont icon-fenxiang1"></i>
-
             </MHeader>
             <div className="Basics-info">
               <img src={avatarUrl} />

@@ -6,6 +6,8 @@ import MHeader from "../../../components/MHeader/MHeader";
 import './LatestPlay.less'
 import index from "../../../store/reducer";
 import actions from "../../../store/actions/mymusic";
+
+
 @connect((state)=>({...state.mymusicReducer}),actions)
 export default class LatestPlay extends React.Component {
   constructor() {
@@ -34,9 +36,8 @@ export default class LatestPlay extends React.Component {
   };
 
   /*清除播放记录*/
- /*isClear:!this.state.isClear*/
   clickClear=()=>{
-    dispatch()
+    this.props.getNearlyEmpty()
   };
 
 
@@ -119,7 +120,7 @@ item
                   <button className='clear-away' onClick={this.clickClear}>清除</button>
                 </div>
 
-                <button className='call-off'>取消</button>
+                <button className='call-off' onClick={this.clickDelete}>取消</button>
               </div>:null}
             </li>
           </ul>

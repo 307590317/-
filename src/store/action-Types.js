@@ -16,12 +16,8 @@ export const  GET_UNIQUE='GET_UNIQUE';
 export const  GET_NEW='GET_NEW';
 /*获取搜索歌曲列表*/
 export const GET_SEARCH='GET_SEARCH';
-
-
 /*注册*/
 export const TO_REG="TO_REG";
-
-
 /*点击朋友动态栏中信息进入详情页，在这里我们获取评论的数*/
 export const GET_PREFECT_COMMENT_FROM_FRIEND_DYNAMIC='GET_PREFECT_COMMENT_FROM_FRIEND_DYNAMIC';
 
@@ -49,8 +45,11 @@ export const GET_RADIO='GET_RADIO';
 export const GET_PROFILE_DYNAMIC="GET_PROFILE_DYNAMIC";
 
 
-/*获取数据为空*/
-export const GET_NEARLY_EMPTY_='GET_NEARLY_EMPTY_';
+/*退出登录后把redux数据清空*/
+export const GET_NEARLY_EMPTY='GET_NEARLY_EMPTY';
 
 /*退出登录*/
 export const EXIT_LOGIN="EXIT_LOGIN";
+
+/*清除数据后再次登录数据为空*/
+export const KEEP_EMPTY='KEEP_EMPTY';
