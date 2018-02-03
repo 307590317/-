@@ -32,10 +32,11 @@ class Detail extends React.Component {
     async componentDidMount() {
         /*此处的id需要用this.props.match.params.id*/
         let result = await getMP3(this.props.match.params.id);
-        let url = result.data[0].url;
-
-        this.setState({url});
-        this.props.getSongDetailAPI('347230');
+      console.log(result);
+      let url = result.data[0].url;
+      console.log(url);
+      this.setState({url});
+        this.props.getSongDetailAPI(this.props.match.params.id);
 
     }
 

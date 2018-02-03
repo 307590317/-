@@ -9,12 +9,9 @@ export default class MHeader extends React.Component {
       return (
         <div className='header'>
           {this.props.children}
-
-              <NavLink to={{pathname:'/detail/1'}} style={{display:this.props.display}}>
+              <NavLink to={{pathname:'/detail/33894312'}} style={{display:this.props.display}}>
                 <i className="iconfont icon-paihangbang1"></i>
               </NavLink>
-
-
         </div>
     )
   }

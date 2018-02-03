@@ -12,14 +12,6 @@ export default class EstablishList extends React.Component {
           </div>
           <i className='trumpet'></i>
         </li>
-        <li>
-          <img src="" alt=""/>
-          <div className='describe'>
-            <p>美式乡村音乐</p>
-            <i className='little'></i>
-            <span>23首，已下载11首</span>
-          </div>
-        </li>
 
       </ul>
     </div>
