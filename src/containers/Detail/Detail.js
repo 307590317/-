@@ -5,21 +5,38 @@ import circle from './img/circle.png';
 import mPoint from './img/mPoint.png';
 import e from './img/play_disc.png';
 import f from './img/singer-d.png';
+import {connect} from 'react-redux';
+import {getMP3} from "../../api/zsq";
+import 'babel-polyfill';
+import actions from '../../store/actions/comment';
 
-export default class Detail extends React.Component {
+@connect(state => ({...state.commentReducer}), actions)
+class Detail extends React.Component {
     constructor() {
         super();
         this.state = {
-            flag: false,
-            flag1: false,
+            flag: true,
+            flag1: true,
             flag2: 1,
             showDownload1: {display: 'block'},
             showDownload2: {display: 'none'},
             appear: {display: 'none'},
             showMusicList: {display: 'none'},
             showListMask: {display: 'none'},
-            playStyle:1,
+            playStyle: 1,
+            url: null, //歌曲地址
+            playStatus: false,//播放状态 true播放 false 暂停
         }
+    }
+
+    async componentDidMount() {
+        /*此处的id需要用this.props.match.params.id*/
+        let result = await getMP3(this.props.match.params.id);
+        let url = result.data[0].url;
+
+        this.setState({url});
+        this.props.getSongDetailAPI('347230');
+
     }
 
     /*点击切换类名  //点击切换字体图标*/
@@ -27,8 +44,15 @@ export default class Detail extends React.Component {
         this.setState({flag: !this.state.flag});
     };
 
-    changeName = () => {
+    contorlPlayState = () => {
         this.setState({flag1: !this.state.flag1});
+        this.setState({playStatus: !this.state.playStatus});
+        let audio = document.getElementById('audio');
+        if(this.state.playStatus){
+            audio.play();
+        }else{
+            audio.pause();
+        }
     };
 
     changeClassName = () => {
@@ -40,53 +64,58 @@ export default class Detail extends React.Component {
             }
         }
         //=>用定时器控制切换播放方式按钮
-        this.timer=setTimeout(()=> {
+        this.timer = setTimeout(() => {
             this.setState({appear: {display: 'none'}});
-        },3000)
+        }, 3000)
     };
 
     showDownloadMask = () => {
         this.setState({showDownload1: {display: 'block'}, showDownload2: {display: 'block'}});
     };
 
-    changePlayState=()=>{
-            this.setState({appear: {display: 'block'}});
-            if (this.state.playStyle <= 3) {
-                this.setState({playStyle: this.state.playStyle + 1});
-                if (this.state.playStyle === 3) {
-                    this.setState({playStyle: 1});
-                }
+    changePlayState = () => {
+        this.setState({appear: {display: 'block'}});
+        if (this.state.playStyle <= 3) {
+            this.setState({playStyle: this.state.playStyle + 1});
+            if (this.state.playStyle === 3) {
+                this.setState({playStyle: 1});
             }
-        };
+        }
+    };
 
     hideMask = () => {
         this.setState({showDownload1: {display: 'none'}, showDownload2: {display: 'none'}});
     };
 
-    showMusicList=()=>{
-        this.setState({showMusicList:{display:'block'},showListMask: {display: 'block'}});
+    showMusicList = () => {
+        this.setState({showMusicList: {display: 'block'}, showListMask: {display: 'block'}});
     };
 
-    hideListMask=()=>{
-        this.setState({showListMask: {display: 'none'},showMusicList:{display:'none'}})
+    hideListMask = () => {
+        this.setState({showListMask: {display: 'none'}, showMusicList: {display: 'none'}})
     };
+
     render() {
+        let songs = this.props.songs;
+        console.log(this.props);
         return (
             <div className="detail">
+                {/*<audio src={this.state.url} autoPlay={this.state.playStatus?"autoPlay":null} id="audio"></audio>*/}
+                <audio src={this.state.url} autoPlay={'autoPlay'} id="audio"></audio>
                 <div className="detailHeader">
                     <i className="back iconfont icon-fanhui"></i>
                     <div className="musicName">
-                        <span className="name">无问西东</span>
-                        <span className="singer">王菲</span>
+                        <span className="name">{songs[0].name}</span>
+                        <span className="singer">{songs[0].ar[0].name}</span>
                     </div>
                     <i className="share iconfont icon-fenxiang"></i>
                 </div>
                 <div className="detailBody">
                     <div className="imgDetailBox">
                         <img src={circle} className="img-c"/>
-                        <img src={mPoint} className={this.state.flag1 ?"img-d":"img-d pointRun"}/>
-                        <img src={e} className={this.state.flag1 ?"img-e CDRun":"img-e"}/>
-                        <img src={f} className={this.state.flag1 ?"img-f CDRun":"img-f"}/>
+                        <img src={mPoint} className={this.state.flag1 ? "img-d" : "img-d pointRun"}/>
+                        <img src={e} className={this.state.flag1 ? "img-e CDRun" : "img-e"}/>
+                        <img src={songs[0].al.picUrl}  className={this.state.flag1 ? "img-f CDRun" : "img-f"}/>
                         <div className="runCircle"></div>
                     </div>
                     <div className="btn">
@@ -117,7 +146,7 @@ export default class Detail extends React.Component {
                     </i>
                     <i className="playLeft iconfont icon-zuobofang"></i>
                     <i className={this.state.flag1 ? "curMusicPlay iconfont icon-bofang1" : "curMusicPlay iconfont icon-bofang11"}
-                       onClick={this.changeName}></i>
+                       onClick={this.contorlPlayState}></i>
                     <i className="playRight iconfont icon-youbofang"></i>
                     <i className="list iconfont icon-liebiao2" onClick={this.showMusicList}></i>
                 </div>
@@ -133,74 +162,82 @@ export default class Detail extends React.Component {
                     </div>
                 </div>
 
-                    <div className="musicdList"  style={this.state.showMusicList}>
-                        <div className="musicdListHeader clearfix">
-                            <ul>
-                                <li>
-                                    <i className={this.state.playStyle == 1 ? "goBack iconfont icon-fanhui11" : (this.state.playStyle == 2 ? "goBack iconfont icon-suijibofang" : "goBack iconfont icon-danquxunhuan")} onClick={this.changePlayState}></i>
-                                </li>
-                                <li>{this.state.playStyle == 1 ? "循环播放" : (this.state.playStyle == 2 ? "随机播放" : "单曲循环")}</li>
-                                <li>(90)</li>
-                                <li><i className="iconfont icon-dustbin_icon"></i></li>
-                                <li>收藏全部</li>
-                                <li><i className="iconfont icon-shoucang1"></i></li>
-                            </ul>
-                        </div>
-                        <ul className="musicdLists">
+                <div className="musicdList" style={this.state.showMusicList}>
+                    <div className="musicdListHeader clearfix">
+                        <ul>
                             <li>
-                                <span className="musicName">歌名歌名</span>
-                                <b className="musicSinger"> - 歌手</b>
-                                <i className="closeMusic">×</i>
+                                <i className={this.state.playStyle == 1 ? "goBack iconfont icon-fanhui11" : (this.state.playStyle == 2 ? "goBack iconfont icon-suijibofang" : "goBack iconfont icon-danquxunhuan")}
+                                   onClick={this.changePlayState}></i>
                             </li>
-                            <li>
-                                <span className="musicName">歌名歌名111</span>
-                                <b className="musicSinger"> - 歌手1111</b>
-                                <i className="closeMusic">×</i>
-                            </li>
-                            <li>
-                                <span className="musicName">歌名歌名</span>
-                                <b className="musicSinger"> - 歌手</b>
-                                <i className="closeMusic">×</i>
-                            </li>
-                            <li>
-                                <span className="musicName">歌名歌名111</span>
-                                <b className="musicSinger"> - 歌手1111</b>
-                                <i className="closeMusic">×</i>
-                            </li>
-                            <li>
-                                <span className="musicName">歌名歌名</span>
-                                <b className="musicSinger"> - 歌手</b>
-                                <i className="closeMusic">×</i>
-                            </li>
-                            <li>
-                                <span className="musicName">歌名歌名111</span>
-                                <b className="musicSinger"> - 歌手1111</b>
-                                <i className="closeMusic">×</i>
-                            </li>
-                            <li>
-                                <span className="musicName">歌名歌名</span>
-                                <b className="musicSinger"> - 歌手</b>
-                                <i className="closeMusic">×</i>
-                            </li>
-                            <li>
-                                <span className="musicName">歌名歌名111</span>
-                                <b className="musicSinger"> - 歌手1111</b>
-                                <i className="closeMusic">×</i>
-                            </li>
-                            <li>
-                                <span className="musicName">歌名歌名111</span>
-                                <b className="musicSinger"> - 歌手1111</b>
-                                <i className="closeMusic">×</i>
-                            </li>
-                            <li>
-                                <span className="musicName">歌名歌名111</span>
-                                <b className="musicSinger"> - 歌手1111</b>
-                                <i className="closeMusic">×</i>
-                            </li>
+                            <li>{this.state.playStyle == 1 ? "循环播放" : (this.state.playStyle == 2 ? "随机播放" : "单曲循环")}</li>
+                            <li>(90)</li>
+                            <li><i className="iconfont icon-dustbin_icon"></i></li>
+                            <li>收藏全部</li>
+                            <li><i className="iconfont icon-shoucang1"></i></li>
                         </ul>
                     </div>
+                    <ul className="musicdLists">
+                        <li>
+                            <span className="musicName">你要的全拿走</span>
+                            <b className="musicSinger"> - 胡彦斌</b>
+                            <i className="closeMusic">×</i>
+                        </li>
+                        <li>
+                            <span className="musicName">远走高飞</span>
+                            <b className="musicSinger"> - 金志文</b>
+                            <i className="closeMusic">×</i>
+                        </li>
+                        <li>
+                            <span className="musicName">差一步</span>
+                            <b className="musicSinger"> - 大壮</b>
+                            <i className="closeMusic">×</i>
+                        </li>
+                        <li>
+                            <span className="musicName">成都</span>
+                            <b className="musicSinger"> - 赵雷</b>
+                            <i className="closeMusic">×</i>
+                        </li>
+                        <li>
+                            <span className="musicName">醉赤壁</span>
+                            <b className="musicSinger"> - 林俊杰</b>
+                            <i className="closeMusic">×</i>
+                        </li>
+                        <li>
+                            <span className="musicName">带你去旅行</span>
+                            <b className="musicSinger"> - 校长</b>
+                            <i className="closeMusic">×</i>
+                        </li>
+                        <li>
+                            <span className="musicName">文爱</span>
+                            <b className="musicSinger"> - CG</b>
+                            <i className="closeMusic">×</i>
+                        </li>
+                        <li>
+                            <span className="musicName">晴天</span>
+                            <b className="musicSinger"> - 周杰伦</b>
+                            <i className="closeMusic">×</i>
+                        </li>
+                        <li>
+                            <span className="musicName">Psycho</span>
+                            <b className="musicSinger"> - Russ</b>
+                            <i className="closeMusic">×</i>
+                        </li>
+                        <li>
+                            <span className="musicName">说散就散</span>
+                            <b className="musicSinger"> - JC</b>
+                            <i className="closeMusic">×</i>
+                        </li>
+                        <li>
+                            <span className="musicName">Time</span>
+                            <b className="musicSinger"> - MKJ</b>
+                            <i className="closeMusic">×</i>
+                        </li>
+                    </ul>
+                </div>
                 <div className="musicListMask" style={this.state.showListMask} onClick={this.hideListMask}></div>
             </div>
         )
     }
 }
+
+export default connect(state => ({...state}), actions)(Detail);

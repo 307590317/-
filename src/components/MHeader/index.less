@@ -8,13 +8,13 @@
   display: flex;
   justify-content: space-around;
   border-radius: 5px 5px 0 0;
-  z-index: 9999;
+  z-index: 999;
   a{
     line-height: 40px;
     display: none;
-    &.show{
-      display: block;
-    }
+    //&.show{
+    //  display: block;
+    //}
   }
   i{
     display: flex;
@@ -23,5 +23,19 @@
     align-items: center;
     font-size: 22px;
     color: #fff;
+
+  }
+  .cancel{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    position: relative;
+    margin-left: 6px;
+    font-style: normal;
+    font-size: 18px;
+    line-height: 40px;
+    z-index: 1000;
   }
 }

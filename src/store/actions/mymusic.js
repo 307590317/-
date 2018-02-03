@@ -8,17 +8,21 @@ let actions={
       dispatch({type:Types.GET_RECORD,payload:getRecord(id)});
     }
   }
+}
+export default actions;
+=======
 };
 export default actions;*/
 import {getRecord,getUserDj} from "../../api/gjx";
 import {getUserList} from '../../api/common';
 
 let actions={
-  getRecordAPI(id){
+  getRecordAPI(id){//id='248846943'
     //getRecord(id);
     //return {type:Types.GET_NEARLY,data:getRecord(id).then()};
     return (dispatch,getState)=>{
       dispatch({type:Types.GET_NEARLY,payload:getRecord(id)})
+  // dispatch({type:Types.GET_NEARLY,payload:{"weekData":[],"code": 200}})
     }
   },
 
@@ -28,5 +32,4 @@ let actions={
     }
   },
 };
-
 export default actions;

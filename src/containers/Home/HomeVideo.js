@@ -1,8 +1,10 @@
 import React from 'react';
+import HomeTop from "./HomeTop";
 
 export default class HomeVideo extends React.Component {
     render() {
         return <div className="home-video">
+            {/*<HomeTop/>*/}
             <ul>
                 <li>
                     <div className='top'>

@@ -1,13 +1,14 @@
 import React from 'react';
 import './index.less';
-import {Link} from 'react-router-dom';
+import {Link, Route} from 'react-router-dom';
+
 
 import EstablishList from "./EstablishList";
 import Shade from "./Shade";
 import MHeader from "../../components/MHeader/MHeader";
 import {connect} from 'react-redux';
 import actions from "../../store/actions/mymusic";
-
+import LatestPlay from "./LatestPlay/LatestPlay";
 
 /*import {getRecord} from "../../api/gjx";
 import 'babel-polyfill'*/
@@ -18,7 +19,8 @@ export default class MyMusic extends React.Component {
     super();
     this.state = {
       isShow: false,
-      isPopUp: false
+      isPopUp: false,
+      data: {}
     }
   }
 
@@ -40,16 +42,16 @@ export default class MyMusic extends React.Component {
     this.props.getUserDjAPI('248846943');
   }
 
-
   render() {
     //console.log(this.props.record.weekData.length);
     // let data=this.props.record,
     //   weekData=data.weekData||[],
     //   length=weekData.length;
     // console.log(length);
+    console.log(this.props);
     return (
       <div className='mymusic'>
-        <MHeader>
+        <MHeader data={this.state.data}>
           <i className="iconfont icon-yunzhanghu"></i>
           <div className='headerCenter'>
             我的音乐
@@ -67,30 +69,30 @@ export default class MyMusic extends React.Component {
             </Link>
 
             <Link to='/latestplay'>
-            <li>
+              <li>
                 <i className='iconfont icon-bofang2 front '></i>
                 <p>最近播放</p>
                 <span>{this.props.record.weekData.length}</span>
                 <i className='back iconfont icon-fanhui2'></i>
-            </li>
+              </li>
             </Link>
 
             <Link to='/'>
-            <li>
+              <li>
                 <i className='front iconfont icon-diantai'></i>
                 <p>我的电台</p>
                 <span>{this.props.dj.count}</span>
                 <i className='back iconfont icon-fanhui2'></i>
-            </li>
+              </li>
             </Link>
 
             <Link to='/'>
-            <li className='last'>
+              <li className='last'>
                 <i className='front iconfont icon-shoucang'></i>
                 <p>我的收藏</p>
                 <span>33</span>
                 <i className='back iconfont icon-fanhui2'></i>
-            </li>
+              </li>
             </Link>
 
           </ul>

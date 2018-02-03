@@ -25,13 +25,13 @@ export default class EstablishList extends React.Component {
     return <div>
       <ul className='layer-left'>
         {this.props.userList.playlist.map((item,index)=>{
-          let {coverImgUrl,name,trackCount}=item;
+          let {coverImgUrl,name,trackCount,cloudTrackCount}=item;
           return (
             <li key={index}>
               <img src={coverImgUrl} />
               <div className='describe'>
                 <p>{name}</p>
-                <span>{trackCount}</span>
+                <span>{cloudTrackCount===0?`${trackCount}首`:`${trackCount}首，已下载${cloudTrackCount}首`}</span>
               </div>
             </li>
           )

@@ -20,27 +20,30 @@ export default class FriendDynamicDetail extends React.Component {
                     </div>
                 </div>
             </MHeader>
-
+            <TitelInFriendDynamic>精彩评论</TitelInFriendDynamic>
+            <FriendComment/>
+            <TitelInFriendDynamic>相关评论</TitelInFriendDynamic>
+            <FriendComment/>
             <div className="content">
 
                 <div className="dynamic-detail-each-content">
                     <header className="friend-dynamic-detail-header">
-                        <Link  className="photo-container-in-friend-dynamic" to={'/notice'}>
+                        <Link  className="photo-container-in-friend-dynamic" to={'/home'}>
                             <img src={a} alt=""/>
                         </Link>
 
                         <div className="username-in-friend-dynamic">
-                                  <Link to={"/sssss"} >
+                                  <Link to={"/profile"} >
                             小可爱baby
                                 </Link>
-                            <Link to={'/notice'}>
+                            <Link to={'/reg'}>
                                 发布视频
                             </Link>
                         </div>
 
                         <p className="watchtime-in-friend-dynamic">昨天：21:09</p>
 
-                        <Link to={'/notice'} className="notice-me">
+                        <Link to={'/login'} className="notice-me">
                             <strong>＋</strong>
                             <strong>关注</strong>
                         </Link>
@@ -63,56 +66,8 @@ export default class FriendDynamicDetail extends React.Component {
                 </div>
                 <TitelInFriendDynamic>精彩评论</TitelInFriendDynamic>
                 <FriendComment/>
-                <FriendComment/>
-                <FriendComment/>
-                <FriendComment/>
-                <FriendComment/>
-                <FriendComment/>
-                <FriendComment/>
-                <FriendComment/>
-                <FriendComment/>
-                <FriendComment/>
                 <TitelInFriendDynamic>最新评论</TitelInFriendDynamic>
                 <FriendComment/>
-                <FriendComment/>
-                <FriendComment/>
-                <FriendComment/>
-                <FriendComment/>
-                <FriendComment/>
-
-
-
-
-                {/*<div className="comment">*/}
-                    {/*<span>*/}
-                        {/*精彩评论*/}
-                    {/*</span>*/}
-
-                {/*</div>*/}
-
-                {/*<div className="each-nearby-user">*/}
-
-                    {/*<div className="nearby-user-profile">*/}
-                        {/*<NavLink to={"/friend/nearby/profile"}>*/}
-                            {/*<img src={a} alt=""/>*/}
-                            {/*<span className="user-name">薛世洋</span>*/}
-                            {/*<span className="distance">*/}
-                                    {/*<span className="distance-logo">220</span>*/}
-                                    {/*<span className="user-distance">👍</span>*/}
-                                {/*</span>*/}
-                            {/*<span className="sex-and-news-from">*/}
-                                     {/*<span className="sex">2月15日</span>*/}
-                                {/*</span>*/}
-
-                        {/*</NavLink>*/}
-                    {/*</div>*/}
-
-                    {/*<div className="nearby-user-lately-listen-song">*/}
-                        {/*<NavLink to={"/song"}>*/}
-                            {/*<span className="love-song">我去。这个歌真的太好听了</span>*/}
-                        {/*</NavLink>*/}
-                    {/*</div>*/}
-                {/*</div>*/}
 
             </div>
         </div>
