@@ -9,4 +9,4 @@ export let getComment=(id,limit='20')=>axios.get(`/comment/music?id=${id}&limit=
 //喜欢音乐(isLike:布尔值 , 默认为 true 即喜欢 , 若传 false, 则取消喜欢)
 export let likeMusic=(id,isLike=true)=>axios.get(`/${isLike}?id=${id}`);
 //根据音乐id获取到对应的MP3
-export let getMP3=(id)=>axios.get(`/music/url?id=${id}`);
+export let getMP3=(id)=>axios.get(`/music/url?id=${id}`)
