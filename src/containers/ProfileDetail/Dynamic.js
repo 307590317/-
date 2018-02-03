@@ -66,7 +66,7 @@ export default class Dynamic extends React.Component {
 
             )}
 
-            {/*<li>
+           {/* <li>
               <img src={avatar} className="avatar"/>
               <div className="dynamic-detail">
                 <h4>熊博士的音乐</h4>
@@ -88,6 +88,7 @@ export default class Dynamic extends React.Component {
                 </div>
               </div>
             </li>*/}
+
           </ul>
         </div>
     )

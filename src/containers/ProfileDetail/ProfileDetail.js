@@ -71,7 +71,7 @@ export default class ProfileDetail extends React.Component {
 
               </li>
             </ul>
-            <div>
+            <div className="scroll-content">
               <Switch>
                 <Route path={"/profileDetail"} exact={true} component={Music}/>
                 <Route path={"/profileDetail/aboutMe"} component={AboutMe}/>
