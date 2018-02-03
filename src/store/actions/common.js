@@ -15,6 +15,13 @@ let actions={
     return function (dispatch,getState) {
       dispatch({type:Types.GET_USERLIST,payload:getUserList(id)});
     }
+  },
+  //退出登录
+  clearUserIdAPI:()=>{
+    return function (dispatch,getState) {
+      dispatch({type:Types.EXIT_LOGIN,id:''});
+    }
+    // return {type:Types.EXIT_LOGIN,id:''}
   }
 };
 export default actions;

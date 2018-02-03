@@ -13,10 +13,8 @@ export default class SongList extends React.Component {
        let id=this.props.location.state.id;
         let result=await getTuiJiansDetail(id);
      this.setState({...result});
-       console.log(this.state);
    }
     render() {
-        console.log(this.state.result.tracks);
         let {tracks,name,coverImgUrl,trackCount,commentCount,subscribedCount,shareCount,creator}=this.state.result;
         let {avatarUrl,nickname}=creator;
         return <div className='songlist'>

@@ -6,6 +6,7 @@ export default class Login extends React.Component {
   render(){
     return (
       <div className='login'>
+        <i className="iconfont icon-fanhui goBack" onClick={()=>{this.props.history.goBack()}}></i>
         <div className="logo">
             <img src={logo} alt=""/>
         </div>
