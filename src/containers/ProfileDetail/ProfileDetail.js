@@ -26,7 +26,7 @@ export default class ProfileDetail extends React.Component {
         <div className="profile-detail">
           <div className="Essential" style={style}>
             <MHeader>
-              <i className='iconfont icon-fanhui' onClick={()=>{this.props.history.goBack()}}></i>
+              <i className='iconfont icon-fanhui' onClick={()=>{this.props.history.push("/profile")}}></i>
               <div className="headerCenter">
               </div>
               <i className="iconfont icon-fenxiang1"></i>

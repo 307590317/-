@@ -8,18 +8,28 @@ let actions={
       dispatch({type:Types.GET_RECORD,payload:getRecord(id)});
     }
   }
+}
+export default actions;
+=======
 };
 export default actions;*/
-import {getRecord} from "../../api/gjx";
+import {getRecord,getUserDj} from "../../api/gjx";
+import {getUserList} from '../../api/common';
 
 let actions={
   getRecordAPI(id){//id='248846943'
-    /*// getRecord(id)
-    // return {type:Types.GET_NEARLY,data:getRecord(id).then()}*/
-    return  (dispatch,getState)=>{
+    //getRecord(id);
+    //return {type:Types.GET_NEARLY,data:getRecord(id).then()};
+    return (dispatch,getState)=>{
       dispatch({type:Types.GET_NEARLY,payload:getRecord(id)})
-      // dispatch({type:Types.GET_NEARLY,payload:{"weekData":[],"code": 200}})
+  // dispatch({type:Types.GET_NEARLY,payload:{"weekData":[],"code": 200}})
     }
-  }
+  },
+
+  getUserDjAPI(id){
+    return (dispatch,getState)=>{
+    dispatch({type:Types.GET_RADIO,payload:getUserDj(id)})
+    }
+  },
 };
 export default actions;

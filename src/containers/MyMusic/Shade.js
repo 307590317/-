@@ -28,11 +28,11 @@ export default class Shade extends React.Component {
               <span>我创建的歌单(2)</span>
             </li>
             <li>
-              <i></i>
+              <i className='iconfont icon-xinjiananniu'></i>
               <span>新建歌单</span>
             </li>
             <li>
-              <i></i>
+              <i className='iconfont icon-shoukuandanguanli'></i>
               <span>管理歌单歌单</span>
             </li>
           </ul>
