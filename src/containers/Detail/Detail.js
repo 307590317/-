@@ -35,7 +35,6 @@ class Detail extends React.Component {
     let url = result.data[0].url;
     this.setState({url});
     this.props.getSongDetailAPI(this.props.match.params.id);
-
   }
 
   /*点击切换类名  //点击切换字体图标*/
@@ -94,19 +93,28 @@ class Detail extends React.Component {
     this.setState({showListMask: {display: 'none'}, showMusicList: {display: 'none'}})
   };
   lastSong = async () => {
-    this.props.history.push(`/detail/${parseInt(this.props.match.params.id) - 1}`);
-    let result = await getMP3(this.props.history.location.pathname.slice(9));
-    let url = result.data[0].url;
-    this.setState({url});
-    this.props.getSongDetailAPI(this.props.history.location.pathname.slice(9));
+    // this.props.history.push(`/detail/${parseInt(this.props.match.params.id) - 1}`);
+    // let result = await getMP3(this.props.history.location.pathname.slice(9));
+    // let url = result.data[0].url;
+    // this.setState({url});
+    // this.props.getSongDetailAPI(this.props.history.location.pathname.slice(9));
 
   };
   nextSong = async () => {
-    this.props.history.push(`/detail/${parseInt(this.props.match.params.id) + 1}`);
-    let result = await getMP3(this.props.history.location.pathname.slice(9));
-    let url = result.data[0].url;
-    this.setState({url});
-    this.props.getSongDetailAPI(this.props.history.location.pathname.slice(9));
+    // this.props.history.push(`/detail/${parseInt(this.props.match.params.id) + 1}`);
+    // let result = await getMP3(this.props.history.location.pathname.slice(9));
+    // let url = result.data[0].url;
+    // this.setState({url});
+    // this.props.getSongDetailAPI(this.props.history.location.pathname.slice(9));
+  };
+  //跳转到跳回来的页面
+  go=()=>{
+    console.log(1);
+    if(!this.props.location.state){
+      this.props.history.push('/');
+      return;
+    }
+    this.props.history.push(this.props.location.state.path)
   };
   render() {
     let songs = this.props.songs;
@@ -115,7 +123,7 @@ class Detail extends React.Component {
         {/*<audio src={this.state.url} autoPlay={this.state.playStatus?"autoPlay":null} id="audio"></audio>*/}
         <audio src={this.state.url} autoPlay={'autoPlay'} id="audio"></audio>
         <div className="detailHeader">
-          <i className="back iconfont icon-fanhui"></i>
+          <i className="back iconfont icon-fanhui" onClick={this.go}></i>
           <div className="musicName">
             <span className="name">{songs[0].name}</span>
             <span className="singer">{songs[0].ar[0].name}</span>

@@ -86,7 +86,7 @@ export default class MyMusic extends React.Component {
               <li>
                 <i className='front iconfont icon-diantai'></i>
                 <p>我的电台</p>
-                <span>{this.props.dj.count||0}</span>
+                <span>{this.props.userId?this.props.dj.count:0}</span>
                 <i className='back iconfont icon-fanhui2'></i>
               </li>
             </Link>
@@ -106,7 +106,6 @@ export default class MyMusic extends React.Component {
               {this.state.isShow?
                 <i className="forwards iconfont icon-xiangxiajiantou"></i>:
                 <i className='forwards iconfont icon-fanhui2'></i>
-
               }
 
               <span>我创建的歌单({`${this.props.userList.playlist?this.props.userList.playlist.length:0}`})</span>

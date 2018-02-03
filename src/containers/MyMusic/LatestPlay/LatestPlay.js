@@ -99,7 +99,8 @@ item
             {this.props.record.weekData.map((item,index)=>{
               return(
                 <li className={this.state.isTurn?' active':''} key={index}>
-                  <Link to={`/detail/${item.song.id}`}>
+                  <Link to={{pathname:`/detail${item.song.id}`,state:{path:`/detail`}}}>
+                  {/*<Link to={`/detail/${item.song.id}`}>*/}
                     <div className='song-name'>
                       <i className={`choice-none iconfont icon-weixuanzhongyuanquan${!this.state.isTurn?' active':''}`}></i>
                       <p>{item.song.name}</p>
