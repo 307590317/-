@@ -13,9 +13,7 @@
 header
 footer
 centent
-2、MHeader组件可以传递show属性，值为布尔类型即可，控制的是右上角播放按钮的有无，
-值为true时，显示播放按钮，值为false时不显示播放按钮；默认值为true；
-
+2、后台是NeteaseCloudMusicApi中的app.js   接口文件地址（需要克隆到resource文件夹中） https://github.com/Binaryify/NeteaseCloudMusicApi.git
 nickname：用户昵称
 avatarUrl：用户头像
 
