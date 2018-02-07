@@ -43,7 +43,7 @@ export default class Home extends React.Component {
       return (
       <div className='home'>
 
-        <MHeader display={display == 'block' ? 'none' : 'block'}>
+        <MHeader display={display == 'block' ? 'none' : 'flex'}>
           {/*如果弹出层出现，胡同消失*/}
           <i className="iconfont icon-shiwu-maikefeng" style={{display: display == 'block' ? 'none' : 'flex'}}></i>
           <div className='headerCenter' style={{width: display == 'block' ? '300px' : void 0}}>

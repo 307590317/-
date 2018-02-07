@@ -46,5 +46,10 @@ export const GET_NEARLY_EMPTY = 'GET_NEARLY_EMPTY';
 
 /*退出登录*/
 export const EXIT_LOGIN = "EXIT_LOGIN";
-
+/*修改播放页的显示隐藏标识*/
+export const CHANGE_DETAILHIDE='CHANGE_DETAILHIDE';
+/*获取歌曲ID*/
+export const GET_MUSICID='GET_MUSICID';
+/*获取歌曲URL*/
+export const GET_MUSICURL='GET_MUSICURL';
 

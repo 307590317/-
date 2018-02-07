@@ -1,17 +1,18 @@
 import React from 'react';
 import './index.less';
 import {NavLink} from 'react-router-dom';
+import {connect} from 'react-redux';
+import actions from "../../store/actions/common";
+@connect(state=>({...state.common}),actions)
 export default class MHeader extends React.Component {
   static defaultProps={
     show:true
   };
   render(){
-      return (
+    return (
         <div className='header'>
           {this.props.children}
-              <NavLink to={{pathname:'/detail/33894312'}} style={{display:this.props.display}}>
-                <i className="iconfont icon-paihangbang1"></i>
-              </NavLink>
+                <i className="iconfont icon-paihangbang1" style={{display:this.props.display}} onClick={this.props.changeDetailHide}></i>
         </div>
     )
   }

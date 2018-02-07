@@ -8,7 +8,7 @@ export default class Shade extends React.Component {
   }
 
   cancelPopUp = (e) => {
-    switch (e.target.tagName.toLowerCase()){
+    switch (e.target.tagName.toLowerCase()) {
       case 'ul':
       case 'li':
       case 'span':
@@ -20,23 +20,23 @@ export default class Shade extends React.Component {
 
   render() {
     return (
-      <div>
-        {!this.state.disappear?
+      <div className='shade'>
+        {!this.state.disappear ?
           <div className='layer-right' onClick={this.cancelPopUp}>
-          <ul className='popup'>
-            <li className='special'>
-              <span>我创建的歌单(2)</span>
-            </li>
-            <li>
-              <i className='iconfont icon-xinjiananniu'></i>
-              <span>新建歌单</span>
-            </li>
-            <li>
-              <i className='iconfont icon-shoukuandanguanli'></i>
-              <span>管理歌单歌单</span>
-            </li>
-          </ul>
-        </div> : null}
+            <ul className='popup'>
+              <li className='special'>
+                <span>我创建的歌单(2)</span>
+              </li>
+              <li>
+                <i className='iconfont icon-xinjiananniu'></i>
+                <span>新建歌单</span>
+              </li>
+              <li>
+                <i className='iconfont icon-shoukuandanguanli'></i>
+                <span>管理歌单歌单</span>
+              </li>
+            </ul>
+          </div> : null}
       </div>
 
     )

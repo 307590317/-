@@ -22,7 +22,6 @@ function commentReducer(state = initState, action) {
     //匹配派发的行为
     switch (action.type) {
         case Types.GET_COMMENT:
-
             return {...state, ...action.payload};//返回新的状态覆盖默认的状态
         case Types.GET_SONGDETAIL:
             return {...state, ...action.payload};

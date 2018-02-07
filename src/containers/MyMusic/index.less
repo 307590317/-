@@ -128,57 +128,61 @@
         }
       }
     }
-
-    .layer-right {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, .2);
-      z-index: 10;
-
-      .popup {
-        width: 100%;
-        height: 125px;
-        background: #fff;
-        position: absolute;
-        bottom: 0;
+    .shade{
+      position: relative;
+      z-index: 889;
+      .layer-right {
+        position: fixed;
+        top: 0;
         left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, .2);
+        z-index: 10;
 
-        li {
+        .popup {
           width: 100%;
-          border-bottom: 1px solid #ababab;
-          font-size: 14px;
-          height: 35px;
-          line-height: 35px;
-          position: relative;
-          margin: 5px 0 5px 35px;
+          height: 125px;
+          background: #fff;
+          position: absolute;
+          bottom: 0;
+          left: 0;
 
-          &.special {
-            margin-left: 0;
-            padding-left: 10px;
-            font-size: 12px;
-            color: rgba(0, 0, 0, .6);
+          li {
+            width: 100%;
+            border-bottom: 1px solid #ababab;
+            font-size: 14px;
+            height: 35px;
+            line-height: 35px;
+            position: relative;
+            margin: 5px 0 5px 35px;
+
+            &.special {
+              margin-left: 0;
+              padding-left: 10px;
+              font-size: 12px;
+              color: rgba(0, 0, 0, .6);
+            }
+
+            &:nth-last-of-type(1) {
+              border-bottom: none;
+              font-size: 13px;
+            }
+
+            i {
+              color: #ff0100;
+              font-size: 20px;
+              position: absolute;
+              top: 50%;
+              transform: translateY(-50%);
+              left: -25px;
+            }
+
           }
-
-          &:nth-last-of-type(1) {
-            border-bottom: none;
-            font-size: 13px;
-          }
-
-          i {
-            color: #ff0100;
-            font-size: 20px;
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            left: -25px;
-          }
-
         }
       }
     }
+
 
   }
 }

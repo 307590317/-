@@ -105,8 +105,6 @@ export default class HomeMusic extends React.Component {
                             <p>{item.song.artists[0].name}</p>
                         </li>
                     ))}
-
-
                 </ul>
             </div>
 

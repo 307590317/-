@@ -1,16 +1,17 @@
 import React from 'react';
 import './index.less';
-import {Link, NavLink} from 'react-router-dom';
+import {Link, NavLink,withRouter} from 'react-router-dom';
 import circle from './img/circle.png';
 import mPoint from './img/mPoint.png';
 import e from './img/play_disc.png';
-import f from './img/singer-d.png';
+// import f from './img/singer-d.png';
+import logo from './img/musicLogo.jpg';
 import {connect} from 'react-redux';
 import {getMP3} from "../../api/zsq";
 import 'babel-polyfill';
 import actions from '../../store/actions/comment';
-
-@connect(state => ({...state.commentReducer}), actions)
+import comActions from '../../store/actions/common'
+@connect(state => ({...state.commentReducer,...state.common}), {...actions,...comActions})
 export default class Detail extends React.Component {
   constructor() {
     super();
@@ -24,20 +25,22 @@ export default class Detail extends React.Component {
       showMusicList: {display: 'none'},
       showListMask: {display: 'none'},
       playStyle: 1,
-      url: null, //歌曲地址
+      // url: null, //歌曲地址
       playStatus: false,//播放状态
       nowTime: '00:00',
-      detailPageHide: true,//控制detail隐藏或者显示
+      // detailPageHide: true,//控制detail隐藏或者显示
     }
   }
-
-
   async componentDidMount() {
-    console.log(this.props.location.state);
-    let result = await getMP3(this.props.location.state);
-    let url = result.data[0].url;
-    this.setState({url});
-    this.props.getSongDetailAPI(this.props.location.state);
+    // console.log(this.props.musicId);
+    // if(!this.props.musicId){
+    //   return;
+    // }
+    // let result = await getMP3(this.props.musicId);
+    // let url = result.data[0].url;
+    // this.setState({url});
+   /* console.log(this.props.musicId);
+    this.props.getSongDetailAPI(this.props.musicId);*/
     this.$runline = this.refs.runline;
     /*默认线*/
     this.$runBtn = this.refs.runBtn;
@@ -45,7 +48,22 @@ export default class Detail extends React.Component {
     this.$playLine = this.refs.playLine;
     /*播放线*/
   }
-
+  //  getUrl=async()=>{
+  //   console.log(this.props.musicId);
+  //   if(!this.props.musicId){
+  //     return;
+  //   }
+  //   let result = await getMP3(this.props.musicId);
+  //   let url = result.data[0].url;
+  //   this.setState({url});
+  //   this.props.getSongDetailAPI(this.props.musicId);
+  //   this.$runline = this.refs.runline;
+  //   /*默认线*/
+  //   this.$runBtn = this.refs.runBtn;
+  //   /*播放滚动按钮*/
+  //   this.$playLine = this.refs.playLine;
+  //   /*播放线*/
+  // };
 
   /*点击切换类名  //点击切换字体图标*/
   changeClass = () => {
@@ -53,6 +71,9 @@ export default class Detail extends React.Component {
   };
 
   contorlPlayState = () => {
+    if(!this.props.mp3Url){
+      return;
+    }
     this.setState({playStatus: !this.state.playStatus, flag1: !this.state.flag1});
     if (this.state.playStatus) {
       this.audio.play();
@@ -173,32 +194,32 @@ export default class Detail extends React.Component {
     this.props.getSongDetailAPI(this.props.history.location.pathname.slice(9));
   };*/
   //跳转到跳回来的页面
-  go = () => {
-    if (!this.props.location.state) {
-      this.props.history.push('/');
-      return;
-    }
-    this.props.history.push(this.props.location.state.path)
-  };
+  // go = () => {
+  //   if (!this.props.location.state) {
+  //     this.props.history.push('/');
+  //     return;
+  //   }
+  //   this.props.history.push(this.props.location.state.path)
+  // };
 
-  //隐藏详情页
-  detailPageHide = () => {
-    this.setState({
-      detailPageHide: !this.state.detailPageHide
-    })
-  };
+  // //隐藏详情页
+  // detailPageHide = () => {
+  //   this.setState({
+  //     detailPageHide: !this.state.detailPageHide
+  //   })
+  // };
 
   render() {
+    console.log(this.props);
     let songs = this.props.songs;
-
     return (
-      <div className={this.state.detailPageHide ? "detail" : "detail detailHide"}>
-        <audio src={this.state.url} autoPlay={'autoPlay'} id="audio"
+      <div className={this.props.detailHide?"detail detailHide":"detail"}>
+        <audio src={this.props.mp3Url} autoPlay={this.props.mp3Url?'autoPlay':''} id="audio"
                onLoadedData={this.musicPlayHandle} ref={x => {
           this.audio = x
         }}></audio>
         <div className="detailHeader">
-          <i className="back iconfont icon-fanhui"></i>
+          <i className="back iconfont icon-fanhui" onClick={this.props.changeDetailHide}></i>
           <div className="musicName">
             <span className="name">{songs[0].name}</span>
             <span className="singer">{songs[0].ar[0].name}</span>
@@ -210,24 +231,24 @@ export default class Detail extends React.Component {
             <img src={circle} className="img-c"/>
             <img src={mPoint} className={this.state.flag1 ? "img-d pointStopRun" : "img-d pointRun"}/>
             <img src={e} className={this.state.flag1 ? "img-e CDRun" : "img-e"}/>
-            <img src={songs[0].al.picUrl} className={this.state.flag1 ? "img-f CDRun" : "img-f"}/>
+            <img src={logo} className={this.state.flag1 ? "img-f CDRun" : "img-f"}/>
+
             <div className="runCircle"></div>
           </div>
           <div className="btn">
-            {/*点击之前className：icon-aixin   点击之后：icon-xin*/}
             <i className={this.state.flag ? "like iconfont icon-aixin" : "like iconfont icon-xin"}
                onClick={this.changeClass}></i>
             <i className="download iconfont icon-download" onClick={this.showDownloadMask}></i>
             <NavLink to='/comment'><i className="comment-btn iconfont icon-pinglun"
-                                      onClick={this.detailPageHide}></i></NavLink>
+                                      onClick={this.props.changeDetailHide}></i></NavLink>
             <i className="details iconfont icon-101"></i>
           </div>
           <div className="progress">
             <span className="already">{this.state.nowTime}</span>
             <div className="timeLine">
-              <div ref="runline" className="run">{/*默认线*/}
-                <div className="playLine" ref="playLine">{/*播放线*/}
-                  <div className="runBtn" ref="runBtn">{/*按钮*/}
+              <div ref="runline" className="run">
+                <div className="playLine" ref="playLine">
+                  <div className="runBtn" ref="runBtn">
                     <div className="dot"></div>
                   </div>
                 </div>
@@ -247,7 +268,7 @@ export default class Detail extends React.Component {
                               style={this.state.appear}>{this.state.flag2 == 1 ? "循环播放" : (this.state.flag2 == 2 ? "随机播放" : "单曲循环")}</span>
           </i>
           <i className="playLeft iconfont icon-zuobofang"></i>
-          <i className={this.state.flag1 ? "curMusicPlay iconfont icon-bofang1" : "curMusicPlay iconfont icon-bofang11"}
+          <i className={this.props.mp3Url&&this.state.flag1 ? "curMusicPlay iconfont icon-bofang1" : "curMusicPlay iconfont icon-bofang11"}
              onClick={() => {
                this.contorlPlayState();
                this.musicPlayHandle();
@@ -266,7 +287,6 @@ export default class Detail extends React.Component {
             </ul>
           </div>
         </div>
-
         <div className="musicdList" style={this.state.showMusicList}>
           <div className="musicdListHeader clearfix">
             <ul>

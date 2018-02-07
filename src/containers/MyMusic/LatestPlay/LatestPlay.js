@@ -21,11 +21,9 @@ export default class LatestPlay extends React.Component {
       isSingleCheck:false*/
     }
   }
-
   clickDelete = () => {
     this.setState({isArise: !this.state.isArise});
   };
-
   clickCompile = () => {
     this.setState({isTurn: !this.state.isTurn});
   };
@@ -46,7 +44,7 @@ item
 
   handleClick = (e) => {
     e.target.isSelscted = true;
-    this.setState({isSelNum: isSelNum + 1});
+    this.setState({isSelNum: this.state.isSelNum + 1});
     let length = this.props.record.weekData.slice(0, 2);//2
     this.state.isSelNum === length ? this.state.isAllCheck = true : null;
   };
@@ -55,7 +53,6 @@ item
   };
   render() {
     let data=this.props.record.weekData.slice(0,10);
-
     return (
       <div>
         <MHeader>
@@ -104,7 +101,7 @@ item
                   </Link>
                 </li>
               )
-            }):''}
+            })}
              <li className={`rubbish${this.state.isTurn?' active':''}`} onClick={this.clickDelete}>
               <span><i className='iconfont icon-dustbin_icon'></i>清除播放记录</span>
               {this.state.isArise ? <div className='layer-delete'>

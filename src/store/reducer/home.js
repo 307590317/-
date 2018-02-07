@@ -1,6 +1,10 @@
 import * as Types from '../action-Types';
 
-let initState = {banners:[],recommend:{result:[]},unique:{result:[]},new:{result:[]}};
+let initState = {
+    banners:[],
+  recommend:{result:[]},
+  unique:{result:[]},
+  new:{result:[]}};
 
 function homeReducer(state = initState, action) {
 
