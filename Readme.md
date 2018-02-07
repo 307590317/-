@@ -13,7 +13,10 @@
 header
 footer
 centent
-2、后台是NeteaseCloudMusicApi中的app.js   接口文件地址（需要克隆到resource文件夹中） https://github.com/Binaryify/NeteaseCloudMusicApi.git
+2、后台文件地址（需要克隆到resource文件夹中） https://github.com/Binaryify/NeteaseCloudMusicApi.git
+克隆下来以后需要进入到文件夹中npm install 安装一下依赖，然后就可以run NeteaseCloudMusicApi中的app.js了；
+
+
 nickname：用户昵称
 avatarUrl：用户头像
 
